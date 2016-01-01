@@ -15,7 +15,7 @@ var config = {
 
 		WEBSERVER 					: {
 			PORT 					: 3000,
-			DBURI                   : 'mongodb://localhost/ConnectionTest'
+			DBURI                   : 'mongodb://heroku_xgf1ghk8:u901lccncodu74h9012mn81eks@ds037185.mongolab.com:37185/heroku_xgf1ghk8'
 		}
 	},
 	'development' 					: {
