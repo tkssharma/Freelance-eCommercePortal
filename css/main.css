@@ -1,0 +1,350 @@
+
+.onboarding-form-group {
+	padding-bottom: 10px
+}
+
+.notch-shared {
+	content: "";
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	width: 0;
+	height: 0
+}
+
+.udacity-u {
+	width: 40px;
+	margin-right: 15px
+}
+
+.udacity-u-slide-out {
+	-webkit-transition: all 400ms ease;
+	transition: all 400ms ease;
+	width: 0;
+	margin-right: 0
+}
+
+.udacity-u-slide-in {
+	-webkit-transition: all 400ms ease;
+	transition: all 400ms ease;
+	width: 160px;
+	margin-right: 15px;
+}
+
+.navbar.site-nav {
+	-webkit-transition: all 400ms ease;
+	transition: all 400ms ease;
+	transition-property: background-color,color,border-color;
+	-webkit-transition-property: background-color,color,border-color
+}
+
+.navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>li>a:focus {
+	background: 0 0
+}
+
+@media (max-width: 767px) {
+	.navbar-transparent {
+		background-color:#294860;
+		border-color: #294860
+	}
+
+	.navbar-transparent .navbar-toggle .icon-bar {
+		background-color: #fff
+	}
+
+	.navbar-transparent .open .dropdown-menu>.dropdown-header {
+		border-color: #294860
+	}
+
+	.navbar-transparent .open .dropdown-menu>li>a {
+		color: #e6e6e6
+	}
+
+	.navbar-transparent .open .dropdown-menu>li>a:hover,.navbar-transparent .open .dropdown-menu>li>a:focus {
+		color: #fff;
+		background-color: #294860
+	}
+
+	.navbar-transparent .open .dropdown-menu>.active>a,.navbar-transparent .open .dropdown-menu>.active>a:hover,.navbar-transparent .open .dropdown-menu>.active>a:focus {
+		color: #fff;
+		background-color: #294860
+	}
+
+	.navbar-transparent .open .dropdown-menu>.disabled>a,.navbar-transparent .open .dropdown-menu>.disabled>a:hover,.navbar-transparent .open .dropdown-menu>.disabled>a:focus {
+		color: #e6e6e6;
+		background-color: transparent
+	}
+}
+
+.image-homepage-banner {
+	background-image: url('http://gohighbrow.com/wp-content/uploads/2015/11/2.jpeg');
+}
+.navbar-brand {
+	float: left;
+	height: 50px;
+	padding: 0px !important;
+	font-size: 18px;
+	width: 160px;
+	line-height: 20px;
+}
+.image-homepage-banner .sliding-text-wrapper {
+	position: relative;
+	display: block;
+	text-align: center
+}
+
+.image-homepage-banner .sliding-text-wrapper .stationary-text-top {
+	font-size: 40px;
+	font-weight: 400
+}
+
+@media (max-width: 991px) {
+	.image-homepage-banner .sliding-text-wrapper .stationary-text-top {
+		font-size:30px
+	}
+}
+
+@media (max-width: 767px) {
+	.image-homepage-banner .sliding-text-wrapper .stationary-text-top {
+		font-size:20px
+	}
+}
+
+.image-homepage-banner .sliding-text-wrapper .sliding-text {
+	height: 56px;
+	font-size: 50px;
+	font-weight: 400
+}
+
+@media (max-width: 991px) {
+	.image-homepage-banner .sliding-text-wrapper .sliding-text {
+		height:46px;
+		font-size: 40px
+	}
+}
+
+@media (max-width: 767px) {
+	.image-homepage-banner .sliding-text-wrapper .sliding-text {
+		height:30px;
+		font-size: 24px
+	}
+}
+
+.image-homepage-banner .sliding-text-wrapper .sliding-text>div {
+	position: absolute;
+	width: 100%;
+	overflow: hidden;
+	opacity: 0
+}
+
+.image-homepage-banner .sliding-text-wrapper .stationary-text-bottom {
+	font-size: 30px;
+	font-weight: 400
+}
+
+@media (max-width: 991px) {
+	.image-homepage-banner .sliding-text-wrapper .stationary-text-bottom {
+		font-size:20px
+	}
+}
+
+@media (max-width: 767px) {
+	.image-homepage-banner .sliding-text-wrapper .stationary-text-bottom {
+		font-size:16px
+	}
+}
+
+.built-by {
+	color: #000;
+	margin: 0;
+	font-weight: 400;
+	display: inline-block;
+	font-size: 20px
+}
+
+@media (max-width: 991px) {
+	.built-by {
+		font-size:16px!important
+	}
+}
+
+.nyt-featured {
+	padding: 2px 8px;
+	color: #b3b3b3;
+	border: 1px solid #b3b3b3;
+	margin-left: 10px;
+	margin-right: 15px
+}
+
+.icon-nyt {
+	width: 30px;
+	font-size: 30px
+}
+
+@media (max-width: 767px) {
+	.icon-nyt {
+		width:20px;
+		font-size: 20px
+	}
+}
+
+.text-large {
+	font-size: 16px!important
+}
+
+@media (max-width: 991px) {
+	.text-large {
+		font-size:14px!important
+	}
+}
+
+@media (max-width: 767px) {
+	.text-large {
+		font-size:12px!important
+	}
+}
+
+.text-quote-size {
+	font-size: 24px!important
+}
+
+@media (max-width: 991px) {
+	.text-quote-size {
+		font-size:22px!important
+	}
+}
+
+@media (max-width: 767px) {
+	.text-quote-size {
+		font-size:20px!important
+	}
+}
+
+h2 {
+	font-size: 40px
+}
+
+@media (max-width: 767px) {
+	h2 {
+		font-size:28px
+	}
+}
+
+.h2-standard {
+	font-size: 22px
+}
+
+@media (max-width: 767px) {
+	.h2-standard {
+		font-size:20px
+	}
+}
+
+.read-announcement {
+	margin-top: -2px;
+	text-decoration: none!important;
+	font-size: 14px
+}
+
+@media (max-width: 991px) {
+	.read-announcement {
+		font-size:12px
+	}
+}
+
+.header-right-arrow {
+	height: 12px
+}
+
+@media (max-width: 991px) {
+	.header-right-arrow {
+		height:10px
+	}
+}
+
+.super-header-wrapper {
+	position: relative
+}
+
+.super-header {
+	position: relative;
+	background-size: cover;
+	margin: 0 auto;
+	background-position: center center
+}
+
+.super-header-content h2 {
+	font-size: 40px;
+	font-weight: 400
+}
+
+@media (max-width: 767px) {
+	.super-header-content h2 {
+		font-size:24px
+	}
+}
+
+.super-header-content h1 {
+	font-size: 20px;
+	font-weight: 400
+}
+
+@media (max-width: 767px) {
+	.super-header-content h1 {
+		font-size:16px
+	}
+}
+
+.level-up-padding {
+	padding-top: 5px
+}
+
+.banner-icon-background {
+	background: url(//s3-us-west-1.amazonaws.com/udacity-content/images/H-25-off_Background_%402x.png);
+	background-size: contain;
+	background-position: top right;
+	background-repeat: no-repeat
+}
+
+.sprite-grads {
+	background-image: url(//lh3.googleusercontent.com/V-Jo3QoWhugbsNXdptygFFWsIDqkzqyOGcl8MmYYNxW-xqopuXrhL--GUqOSdh52Au06auKgbnxNJGPrmqsQ=s285#w=570&h=190);
+	background-repeat: no-repeat;
+	display: block
+}
+
+.sprite-grads-nathan {
+	width: 75px;
+	height: 75px;
+	background-position: -10px -10px
+}
+
+.sprite-grads-kevin {
+	width: 75px;
+	height: 75px;
+	background-position: -105px -10px
+}
+
+.sprite-grads-carol {
+	width: 75px;
+	height: 75px;
+	background-position: -200px -10px
+}
+
+.h1-text {
+	display: none
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2) {
+	.sprite-grads {
+		background-image: url(//lh3.googleusercontent.com/V-Jo3QoWhugbsNXdptygFFWsIDqkzqyOGcl8MmYYNxW-xqopuXrhL--GUqOSdh52Au06auKgbnxNJGPrmqsQ=s0#w=570&h=190)
+	}
+
+	.sprite-grads-nathan,.sprite-grads-kevin,.sprite-grads-carol {
+		background-size: 285px 95px
+	}
+}
+.btn-primary {
+    color: #fff;
+    background-color: #404E4E !important;
+    border-color: #9E896B !important;
+}

@@ -1,0 +1,44 @@
+{
+  "name": "node-js-allakarte",
+  "version": "0.1.5",
+  "description": "app   to create rest api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+
+    "body-parser": "~1.13.3",
+    "crypto": "~0.0.3",
+    "express": "~3.4.0",
+    "express-session": "~1.12.1",
+    "graceful-logger": "^0.4.3",
+    "jws": "~3.1.0",
+    "jwt-simple": "~0.3.1",
+    "lodash": "~3.9.3",
+    "mongoose": "~4.0.6",
+    "morgan": "~1.3.2",
+    "nodemailer": "~1.10.0",
+    "passport": "~0.1.17",
+    "passport-facebook": ">= 0.0.0",
+    "passport-google-oauth": "~0.1.5",
+    "passport-http-bearer": "^1.0.1",
+    "passport-local": "~0.1.6",
+    "passport-local-mongoose": "~0.2.5",
+    "path": "~0.12.7",
+    "pretty-log": "^0.1.0"
+  },
+  "engines": {
+    "node": "4.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-js-getting-started"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
