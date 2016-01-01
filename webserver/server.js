@@ -176,7 +176,7 @@ webServer.prototype.start = function(){
 			process.exit(1);
 		})
 
-		.listen(self.config.WEBSERVER.PORT, 'localhost', function() {
+		.listen(process.env.PORT || self.config.WEBSERVER.PORT , 'localhost', function() {
 			console.log("Listening on localhost on port " + self.app.get('port') + ' in ' + (process.env.NODE_ENV || 'development'));
 	  });
 }; //start
