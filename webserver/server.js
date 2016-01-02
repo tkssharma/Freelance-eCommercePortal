@@ -10,9 +10,17 @@ var
 	MORGAN          = require('morgan'),
 	BODY_PARSER     = require('body-parser'),
     MONGOOSE        = require( 'mongoose' ),
+    CONFIG 			= require('../config'),
   /* internal */
 	ERROR           = require('./error.js'),
-	M               = require('./middlware');
+	M               = require('./middlware'),
+	UserHandler = require('./handlers/UserHandler'),
+	AuthHandler = require('./handlers/AuthHandler'),
+	passport = require('passport'),
+	User = require('./models/user'),
+	session = require('express-session');
+
+	require('./passport')(passport,CONFIG);
 
 
 // ***************************************************************************************************************
@@ -45,6 +53,9 @@ function webServer(config) {
 	self.app.use(EXPRESS.cookieParser());
 	self.app.use(EXPRESS.static(PATH.join(__dirname, '../')));
     });
+
+    self.app.use(passport.initialize());
+    self.app.use(passport.session());
 
 	// Create the database connection
 	MONGOOSE.connect(self.config.WEBSERVER.DBURI);
@@ -86,7 +97,7 @@ webServer.prototype._setCors = function(req, res, next){
 
 
 // Set Routes
-webServer.prototype._setRoutes = function(){
+webServer.prototype._setRoutes = function(handlers){
 	var self = this;
 
 	// set cors
@@ -113,21 +124,22 @@ webServer.prototype._setRoutes = function(){
 	});
 
 
-
-	// save the feedback from the user.
-	/*self.app.post('/feedback', BODY_PARSER.urlencoded({ extended: false }), BODY_PARSER.json(),
-				   EXPRESSVALIDATOR(), M.validatePostFeedback(self.config), function(req,res){
-
-			//everthing is correct we can move forward
-			self.mainEs.submitFeedbackForSearch(req.body, function(err, formattedResp) {
-				if(err)     return ERROR(err, req, res);
-
-				return res.status(200).json({
-					status: 'success',
-					message: "feedback has been successfully submitted"
-				});
-			});
-	});*/
+   // passport js callback routes
+	self.app.get('/api/users/google', passport.authenticate('google', {scope: ['email']}), handlers.auth.googleSignIn);
+	self.app.get('/api/users/google/callback', passport.authenticate('google', {failureRedirect: '/login', session: false, scope: 'https://www.googleapis.com/auth/plus.login'}),  handlers.auth.googleSignInCallback);
+	self.app.get('/api/users/facebook', passport.authenticate('facebook', { failureRedirect: '/login',successRedirect : '/welcome', session: false, scope: ['email'] }), handlers.auth.facebookSignIn);
+	self.app.get('/api/users/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login', session: false, scope: [] }), handlers.auth.facebookSignInCallback);
+	self.app.post('/api/users/login', passport.authenticate('local', {session: false}), handlers.auth.localSignIn);
+	self.app.post('/api/users/logout', passport.authenticate('local', {session: false}), handlers.auth.SignOut);
+	self.app.post('/api/users', handlers.auth.registerLocal);
+	self.app.get('/auth/local/callback', handlers.auth.localSignInCallback);
+	self.app.get('/user', handlers.user.getUsers);
+	self.app.get('/user/:id', handlers.user.getUser);
+	self.app.put('/user/:id', handlers.user.updateUser);
+	self.app.get('/user/:first/:last/:email', handlers.user.createUser);
+	self.app.post('/api/users/reset', handlers.auth.ResetPassword);
+	self.app.post('/api/users/login/resetpassword', handlers.auth.ResetPasswordCallback);
+	self.app.post('/api/users/signout', handlers.auth.SignOut);
 
 
 
@@ -165,9 +177,15 @@ webServer.prototype._setRoutes = function(){
 webServer.prototype.start = function(){
 	var self = this;
 
+
+    var handlers = {
+	user: new UserHandler(),
+	auth: new AuthHandler()
+    };
+
 	// set routes first
 	console.log("webServer.prototype.start :: Setting routes");
-	self._setRoutes();
+	self._setRoutes(handlers);
 
 	console.log("webServer.prototype.start :: Creating HTTP Server");
 	HTTP.createServer(self.app)
