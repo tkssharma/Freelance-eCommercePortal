@@ -194,7 +194,7 @@ webServer.prototype.start = function(){
 			process.exit(1);
 		})
 
-		.listen(process.env.PORT || 5000 , 'localhost', function() {
+		.listen(process.env.PORT || 5000 , function() {
 			console.log("Listening on localhost on port " + self.app.get('port') + ' in ' + (process.env.NODE_ENV || 'development'));
 	  });
 }; //start
