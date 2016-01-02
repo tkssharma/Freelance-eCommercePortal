@@ -90,6 +90,12 @@ h1, h2, h3, h4, h5 {
 	}
 }
 
+.flip-container, .front, .back {
+    margin: 15px 0;
+    width: 360px;
+    height: 275px !important;
+}
+
 .image-homepage-banner {
     background-image: url('../images/header.jpg');
 }
