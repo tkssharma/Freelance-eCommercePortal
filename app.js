@@ -3,8 +3,8 @@
 
 var
 	/* internal */
-	CONFIG 			= require('./config.js'),
-	WEBSERVER 		= require('./webServer/server.js');
+	CONFIG 			= require('./config'),
+	WEBSERVER 		= require('./webServer/server');
 
 (function() {
 			var ws = new WEBSERVER(CONFIG);

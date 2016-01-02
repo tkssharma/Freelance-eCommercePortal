@@ -3,7 +3,7 @@
 
 var
 
-	ERROR            = require('./error.js');
+	ERROR            = require('./error');
 
 
 
