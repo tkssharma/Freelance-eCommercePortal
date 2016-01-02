@@ -6264,7 +6264,7 @@ h3,.h3,.modal .modal-content .modal-header {
 h4,.h4 {
 	color: #767676;
 	line-height: 1.6;
-	text-transform: uppercase;
+
 	font-weight: 400
 }
 
@@ -6346,43 +6346,43 @@ h1 small,h2 small,h3 small,h4 small,h5 small,h6 small,.h1 small,.h2 small,.h3 sm
 }
 
 .theme-nd011 .theme-stroke {
-	stroke: #149671
+	stroke: #337ab7
 }
 
 .theme-nd011 .theme-fill {
-	fill: #149671
+	fill: #337ab7
 }
 
 .theme-nd011 .theme-color {
-	color: #149671!important
+	color: #337ab7!important
 }
 
 .theme-nd011 .theme-background-color {
-	background-color: #149671
+	background-color: #337ab7
 }
 
 .theme-nd011 .theme-border-color {
-	border-color: #149671!important
+	border-color: #337ab7!important
 }
 
 .theme-nd010 .theme-stroke {
-	stroke: #c45381
+	stroke: #F0DB4F
 }
 
 .theme-nd010 .theme-fill {
-	fill: #c45381
+	fill: #F0DB4F
 }
 
 .theme-nd010 .theme-color {
-	color: #c45381!important
+	color: #F0DB4F!important
 }
 
 .theme-nd010 .theme-background-color {
-	background-color: #c45381
+	background-color: #F0DB4F
 }
 
 .theme-nd010 .theme-border-color {
-	border-color: #c45381!important
+	border-color: #F0DB4F!important
 }
 
 .theme-nd802 .theme-stroke {
@@ -6406,23 +6406,23 @@ h1 small,h2 small,h3 small,h4 small,h5 small,h6 small,.h1 small,.h2 small,.h3 sm
 }
 
 .theme-nd009 .theme-stroke {
-	stroke: #ac4057
+	stroke: rgba(0, 216, 255, 0.19)
 }
 
 .theme-nd009 .theme-fill {
-	fill: #ac4057
+	fill: rgba(0, 216, 255, 0.19)
 }
 
 .theme-nd009 .theme-color {
-	color: #ac4057!important
+	color: rgba(0, 216, 255, 0.19) !important
 }
 
 .theme-nd009 .theme-background-color {
-	background-color: #ac4057
+	background-color: rgba(0, 216, 255, 0.19)
 }
 
 .theme-nd009 .theme-border-color {
-	border-color: #ac4057!important
+	border-color: rgba(0, 216, 255, 0.19)!important
 }
 
 .theme-nd006 .theme-stroke {
@@ -6446,63 +6446,63 @@ h1 small,h2 small,h3 small,h4 small,h5 small,h6 small,.h1 small,.h2 small,.h3 sm
 }
 
 .theme-nd007 .theme-stroke {
-	stroke: #6a5f9b
+	stroke: #337ab7
 }
 
 .theme-nd007 .theme-fill {
-	fill: #6a5f9b
+	fill: #337ab7
 }
 
 .theme-nd007 .theme-color {
-	color: #6a5f9b!important
+	color: #337ab7!important
 }
 
 .theme-nd007 .theme-background-color {
-	background-color: #6a5f9b
+	background-color: #337ab7
 }
 
 .theme-nd007 .theme-border-color {
-	border-color: #6a5f9b!important
+	border-color: #337ab7!important
 }
 
 .theme-nd004 .theme-stroke {
-	stroke: #6b80dd
+	stroke: #260D3A
 }
 
 .theme-nd004 .theme-fill {
-	fill: #6b80dd
+	fill: #260D3A
 }
 
 .theme-nd004 .theme-color {
-	color: #6b80dd!important
+	color: #260D3A!important
 }
 
 .theme-nd004 .theme-background-color {
-	background-color: #6b80dd
+	background-color: #260D3A
 }
 
 .theme-nd004 .theme-border-color {
-	border-color: #6b80dd!important
+	border-color: #260D3A!important
 }
 
 .theme-nd000 .theme-stroke {
-	stroke: #c45381
+	stroke: #8D959B
 }
 
 .theme-nd000 .theme-fill {
-	fill: #c45381
+	fill: #8D959B
 }
 
 .theme-nd000 .theme-color {
-	color: #c45381!important
+	color: #8D959B!important
 }
 
 .theme-nd000 .theme-background-color {
-	background-color: #c45381
+	background-color: #8D959B
 }
 
 .theme-nd000 .theme-border-color {
-	border-color: #c45381!important
+	border-color: #8D959B!important
 }
 
 .theme-nd002 .theme-stroke {
@@ -6526,63 +6526,63 @@ h1 small,h2 small,h3 small,h4 small,h5 small,h6 small,.h1 small,.h2 small,.h3 sm
 }
 
 .theme-nd801 .theme-stroke {
-	stroke: #149671
+	stroke: #B62F32
 }
 
 .theme-nd801 .theme-fill {
-	fill: #149671
+	fill: #B62F32
 }
 
 .theme-nd801 .theme-color {
-	color: #149671!important
+	color: #B62F32!important
 }
 
 .theme-nd801 .theme-background-color {
-	background-color: #149671
+	background-color: #B62F32
 }
 
 .theme-nd801 .theme-border-color {
-	border-color: #149671!important
+	border-color: #B62F32!important
 }
 
 .theme-nd003 .theme-stroke {
-	stroke: #e7654e
+	stroke: #E84C50
 }
 
 .theme-nd003 .theme-fill {
-	fill: #e7654e
+	fill: #E84C50
 }
 
 .theme-nd003 .theme-color {
-	color: #e7654e!important
+	color: #E84C50!important
 }
 
 .theme-nd003 .theme-background-color {
-	background-color: #e7654e
+	background-color: #E84C50
 }
 
 .theme-nd003 .theme-border-color {
-	border-color: #e7654e!important
+	border-color: #E84C50!important
 }
 
 .theme-nd001 .theme-stroke {
-	stroke: #00a4b9
+	stroke: rgb(39, 59, 71)
 }
 
 .theme-nd001 .theme-fill {
-	fill: #00a4b9
+	fill: rgb(39, 59, 71)
 }
 
 .theme-nd001 .theme-color {
-	color: #00a4b9!important
+	color: rgb(39, 59, 71)!important
 }
 
 .theme-nd001 .theme-background-color {
-	background-color: #00a4b9
+	background-color: rgb(39, 59, 71);
 }
 
 .theme-nd001 .theme-border-color {
-	border-color: #00a4b9!important
+	border-color: rgb(39, 59, 71)!important
 }
 
 .container>.navbar-header {
@@ -6607,10 +6607,7 @@ h1 small,h2 small,h3 small,h4 small,h5 small,h6 small,.h1 small,.h2 small,.h3 sm
 	margin-bottom: -35px
 }
 
-.site-nav.navbar-transparent .nav>li>a:hover, .site-nav.navbar-transparent .nav>li>a:focus {
-    background-color: rgb(52, 64, 64);
-    /* text-decoration: underline; */
-}
+
 .site-nav.navbar-transparent .nav .caret,.site-nav.navbar-transparent .nav a:hover .caret,.site-nav.navbar-transparent .nav .open>a .caret,.site-nav.navbar-transparent .nav .open>a:hover .caret,.site-nav.navbar-transparent .nav .open>a:focus .caret {
 	border-top-color: #fff;
 	border-bottom-color: #fff
@@ -6702,7 +6699,7 @@ h1 small,h2 small,h3 small,h4 small,h5 small,h6 small,.h1 small,.h2 small,.h3 sm
 	padding: 5px 15px;
 	font-size: 10px;
 	color: #b3b3b3;
-	text-transform: uppercase;
+
 	background-color: #f3f3f3
 }
 
@@ -7284,7 +7281,7 @@ hr.hr-slim {
 	font-size: 12px;
 	color: #767676;
 	line-height: 1.6;
-	text-transform: uppercase;
+
 	font-weight: 400
 }
 
@@ -10676,7 +10673,7 @@ p.block-initialed-text {
 
 .left-hand-nav-container .nav-location-btn,.left-hand-nav-container .nav-location-btn a {
 	font-size: 10px;
-	text-transform: uppercase;
+
 	display: block
 }
 
@@ -11486,7 +11483,7 @@ p.block-initialed-text {
 }
 
 .payment-form-container .payment-form-content .payment-form-block .questions-title {
-	text-transform: uppercase;
+
 	margin-top: 40px;
 	margin-bottom: 20px;
 	font-size: 14px
