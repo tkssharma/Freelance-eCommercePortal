@@ -15,7 +15,7 @@ var config = {
 
 			WEBSERVER 					: {
 				PORT 					: 3000,
-				DBURI                   : 'mongodb://localhost:27017/myproject'
+				DBURI                   : 'mongodb://heroku_xgf1ghk8:u901lccncodu74h9012mn81eks@ds037185.mongolab.com:37185/heroku_xgf1ghk8'
 			},
 			GOOGLE_AUTH: {
 				GOOGLE_CLIENT_ID : "'295902945278-b3oqgi2daricc22mnnem3gca13q0ea12.apps.googleusercontent.com'",
