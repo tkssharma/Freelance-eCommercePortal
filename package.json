@@ -9,6 +9,7 @@
   "dependencies": {
 
     "body-parser": "~1.13.3",
+    "bower" : "^1.7.2",
     "crypto": "~0.0.3",
     "express": "~3.4.0",
     "express-session": "~1.12.1",
