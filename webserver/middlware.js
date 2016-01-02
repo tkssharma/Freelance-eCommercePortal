@@ -3,8 +3,7 @@
 
 var
 
-	ERROR            = require('./error.js'),
-	_                = require('lodash');
+	ERROR            = require('./error.js');
 
 
 
