@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5 {
 }
 .nav>li>a:focus, .nav>li>a:hover {
     text-decoration: none;
-    background-color: #2F3E3E !important;
+    background-color: #1A2E3A !important
 }
 .navbar-brand {
 	float: left;

@@ -11631,7 +11631,12 @@ to {
 		height: 240px;
 	}
 }
-
+@media ( min-width : 343px) {
+	.flip-container, .front, .back {
+		width: 270px;
+		height: 240px;
+	}
+}
 @media ( min-width : 992px) {
 	.flip-container, .front, .back {
 		margin: 15px 0;
