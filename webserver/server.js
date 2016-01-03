@@ -16,6 +16,7 @@ var
 	M               = require('./middlware'),
 	UserHandler = require('./handlers/UserHandler'),
 	AuthHandler = require('./handlers/AuthHandler'),
+	TrainingHandler = require('./handlers/TrainingHandler'),
 	passport = require('passport'),
 	User = require('./models/user'),
 	session = require('express-session');
@@ -141,6 +142,14 @@ webServer.prototype._setRoutes = function(handlers){
 	self.app.post('/api/users/login/resetpassword', handlers.auth.ResetPasswordCallback);
 	self.app.post('/api/users/signout', handlers.auth.SignOut);
 
+    self.app.post('/api/createTraining', handlers.training.createTraining);
+	self.app.get('/api/getAllTraining', handlers.training.getAllTraining);
+	self.app.get('/api/getAllTrainingByTechnologyName/:technology', handlers.training.getAllTrainingByTechnologyName);
+
+	self.app.post('/api/createYouTubeVideo', handlers.training.createYouTubeVideo);
+	self.app.get('/api/getAllYouTubeVideos', handlers.training.getAllYouTubeVideos);
+	self.app.get('/api/getAllYouTubeVideosByTechnologyName/:technology', handlers.training.getAllYouTubeVideosByTechnologyName);
+	self.app.get('/api/getYouTubeVideosByCourseId/:course_id', handlers.training.getYouTubeVideosByCourseId);
 
 
 	// STATIC FILES
@@ -180,7 +189,8 @@ webServer.prototype.start = function(){
 
     var handlers = {
 	user: new UserHandler(),
-	auth: new AuthHandler()
+	auth: new AuthHandler(),
+	training: new TrainingHandler()
     };
 
 	// set routes first
