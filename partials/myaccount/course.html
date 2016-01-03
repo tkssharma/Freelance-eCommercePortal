@@ -1,0 +1,189 @@
+<div class="col-xs-9 ng-scope">
+	<div class="ng-scope" data-modal-dialog="removeCourse">
+		<div class="modal">
+			<div class="modal-backdrop"></div>
+			<div class="modal-dialog" data-ng-class="additionalClasses">
+				<!-- ngIf: !disableClose -->
+				<span data-ng-if="!disableClose" class="ng-scope"><button
+						type="button" aria-label="close" class="close hanging-close"
+						data-ng-click="cornerClose({message:'cornerClose'})"></button></span>
+				<!-- end ngIf: !disableClose -->
+				<div class="modal-content col-xs-12">
+					<div class="modal-header ng-scope">Remove Class</div>
+					<div class="modal-body ng-scope">Do you want to remove this
+						class from My Courses?</div>
+					<div class="modal-footer ng-scope">
+						<button class="btn btn-default" data-ng-click="cancel()">No</button>
+						<button class="btn btn-primary" data-ng-click="confirm()">Yes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="text-center ng-scope " data-ng-show="loading"
+		style="">
+		<div class="row row-gap-huge">
+			<img
+				src="//lh5.ggpht.com/b3OandPWsUWAnRVS5d8JS8OL0nu8dU2d3NceS7p1yKhPl9KD4EhqeylPm7yFbft5wmsA2VCAZ-8wAkmFduXJ=s0#w=90&amp;h=30">
+		</div>
+	</div>
+	<div data-="loading" class="ng-scope" style="">
+		<div
+			data-ng-show="forPayEnrollments.length == 0 &amp;&amp; nonPayEnrollments.length == 0"
+			class="">
+			<div class="row">
+				<div class="col-xs-6">
+					<img alt="pen and blank paper"
+						src="//lh4.ggpht.com/I0vYznRNjebjbXtQ32MOd8WGMjcV2r3CyADjwLh4qWsP30JJWvm6VFActL_B15KE344I7r-ISGh1EcU_DIY=s240#w=480&amp;h=320">
+					<h3>Clean Slate!</h3>
+					<p>You don't have any courses to manage yet, get started by
+						taking some courses.</p>
+					<a href="/courses/all" class="btn btn-secondary">Explore
+						Courses</a>
+				</div>
+			</div>
+		</div>
+
+		<div data-ng-show="forPayEnrollments.length > 0" class="">
+			<h3>Enrolled Courses</h3>
+			<table class="table">
+				<tbody>
+					<!-- iterate through enrollments so they are automatically updated when enrollments change -->
+					<!-- use orderBy filter -->
+					<!-- ngRepeat: enrollment in forPayEnrollments -->
+				</tbody>
+			</table>
+		</div>
+
+		<div data-ng-show="nonPayEnrollments.length > 0" class="" style="">
+			<h3>Course Materials</h3>
+			<table class="table">
+				<tbody>
+					<!-- ngRepeat: enrollment in nonPayEnrollments -->
+					<tr class="topless ng-scope"
+						data-ng-repeat="enrollment in nonPayEnrollments">
+						<td class="ng-binding">Developing Android Apps</td>
+						<td>
+							<!-- start date-->
+						</td>
+						<td class="text-right">
+							<div
+								data-ng-show="isPreEnrolled(enrollment, nodeMap[enrollment['node_key']])"
+								class="">
+								<a href="#!/billing-and-subscriptions">Pre-enrolled in
+									Course</a>
+							</div>
+							<div
+								data-ng-show="hasEnrolled(enrollment, nodeMap[enrollment['node_key']]) &amp;&amp; !isPreEnrolled(enrollment, nodeMap[enrollment['node_key']])  &amp;&amp; nodeMap[enrollment['node_key']]['catalog_entry']['paid_class']['open_for_enrollment']"
+								class="">
+								<a data-ng-href="/course/ud853" href="/course/ud853">Re-enroll
+									in Course</a>
+							</div>
+							<div
+								data-ng-show="!hasEnrolled(enrollment, nodeMap[enrollment['node_key']]) &amp;&amp; !isPreEnrolled(enrollment, nodeMap[enrollment['node_key']])  &amp;&amp; nodeMap[enrollment['node_key']]['catalog_entry']['paid_class']['open_for_enrollment']"
+								class="">
+								<a data-ng-href="/course/ud853" href="/course/ud853">Enroll
+									in Course</a>
+								<div>
+									<a href="" target="_self"
+										data-ng-click="remove(enrollment['node_key'])">Remove</a>
+								</div>
+							</div>
+							<div
+								data-ng-show="!preEnrolled(enrollment, nodeMap[enrollment['node_key']]) &amp;&amp; !nodeMap[enrollment['node_key']]['catalog_entry']['paid_class']['open_for_enrollment']"
+								class="">
+								<div>
+									<a href="" target="_self"
+										data-ng-click="remove(enrollment['node_key'])">Remove</a>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<!-- end ngRepeat: enrollment in nonPayEnrollments -->
+					<tr class="topless ng-scope"
+						data-ng-repeat="enrollment in nonPayEnrollments">
+						<td class="ng-binding">How to Use Git and GitHub</td>
+						<td>
+							<!-- start date-->
+						</td>
+						<td class="text-right">
+							<div
+								data-ng-show="isPreEnrolled(enrollment, nodeMap[enrollment['node_key']])"
+								class="">
+								<a href="#!/billing-and-subscriptions">Pre-enrolled in
+									Course</a>
+							</div>
+							<div
+								data-ng-show="hasEnrolled(enrollment, nodeMap[enrollment['node_key']]) &amp;&amp; !isPreEnrolled(enrollment, nodeMap[enrollment['node_key']])  &amp;&amp; nodeMap[enrollment['node_key']]['catalog_entry']['paid_class']['open_for_enrollment']"
+								class="">
+								<a data-ng-href="/course/ud775" href="/course/ud775">Re-enroll
+									in Course</a>
+							</div>
+							<div
+								data-ng-show="!hasEnrolled(enrollment, nodeMap[enrollment['node_key']]) &amp;&amp; !isPreEnrolled(enrollment, nodeMap[enrollment['node_key']])  &amp;&amp; nodeMap[enrollment['node_key']]['catalog_entry']['paid_class']['open_for_enrollment']"
+								class="">
+								<a data-ng-href="/course/ud775" href="/course/ud775">Enroll
+									in Course</a>
+								<div>
+									<a href="" target="_self"
+										data-ng-click="remove(enrollment['node_key'])">Remove</a>
+								</div>
+							</div>
+							<div
+								data-ng-show="!preEnrolled(enrollment, nodeMap[enrollment['node_key']]) &amp;&amp; !nodeMap[enrollment['node_key']]['catalog_entry']['paid_class']['open_for_enrollment']"
+								class="">
+								<div>
+									<a href="" target="_self"
+										data-ng-click="remove(enrollment['node_key'])">Remove</a>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<!-- end ngRepeat: enrollment in nonPayEnrollments -->
+					<tr class="topless ng-scope"
+						data-ng-repeat="enrollment in nonPayEnrollments">
+						<td class="ng-binding">Website Performance Optimization</td>
+						<td>
+							<!-- start date-->
+						</td>
+						<td class="text-right">
+							<div
+								data-ng-show="isPreEnrolled(enrollment, nodeMap[enrollment['node_key']])"
+								class="">
+								<a href="#!/billing-and-subscriptions">Pre-enrolled in
+									Course</a>
+							</div>
+							<div
+								data-ng-show="hasEnrolled(enrollment, nodeMap[enrollment['node_key']]) &amp;&amp; !isPreEnrolled(enrollment, nodeMap[enrollment['node_key']])  &amp;&amp; nodeMap[enrollment['node_key']]['catalog_entry']['paid_class']['open_for_enrollment']"
+								class="">
+								<a data-ng-href="/course/ud884" href="/course/ud884">Re-enroll
+									in Course</a>
+							</div>
+							<div
+								data-ng-show="!hasEnrolled(enrollment, nodeMap[enrollment['node_key']]) &amp;&amp; !isPreEnrolled(enrollment, nodeMap[enrollment['node_key']])  &amp;&amp; nodeMap[enrollment['node_key']]['catalog_entry']['paid_class']['open_for_enrollment']"
+								class="">
+								<a data-ng-href="/course/ud884" href="/course/ud884">Enroll
+									in Course</a>
+								<div>
+									<a href="" target="_self"
+										data-ng-click="remove(enrollment['node_key'])">Remove</a>
+								</div>
+							</div>
+							<div
+								data-ng-show="!preEnrolled(enrollment, nodeMap[enrollment['node_key']]) &amp;&amp; !nodeMap[enrollment['node_key']]['catalog_entry']['paid_class']['open_for_enrollment']"
+								class="">
+								<div>
+									<a href="" target="_self"
+										data-ng-click="remove(enrollment['node_key'])">Remove</a>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<!-- end ngRepeat: enrollment in nonPayEnrollments -->
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</div>

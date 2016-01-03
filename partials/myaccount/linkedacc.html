@@ -1,0 +1,54 @@
+<div data-ng-hide="managed" class="">
+	<h3>Sign In Accounts</h3>
+	<table class="table">
+		<tbody>
+			<tr data-ng-repeat="linkedAccountType in getLinkedAccountTypes()"
+				class="text-capitalize ng-scope topless"
+				data-ng-class="{'topless': linkedAccountType == getLinkedAccountTypes()[0]}">
+				<td class="col-xs-1"><span
+					class="glyphicon glyphicon-remove-circle text-danger-color"
+					data-ng-class="{'glyphicon-ok-circle text-success-color': user['_'+linkedAccountType+'_id'],
+						'glyphicon-remove-circle text-danger-color': !user['_'+linkedAccountType+'_id']}"></span></td>
+				<td><span
+					data-ng-class="{'text-disabled': !user['_'+linkedAccountType+'_id']}"
+					class="ng-binding text-disabled">google <span
+						class="small text-disabled ng-hide"
+						data-ng-show="user['_'+linkedAccountType+'_id'] &amp;&amp; !accounts[linkedAccountType].loggedIn">(Not
+							logged in to linked account)</span> <span
+						class="small text-disabled ng-binding ng-hide"
+						data-ng-show="accounts[linkedAccountType].loggedIn">( )</span>
+				</span></td>
+				<td class="text-right"><a href=""
+					data-ng-show="user['_'+linkedAccountType+'_id']"
+					data-ng-click="disconnect(linkedAccountType)" class="ng-hide">Disconnect</a>
+					<a href="" data-ng-hide="user['_'+linkedAccountType+'_id']"
+					data-ng-click="connect(linkedAccountType)" class="">Connect</a></td>
+			</tr>
+			<!-- end ngRepeat: linkedAccountType in getLinkedAccountTypes() -->
+			<tr data-ng-repeat="linkedAccountType in getLinkedAccountTypes()"
+				class="text-capitalize ng-scope"
+				data-ng-class="{'topless': linkedAccountType == getLinkedAccountTypes()[0]}">
+				<td class="col-xs-1"><span
+					class="glyphicon glyphicon-ok-circle text-success-color"
+					data-ng-class="{'glyphicon-ok-circle text-success-color': user['_'+linkedAccountType+'_id'],
+						'glyphicon-remove-circle text-danger-color': !user['_'+linkedAccountType+'_id']}"></span></td>
+				<td><span
+					data-ng-class="{'text-disabled': !user['_'+linkedAccountType+'_id']}"
+					class="ng-binding">facebook <span
+						class="small text-disabled"
+						data-ng-show="user['_'+linkedAccountType+'_id'] &amp;&amp; !accounts[linkedAccountType].loggedIn">(Not
+							logged in to linked account)</span> <span
+						class="small text-disabled ng-binding ng-hide"
+						data-ng-show="accounts[linkedAccountType].loggedIn">( )</span>
+				</span></td>
+				<td class="text-right"><a href=""
+					data-ng-show="user['_'+linkedAccountType+'_id']"
+					data-ng-click="disconnect(linkedAccountType)" class="">Disconnect</a>
+					<a href="" data-ng-hide="user['_'+linkedAccountType+'_id']"
+					data-ng-click="connect(linkedAccountType)" class="ng-hide">Connect</a>
+				</td>
+			</tr>
+			<!-- end ngRepeat: linkedAccountType in getLinkedAccountTypes() -->
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,190 @@
+
+<div id="login" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-hidden="true">×</button>
+				<h4 class="modal-title center">Login to your Account</h4>
+				<div class="heading-section color-primary center">The first
+					step to great things</div>
+			</div>
+			<div class="modal-body">
+				<div class="social-buttons col-md-12" style="margin: 10px;">
+					<div class="col-md-6">
+						<a style="width: 100%" href="/api/users/facebook"
+							class="btn btn-primary facebook btn-fb"><i
+							class="fa fa-facebook "></i> Facebook</a>
+					</div>
+
+					<div class="col-md-6">
+						<a style="width: 100%" href="/api/users/google"
+							class="btn btn-primary google btn-tw"><i
+							class="fa fa-google-plus "></i> Google</a>
+					</div>
+				</div>
+				<form class="new_user" id="new_user" action="/en/users/login"
+					accept-charset="UTF-8" method="post">
+					<input name="utf8" type="hidden" value="✓"><input
+						type="hidden" name="authenticity_token"
+						value="2tI3Hw6KImB/tlYLSScMEgV2zV8d2nCz9Vr/4z4dM3QrA3TLjsABUYSljhKDOg45ZoYpwG/k6/4td3WwZBJNVQ==">
+					<div class="form-group">
+						<input autofocus="autofocus" class="form-control"
+							required="required" type="email" value="" name="user[email]"
+							id="user_email"> <span class="form-highlight"></span> <span
+							class="form-bar"></span> <label class="float-label"
+							for="exampleInputEmail1">Enter your email</label>
+					</div>
+					<div class="form-group mb-30">
+						<input autocomplete="off" class="form-control" required="required"
+							type="password" name="user[password]" id="user_password">
+						<span class="form-highlight"></span> <span class="form-bar"></span>
+						<label class="float-label" for="exampleInputEmail1">Enter
+							your password</label>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="sign-remember text-left">
+								<input id="user_remember_me" type="checkbox"
+									name="user[remember_me]" class="material_checkbox"> <label
+									for="user_remember_me">Remember me</label>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="pull-right mb-30 forgot-password-wrapper">
+								<a data-toggle="modal" href="" data-dismiss="modal"
+									data-target="#resetpassword">Forgot your password?</a>
+							</div>
+						</div>
+					</div>
+					<button name="button" type="submit"
+						class="btn btn-primary btn-sm btn-block"
+						data-disable-with="<i class='fa fa-spinner fa-spin'></i> Signing in...">Sign
+						In</button>
+					<div class="signup text-center mt-15">
+						<span>Don’t have an account?</span> <a data-dismiss="modal"
+							data-toggle="modal" href="" data-target="#register">Sign up</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="resetpassword" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-hidden="true">×</button>
+				<h4 class="modal-title center">Recover Your Password</h4>
+				<div class="heading-section color-primary center">Enter your
+					email address.</div>
+			</div>
+			<div class="modal-body">
+				<div class="sign-box-cont">
+					<form class="new_user" id="new_user" action="/en/users"
+						accept-charset="UTF-8" method="post">
+						<input name="utf8" type="hidden" value="✓"><input
+							type="hidden" name="authenticity_token"
+							value="d+vNx9MnKn/6vGf5/AgqZR6jZOAUDaclbv0YIXfL74yGOo4TU20JTgGvv+A2FShOfVOAf2YzPGi20JJyLcSRrQ==">
+
+						<div class="form-group">
+							<input class="form-control" required="required" type="email"
+								value="" name="user[email]" id="user_email"> <span
+								class="form-highlight"></span> <span class="form-bar"></span> <label
+								class="float-label" for="exampleInputEmail1">Enter your
+								email</label>
+						</div>
+
+						<button name="button" type="submit"
+							class="btn btn-primary btn-sm btn-block"
+							data-disable-with="<i class='fa fa-spinner fa-spin'></i> Signing up...">Reset
+							password</button>
+						<div class="signup text-center mt-15">
+							<span>Already have an account?</span> <a data-toggle="modal"
+								href="" data-dismiss="modal" data-target="#login">Sign in</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="register" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-hidden="true">×</button>
+				<h4 class="modal-title center">Login to your Account</h4>
+				<div class="heading-section color-primary center">The first
+					step to great things</div>
+			</div>
+			<div class="modal-body">
+				<div class="social-buttons col-md-12" style="margin: 10px;">
+					<div class="col-md-6">
+						<a style="width: 100%" href="/api/users/facebook"
+							class="btn btn-primary facebook btn-fb"><i
+							class="fa fa-facebook "></i> Facebook</a>
+					</div>
+
+					<div class="col-md-6">
+						<a style="width: 100%" href="/api/users/google"
+							class="btn btn-primary google btn-tw"><i
+							class="fa fa-google-plus "></i> Google</a>
+					</div>
+				</div>
+
+				<form class="new_user" id="new_user" action="/en/users"
+					accept-charset="UTF-8" method="post">
+					<input name="utf8" type="hidden" value="✓"><input
+						type="hidden" name="authenticity_token"
+						value="ksllTF+G/rP5X72xv6AnYN55Xkh2D1wkflJC27ZClMJjGCaY38zdggJMZah1vSVLvYm61wQxx2mmf8iI7E3q4w==">
+					<div class="form-group">
+						<input autofocus="autofocus" class="form-control"
+							required="required" type="text" name="user[name]" id="user_name">
+						<span class="form-highlight"></span> <span class="form-bar"></span>
+						<label class="float-label" for="exampleInputEmail1">Enter
+							your name</label>
+					</div>
+					<div class="form-group">
+						<input class="form-control" required="required" type="email"
+							value="" name="user[email]" id="user_email"> <span
+							class="form-highlight"></span> <span class="form-bar"></span> <label
+							class="float-label" for="exampleInputEmail1">Enter your
+							email</label>
+					</div>
+					<div class="form-group">
+						<input autocomplete="off" class="form-control" required="required"
+							type="password" name="user[password]" id="user_password">
+						<span class="form-highlight"></span> <span class="form-bar"></span>
+						<label class="float-label" for="exampleInputEmail1">Enter
+							your password</label>
+					</div>
+					<div class="form-group mb-30">
+						<input autocomplete="off" class="form-control" required="required"
+							type="password" name="user[password_confirmation]"
+							id="user_password_confirmation"> <span
+							class="form-highlight"></span> <span class="form-bar"></span> <label
+							class="float-label" for="exampleInputEmail1">Confirm your
+							password</label>
+					</div>
+					<button name="button" type="submit"
+						class="btn btn-primary btn-sm btn-block"
+						data-disable-with="<i class='fa fa-spinner fa-spin'></i> Signing up...">Sign
+						up</button>
+					<div class="signup text-center mt-15">
+						<span>Already have an account?</span> <a id="go-to-login"
+							data-toggle="modal" href="" data-dismiss="modal"
+							data-target="#login">Sign in</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+

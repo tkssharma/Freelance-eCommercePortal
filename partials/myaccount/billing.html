@@ -1,0 +1,78 @@
+<div class="col-xs-9 ng-scope" data-ng-view=""><div class="text-center ng-scope ">
+	<div class="row row-gap-huge">
+		<img src="images/loading.gif">
+	</div>
+</div>
+<div class="row row-gap-medium ng-scope">
+	<form role="form"  class="ng-pristine ng-invalid ng-invalid-required">
+		<div class="form-group text-center">
+			<div class="row ng-hide" data-ng-show="serverError">
+				<div class="alert alert-danger col-xs-offset-1 col-xs-9 ng-binding">
+					
+				</div>
+			</div>
+			<div class="row ng-hide" data-ng-show="serverSuccess">
+				<div class="alert alert-success col-xs-offset-1 col-xs-9 ng-binding">
+					
+				</div>
+			</div>
+		</div>
+	<div class="row row-gap-small form-group" data-ng-class="{'has-error': employerInfoErrors.setsEmployer}">
+		<label for="employer" class="col-xs-8 col-xs-offset-1 control-label">Employer/Company</label>
+		<div class="col-xs-3 col-xs-offset-1">
+			<input type="text" placeholder="current employer" class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="employer" data-ng-model="user['employer_info']['employer']" data-uib-typeahead="name for name in fetchAffiliateNames($viewValue)" data-typeahead-min-length="2" required="" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-289-2024"><ul class="dropdown-menu ng-isolate-scope ng-hide" ng-show="isOpen() &amp;&amp; !moveInProgress" ng-style="{top: position().top+'px', left: position().left+'px'}" style="display: block;;display: block;" role="listbox" aria-hidden="true" uib-typeahead-popup="" id="typeahead-289-2024" matches="matches" active="activeIdx" select="select(activeIdx)" move-in-progress="moveInProgress" query="query" position="position">
+    <!-- ngRepeat: match in matches track by $index -->
+</ul>
+		</div>
+		<div class="col-xs-3 form-error">
+			<!-- ngRepeat: err in employerInfoErrors.setsEmployer -->
+		</div>
+	</div>
+	<div class="row row-gap-small form-group" data-ng-class="{'has-error': employerInfoErrors.setsEmployeeId}">
+		<label for="employeeId" class="col-xs-9 col-xs-offset-1 control-label">Employee ID</label>
+		<small class="text-muted col-xs-9 col-xs-offset-1">This is the ID number your company uses for employee tracking and identification.</small>
+		<div class="col-xs-3 col-xs-offset-1">
+			<input type="text" class="form-control ng-pristine ng-untouched ng-valid" id="employeeId" data-ng-model="user['employer_info']['employee_id']">
+		</div>
+		<div class="col-xs-3 form-error">
+			<!-- ngRepeat: err in employerInfoErrors.setsEmployerId -->
+		</div>
+	</div>
+	<div class="row row-gap-small form-group" data-ng-class="{'has-error': employerInfoErrors.setsEmployerPayment}">
+		<div class="col-xs-offset-1 col-xs-9">My employer is paying for my Nanodegree program</div>
+		<div class="col-xs-offset-1 col-xs-3">
+			<div class="radio">
+				<label for="inAdvanced">
+					<input type="radio" data-ng-model="user['employer_info']['employer_payment']" name="employerPayment" value="advance" id="inAdvanced" required="" class="ng-pristine ng-untouched ng-invalid ng-invalid-required">In advanced
+				</label>
+			</div>
+			<div class="radio">
+				<label for="reimbursingMe">
+					<input type="radio" data-ng-model="user['employer_info']['employer_payment'] " name="employerPayment" value="reimburse" id="reimbursingMe" required="" class="ng-pristine ng-untouched ng-invalid ng-invalid-required">
+					Reimbursing me
+				</label>
+			</div>
+			<div class="radio">
+				<label for="partially">
+					<input type="radio" data-ng-model="user['employer_info']['employer_payment']" name="employerPayment" value="partial" id="partially" required="" class="ng-pristine ng-untouched ng-invalid ng-invalid-required">
+					Partially
+				</label>
+			</div>
+			<div class="radio">
+				<label for="notAtAll">
+					<input type="radio" data-ng-model="user['employer_info']['employer_payment']" name="employerPayment" value="not-paying" id="notAtAll" required="" class="ng-pristine ng-untouched ng-invalid ng-invalid-required">
+					Not at all
+				</label>
+			</div>
+		</div>
+		<div class="col-xs-3 form-error">
+			<!-- ngRepeat: err in employerInfoErrors.setsEmployerPayment -->
+		</div>
+	</div>
+	<div class="row row-gap-small form-group">
+		<div class="col-xs-offset-1 col-xs-9">
+			<button type="submit" class="btn btn-primary" data-ng-click="saveEmployerInfo()" data-ng-disabled="saveDisabled">Save</button>
+		</div>
+	</div>
+	</form>
+</div></div>
