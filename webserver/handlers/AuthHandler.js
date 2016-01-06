@@ -6,9 +6,8 @@ var AuthHandler = function() {
 	this.googleSignInCallback = googleSignInCallback;
 	this.facebookSignIn = facebookSignIn;
 	this.facebookSignInCallback = facebookSignInCallback;
-	this.localSignIn = localSignIn;
-	this.localSignInCallback = localSignInCallback;
-	this.registerLocal = registerLocal;
+	this.localLogin = localLogin;
+	this.localSignUp = localSignUp;
 	this.ResetPassword = ResetPassword;
 	this.ResetPasswordCallback = ResetPasswordCallback;
 	this.SignOut = SignOut;
@@ -62,46 +61,34 @@ function facebookSignInCallback(req, res, next) {
 	})(req,res,next);
 }
 
-function localSignIn(req, res, next) {
-	if (req.user) {
-		User.createToken(req.user.email, function(err, usersToken) {
-			if (err) {
-				res.json({success: false, message: 'Issue generating token'});
-			} else {
-				res.send({'success': true, token : usersToken});
-			}
-		});
-	} else {
-		res.json({success: false, message: 'AuthError'});
-	}
+function localLogin(req, res, next) {
+
+ passport.authenticate('local-login', function(err, user, info) {
+     if (err) {return next(err);};
+
+        if (user) {
+            return res.json({token:user.generateJWT()});
+        } else {
+            return res.status(401).json(info);
+        };
+
+  })(req, res, next);
 }
 
-function registerLocal(req, res, next) {
-	console.log("Registering User");
-	console.log(req.body);
-	User.register(
-		new User({
-			username: req.body.email,
-			email:req.body.email,
-			firstname: req.body.firstname,
-			lastname: req.body.lastname,
-			city: req.body.city,
-			role: req.body.role
-		}), req.body.password, function(err){
-			if(err) {
-				console.log(err);
-				console.log("Error Registering User");
-				res.send("Not able to register user");
-			}
+function localSignUp(req, res, next) {
+	console.log("Registering callback");
+    passport.authenticate('local-signup', function(err, user, info) {
+     if (err) {return next(err);};
 
-			
-			MailHandler.sendRegisterMail(req.body.email,true)
-			res.send({'success': true});
-		}
-	);
+        if (user) {
+            return res.json({token:user.generateJWT()});
+        } else {
+            return res.status(401).json(info);
+        };
+  })(req, res, next);
+
 }
 
-function localSignInCallback(req, res, next) {}
 
 function ResetPassword(req, res, next) {
 	console.log(req.body);
@@ -129,4 +116,4 @@ function SignOut(req, res, next) {
 	}
 }
 
-module.exports = AuthHandler; 
+module.exports = AuthHandler;

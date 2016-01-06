@@ -15,7 +15,7 @@ var config = {
 
 			WEBSERVER 					: {
 				PORT 					: 5000,
-				DBURI                   : 'mongodb://heroku_xgf1ghk8:u901lccncodu74h9012mn81eks@ds037185.mongolab.com:37185/heroku_xgf1ghk8'
+				DBURI                   : 'mongodb://localhost/news'
 			},
 			GOOGLE_AUTH: {
 				GOOGLE_CLIENT_ID : "'295902945278-b3oqgi2daricc22mnnem3gca13q0ea12.apps.googleusercontent.com'",
@@ -31,7 +31,7 @@ var config = {
 				GMAIL_SMTP_EMAIL_ID : GMAIL_SMTP_EMAIL_ID,
 				GMAIL_SMTP_PASSWORD : GMAIL_SMTP_PASSWORD
 			},
-			DEV_DOMAIN : "http://allakarte.herokuapp.com",
+			DEV_DOMAIN : "localhost",
 			TOKEN_SECRET: TOKEN_SECRET,
 			MONGO_DB_URI: MONGO_DB_URI,
 			RESET_TOKEN_IN_HOURS: RESET_TOKEN_IN_HOURS

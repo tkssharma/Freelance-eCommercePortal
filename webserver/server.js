@@ -14,7 +14,6 @@ var
   /* internal */
 	ERROR           = require('./error.js'),
 	M               = require('./middlware'),
-	UserHandler = require('./handlers/UserHandler'),
 	AuthHandler = require('./handlers/AuthHandler'),
 	TrainingHandler = require('./handlers/TrainingHandler'),
 	passport = require('passport'),
@@ -130,14 +129,13 @@ webServer.prototype._setRoutes = function(handlers){
 	self.app.get('/api/users/google/callback', passport.authenticate('google', {failureRedirect: '/login', session: false, scope: 'https://www.googleapis.com/auth/plus.login'}),  handlers.auth.googleSignInCallback);
 	self.app.get('/api/users/facebook', passport.authenticate('facebook', { failureRedirect: '/login',successRedirect : '/welcome', session: false, scope: ['email'] }), handlers.auth.facebookSignIn);
 	self.app.get('/api/users/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login', session: false, scope: [] }), handlers.auth.facebookSignInCallback);
-	self.app.post('/api/users/login', passport.authenticate('local', {session: false}), handlers.auth.localSignIn);
+
+
+	self.app.post('/api/users/login', passport.authenticate('local-login', {session: false ,failureRedirect: '/login',successRedirect : '/welcome'}), handlers.auth.localLogin);
 	self.app.post('/api/users/logout', passport.authenticate('local', {session: false}), handlers.auth.SignOut);
-	self.app.post('/api/users', handlers.auth.registerLocal);
-	self.app.get('/auth/local/callback', handlers.auth.localSignInCallback);
-	self.app.get('/user', handlers.user.getUsers);
-	self.app.get('/user/:id', handlers.user.getUser);
-	self.app.put('/user/:id', handlers.user.updateUser);
-	self.app.get('/user/:first/:last/:email', handlers.user.createUser);
+	self.app.post('/api/users',passport.authenticate('local-signup', {session: false , failureRedirect: '/register',successRedirect : '/login'}), handlers.auth.localSignUp);
+
+
 	self.app.post('/api/users/reset', handlers.auth.ResetPassword);
 	self.app.post('/api/users/login/resetpassword', handlers.auth.ResetPasswordCallback);
 	self.app.post('/api/users/signout', handlers.auth.SignOut);
@@ -188,7 +186,6 @@ webServer.prototype.start = function(){
 
 
     var handlers = {
-	user: new UserHandler(),
 	auth: new AuthHandler(),
 	training: new TrainingHandler()
     };

@@ -1,50 +1,60 @@
-var Mongoose = require("mongoose")
-,Schema = Mongoose.Schema
-,path = require('path')
-,PassportLocalMongoose = require("passport-local-mongoose")
-,Crypto = require("crypto")
-,JWT = require("jwt-simple")
-,CONFIG = require('../../config');
 
-var Token = new Schema({
-	token: {type: String},
-	date_created: {type: Date, default: Date.now}
-});
+var mongoose = require('mongoose');
+var crypto = require('crypto');
+var jwt = require('jsonwebtoken');
 
-Token.statics.hasExpired= function(created) {
-	var now = new Date();
-	var diff = (now.getTime() - created);
-	return diff > config.ttl;
-};
 
-var TokenModel = Mongoose.model('Token', Token);
-
-var UserSchema =  new Schema(
-		{
-			firstname: {type: String, required: false}
-		,lasttname: {type: String, required: false}
-		,email: {type: String, required: true}
-		,access_token: {type: String, required: false}
-		,city: {type:String, required:false}
-		,token: {type: Object}
-		,date_created: {type: Date, default: Date.now}
-		,reset_token: {type: String}
-		,reset_token_expires_millis: {type: Number}
-		,facebook_profile_id: {type: String, required: false}
-		,google_profile_id: {type: String, required: false}
-		}
+var UserSchema =  new  mongoose.Schema(
+{
+	username: {type: String, required: false}
+	,hash: String
+	,salt: String
+	,date_created: {type: Date, default: Date.now}
+	,reset_token: {type: String}
+	,reset_token_expires_millis: {type: Number}
+	,
+	facebook: {
+	id: String,
+	token: String,
+	email: String,
+	name: String
+	},
+	google: {
+		id: String,
+		token: String,
+		email: String,
+		name: String
+	}
+}
 );
 
-UserSchema.plugin(PassportLocalMongoose);
 
-UserSchema.statics.encode = function(data) {
-	return JWT.encode(data, CONFIG.TOKEN_SECRET, 'HS256');
+
+UserSchema.methods.setPassword = function(password){
+	this.salt = crypto.randomBytes(16).toString('hex');
+
+	this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
 };
 
-UserSchema.statics.decode = function(data) {
-	return JWT.decode(data, CONFIG.TOKEN_SECRET);
+UserSchema.methods.validPassword = function(password){
+	var hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
+
+	return this.hash === hash;
 };
 
+UserSchema.methods.generateJWT = function(){
+	//expiration 60 days
+	var today = new Date();
+	var exp = new Date(today);
+	exp.setDate(today.getDate() + 60);
+
+	return jwt.sign({
+		_id: this._id,
+		username: this.username,
+		exp: parseInt(exp.getTime() / 1000)
+	}, 'SECRET');
+};
+var x = "";
 UserSchema.statics.findUserByEmailId = function(email, callback) {
 	this.findOne({email: email}, function(err, usr) {
 		if(err || !usr) {
@@ -88,24 +98,7 @@ UserSchema.statics.findUser = function(email, token, callback) {
 	});
 };
 
-UserSchema.statics.createToken = function(email, callback) {
-	this.findOne({email: email}, function(err, usr) {
-		if(err || !usr) {
-			console.log('err');
-		}
-		//Create a token and add to user and save
-		var token = this.model.encode({email: email});
-		usr.token = new TokenModel({token:token});
-		usr.save(function(err, usr) {
-			if (err) {
-				callback(err, null);
-			} else {
-				console.log("about to cb with usr.token.token: " + usr.token.token);
-				callback(false, usr.token.token);//token object, in turn, has a token property :)
-			}
-		});
-	});
-};
+
 
 UserSchema.statics.invalidateUserToken = function(email, callback) {
 	this.findOne({email: email}, function(err, usr) {
@@ -157,7 +150,7 @@ UserSchema.statics.findUserByResetToken = function(email, resetToken, callback) 
 				user.setPassword("demo", function(){
 					user.save();
 					callback(false, user);
-				        });
+				});
 
 				//callback(false, user);
 			} else {
@@ -167,6 +160,5 @@ UserSchema.statics.findUserByResetToken = function(email, resetToken, callback) 
 	});
 };
 
-module.exports = Mongoose.model('User', UserSchema);
-module.exports.Token = TokenModel;
+module.exports = mongoose.model('User', UserSchema);
 
