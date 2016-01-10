@@ -1,0 +1,65 @@
+<section class="login-section section mt-30">
+
+	<div class="container">
+		<div class="clearfix"></div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3 text-center">
+				<div class="sign-box mt-70">
+					<div class="text-center">
+						<h3 class="title-small">Create a new account<span class="text-point">.</span></h3>
+						<div class="heading-section color-primary">The first step to great things</div>
+						<div class="line-section mb-30"></div>
+					</div>
+					<div class="sign-box-cont">
+						<div class="social-buttons override-col-margin col-md-12" style="margin-bottom: 10px;padding: 0px;">
+							<div class="col-md-6 override-col-margin">
+								<a style="width: 100%" href="/api/users/facebook"
+								class="btn btn-primary facebook btn-fb"><i
+								class="fa fa-facebook "></i> Facebook</a>
+							</div>
+
+							<div class="col-md-6 override-col-margin">
+								<a style="width: 100%" href="/api/users/google"
+								class="btn btn-primary google btn-tw"><i
+								class="fa fa-google-plus "></i> Google</a>
+							</div>
+						</div>
+
+						<form class="new_user" id="new_user" action="/en/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="eHxlvhwJDkoq3qgWGXgPMyOB7oGjdjPqb87AoEWBhyj2D3CSBiwgcbVgplCiyRktrrWOUHjjhoCNrF3ht09jVw==">
+							<div class="form-group">
+								<input autofocus="autofocus" class="form-control" required="required" type="text" name="user[name]" id="user_name">
+								<span class="form-highlight"></span>
+								<span class="form-bar"></span>
+								<label class="float-label" for="exampleInputEmail1">Enter your name</label>
+							</div>
+							<div class="form-group">
+								<input class="form-control" required="required" type="email" value="" name="user[email]" id="user_email">
+								<span class="form-highlight"></span>
+								<span class="form-bar"></span>
+								<label class="float-label" for="exampleInputEmail1">Enter your email</label>
+							</div>
+							<div class="form-group">
+								<input autocomplete="off" class="form-control" required="required" type="password" name="user[password]" id="user_password">
+								<span class="form-highlight"></span>
+								<span class="form-bar"></span>
+								<label class="float-label" for="exampleInputEmail1">Enter your password</label>
+							</div>
+							<div class="form-group mb-30">
+								<input autocomplete="off" class="form-control" required="required" type="password" name="user[password_confirmation]" id="user_password_confirmation">
+								<span class="form-highlight"></span>
+								<span class="form-bar"></span>
+								<label class="float-label" for="exampleInputEmail1">Confirm your password</label>
+							</div>
+							<button name="button" type="submit" class="btn btn-primary btn-sm btn-block" data-disable-with="<i class='fa fa-spinner fa-spin'></i> Signing up...">Sign up</button>
+							<div class="signup text-center mt-15">
+								<span>Already have an account?</span>
+								<a id="go-to-login" href="#/authlogin">Sign in</a>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

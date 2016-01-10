@@ -16,18 +16,9 @@ module.exports = function(passport,config) {
 	// env
 	self.env        = process.env.NODE_ENV || 'development';
 
-
-	passport.serializeUser(function(user, done) {
-		done(null, user);
-	});
-
-
-	passport.deserializeUser(function(obj, done) {
-		done(null, obj);
-	});
-
-
-
+	passport.use(new LocalStrategy(User.authenticate()));
+	passport.serializeUser(User.serializeUser());
+	passport.deserializeUser(User.deserializeUser());
 
 	passport.use(new TwitterStrategy({
 		consumerKey		 : self.config.FACEBOOK_AUTH.FACEBOOK_CLIENT_ID,

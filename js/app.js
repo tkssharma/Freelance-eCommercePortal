@@ -6,7 +6,7 @@ var routerApp = angular.module("Codefun", ['ui.router']);
 routerApp.config(function($stateProvider, $urlRouterProvider) {
 
 	$urlRouterProvider.otherwise('home');
-	
+
 	$stateProvider
 
 		// HOME STATES AND NESTED VIEWS ========================================
@@ -18,6 +18,26 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 			abstract : true,
 			url: '/myaccount',
 			templateUrl: 'partials/myaccount.html'
+		})
+		.state('authlogin', {
+			url: '/authlogin',
+			templateUrl: 'partials/auth/login.html'
+		})
+		.state('authregister', {
+			url: '/authregister',
+			templateUrl: 'partials/auth/register.html'
+		})
+		.state('about', {
+			url: '/about',
+			templateUrl: 'partials/about.html'
+		})
+		.state('team', {
+			url: '/team',
+			templateUrl: 'partials/team.html'
+		})
+		.state('authpassword', {
+			url: '/authpassword',
+			templateUrl: 'partials/auth/forgotpassword.html'
 		})
 		.state('myaccount.contact', {
 			url: '/contact',
@@ -51,6 +71,6 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 			url: '/settings',
 			templateUrl: 'partials/myaccount/settings.html'
 		});
-	
-	$urlRouterProvider.when("/myaccount","/myaccount/contact"); 
+
+	$urlRouterProvider.when("/myaccount","/myaccount/contact");
 });

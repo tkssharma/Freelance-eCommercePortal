@@ -18,7 +18,13 @@ var
 	TrainingHandler = require('./handlers/TrainingHandler'),
 	passport = require('passport'),
 	User = require('./models/user'),
-	session = require('express-session');
+	BodyParser = require("body-parser")
+	,ExpressLogger = require("express-logger")
+	,UrlEncode = require("urlencode")
+	,MethodOverride = require("method-override")
+	,CookieParser = require("cookie-parser")
+	,Errorhandler = require("errorhandler")
+	,session = require('express-session');
 
 	require('./passport')(passport,CONFIG);
 
@@ -40,19 +46,19 @@ function webServer(config) {
 	self.app        = EXPRESS();
 
 
-    self.app.configure(function() {
-	self.app.set('port', self.config.WEBSERVER.PORT);
-	if(self.env == 'development')
-	self.app.use(MORGAN('dev'));
-    self.app.set('client-url','http://localhost:3000');
+
+	self.app.set('client-url','http://localhost:8000');
+	self.app.set('client-google-signin','/google?action=signin');
 	self.app.disable('x-powered-by');
-	self.app.use(EXPRESS.logger('dev'));
-	self.app.use(EXPRESS.json());
-	self.app.use(EXPRESS.urlencoded());
-	self.app.use(EXPRESS.methodOverride());
-	self.app.use(EXPRESS.cookieParser());
+	self.app.use(ExpressLogger({path: "./logfile.txt"}));
+	self.app.use(BodyParser());
+	self.app.use(MethodOverride());
+	self.app.use(session({
+		secret:'allcarte secret'
+	}));
+	self.app.use(CookieParser());
 	self.app.use(EXPRESS.static(PATH.join(__dirname, '../')));
-    });
+
 
     self.app.use(passport.initialize());
     self.app.use(passport.session());
@@ -124,21 +130,18 @@ webServer.prototype._setRoutes = function(handlers){
 	});
 
 
-   // passport js callback routes
-	self.app.get('/api/users/google', passport.authenticate('google', {scope: ['email']}), handlers.auth.googleSignIn);
-	self.app.get('/api/users/google/callback', passport.authenticate('google', {failureRedirect: '/login', session: false, scope: 'https://www.googleapis.com/auth/plus.login'}),  handlers.auth.googleSignInCallback);
-	self.app.get('/api/users/facebook', passport.authenticate('facebook', { failureRedirect: '/login',successRedirect : '/welcome', session: false, scope: ['email'] }), handlers.auth.facebookSignIn);
-	self.app.get('/api/users/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login', session: false, scope: [] }), handlers.auth.facebookSignInCallback);
+	var ApiRouter = EXPRESS.Router();
+	var UserRouter = EXPRESS.Router({mergeParams: true});
+	ApiRouter.use('/api/users/', UserRouter);
 
-
-	self.app.post('/api/users/login', passport.authenticate('local-login', {session: false ,failureRedirect: '/login',successRedirect : '/welcome'}), handlers.auth.localLogin);
-	self.app.post('/api/users/logout', passport.authenticate('local', {session: false}), handlers.auth.SignOut);
-	self.app.post('/api/users',passport.authenticate('local-signup', {session: false , failureRedirect: '/register',successRedirect : '/login'}), handlers.auth.localSignUp);
-
-
-	self.app.post('/api/users/reset', handlers.auth.ResetPassword);
-	self.app.post('/api/users/login/resetpassword', handlers.auth.ResetPasswordCallback);
-	self.app.post('/api/users/signout', handlers.auth.SignOut);
+	//User Routes
+	UserRouter.get('/google', passport.authenticate('google', {scope: ['email']}), handlers.auth.GoogleSignIn);
+	UserRouter.get('/google/callback', passport.authenticate('google', {failureRedirect: '/#/login', session: false, scope: 'https://www.googleapis.com/auth/plus.login'}), handlers.auth.GoogleSignInCallback);
+	UserRouter.get('/facebook', passport.authenticate('facebook', { failureRedirect: '/login',successRedirect : '/welcome', session: false, scope: ['email'] }), handlers.auth.FacebookSignIn);
+	UserRouter.get('/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login', session: false, scope: [] }), handlers.auth.FacebookSignInCallback);
+	UserRouter.post('/login',passport.authenticate('local', {session: false}), handlers.auth.LocalSignIn);
+	UserRouter.post('/login/social', handlers.auth.LocalSignInWithSocial);
+	UserRouter.post('/', handlers.auth.RegisterLocal);
 
     self.app.post('/api/createTraining', handlers.training.createTraining);
 	self.app.get('/api/getAllTraining', handlers.training.getAllTraining);

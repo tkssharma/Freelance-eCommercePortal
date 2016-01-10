@@ -1,7 +1,7 @@
 
 <div id="login" class="modal fade" tabindex="-1" role="dialog">
 	<div class="modal-dialog modal-sm">
-		<div class="modal-content">
+		<div class="row modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"
 					aria-hidden="true">×</button>
@@ -10,20 +10,20 @@
 					step to great things</div>
 			</div>
 			<div class="modal-body">
-				<div class="social-buttons col-md-12" style="margin: 10px;">
-					<div class="col-md-6">
+				<div class="social-buttons override-col-margin col-md-12" style="margin-bottom: 10px;padding: 0px;">
+					<div class="col-md-6 override-col-margin">
 						<a style="width: 100%" href="/api/users/facebook"
 							class="btn btn-primary facebook btn-fb"><i
 							class="fa fa-facebook "></i> Facebook</a>
 					</div>
 
-					<div class="col-md-6">
+					<div class="col-md-6 override-col-margin">
 						<a style="width: 100%" href="/api/users/google"
 							class="btn btn-primary google btn-tw"><i
 							class="fa fa-google-plus "></i> Google</a>
 					</div>
 				</div>
-				<form class="new_user" id="new_user" action="/en/users/login"
+				<form class="new_user row col-md-12 override-col-margin" id="new_user" action="/en/users/login"
 					accept-charset="UTF-8" method="post">
 					<input name="utf8" type="hidden" value="✓"><input
 						type="hidden" name="authenticity_token"
@@ -43,19 +43,20 @@
 							your password</label>
 					</div>
 					<div class="row">
-						<div class="col-sm-6">
+						<div class="col-sm-12 col-md-12">
 							<div class="sign-remember text-left">
 								<input id="user_remember_me" type="checkbox"
 									name="user[remember_me]" class="material_checkbox"> <label
 									for="user_remember_me">Remember me</label>
 							</div>
 						</div>
-						<div class="col-sm-6">
-							<div class="pull-right mb-30 forgot-password-wrapper">
+					</div>
+					<div class="row"
+						<div class="col-sm-12 col-md-12">
+							<div class="forgot-password-wrapper">
 								<a data-toggle="modal" href="" data-dismiss="modal"
 									data-target="#resetpassword">Forgot your password?</a>
 							</div>
-						</div>
 					</div>
 					<button name="button" type="submit"
 						class="btn btn-primary btn-sm btn-block"
@@ -75,16 +76,21 @@
 
 <div id="resetpassword" class="modal fade" tabindex="-1" role="dialog">
 	<div class="modal-dialog modal-sm">
-		<div class="modal-content">
+		<div class="modal-content row">
 			<div class="modal-header">
-				<div class="social-buttons col-md-12" style="margin: 10px;">
-					<div class="col-md-6">
+			    <button type="button" class="close" data-dismiss="modal"
+					aria-hidden="true">×</button>
+				<h4 class="modal-title center">Reset your password</h4>
+
+
+				<div class="social-buttons override-col-margin col-md-12" style="margin-bottom: 10px;">
+					<div class="col-md-6 override-col-margin">
 						<a style="width: 100%" href="/api/users/facebook"
 							class="btn btn-primary facebook btn-fb"><i
 							class="fa fa-facebook "></i> Facebook</a>
 					</div>
 
-					<div class="col-md-6">
+					<div class="col-md-6 override-col-margin">
 						<a style="width: 100%" href="/api/users/google"
 							class="btn btn-primary google btn-tw"><i
 							class="fa fa-google-plus "></i> Google</a>
@@ -93,7 +99,7 @@
 			</div>
 			<div class="modal-body">
 				<div class="sign-box-cont">
-					<form class="new_user" id="new_user" action="/en/users"
+					<form class="new_user row col-md-12 override-col-margin" id="new_user" action="/en/users"
 						accept-charset="UTF-8" method="post">
 						<input name="utf8" type="hidden" value="✓"><input
 							type="hidden" name="authenticity_token"
@@ -124,7 +130,7 @@
 
 <div id="register" class="modal fade" tabindex="-1" role="dialog">
 	<div class="modal-dialog modal-sm">
-		<div class="modal-content">
+		<div class="modal-content row">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"
 					aria-hidden="true">×</button>
@@ -133,21 +139,21 @@
 					step to great things</div>
 			</div>
 			<div class="modal-body">
-				<div class="social-buttons col-md-12" style="margin: 10px;">
-					<div class="col-md-6">
+				<div class="social-buttons col-md-12 override-col-margin" style="margin-bottom: 10px;">
+					<div class="col-md-6 override-col-margin">
 						<a style="width: 100%" href="/api/users/facebook"
 							class="btn btn-primary facebook btn-fb"><i
 							class="fa fa-facebook "></i> Facebook</a>
 					</div>
 
-					<div class="col-md-6">
+					<div class="col-md-6 override-col-margin">
 						<a style="width: 100%" href="/api/users/google"
 							class="btn btn-primary google btn-tw"><i
 							class="fa fa-google-plus "></i> Google</a>
 					</div>
 				</div>
 
-				<form class="new_user" id="new_user" action="/en/users"
+				<form class="new_user row col-md-12 override-col-margin" id="new_user" action="/en/users"
 					accept-charset="UTF-8" method="post">
 					<input name="utf8" type="hidden" value="✓"><input
 						type="hidden" name="authenticity_token"

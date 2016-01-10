@@ -6,6 +6,34 @@ h1, h2, h3, h4, h5 {
 	margin-top: 0;
 }
 
+	body {
+		font-size: 20px;
+	}
+	/*h1 font size with override*/
+	h1 {
+		font-size: 56px;
+	}
+
+	/*h2 font size with override*/
+	h2 {
+		font-size: 36px;
+	}
+
+	/*h3,h4,h5,h6 common for all pages*/
+	h3 {
+		font-size: 30px;
+	}
+
+	h4 {
+		font-size: 20px;
+	}
+	h5 {
+		font-size: 18px;
+	}
+	h6 {
+		font-size: 16px;
+	}
+
 .onboarding-form-group {
 	padding-bottom: 10px
 }
@@ -51,7 +79,10 @@ h1, h2, h3, h4, h5 {
 	transition-property: background-color, color, border-color;
 	-webkit-transition-property: background-color, color, border-color
 }
-
+.override-col-margin
+{
+	padding :0px !important;
+}
 .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus
 	{
 	background: 0 0
@@ -551,10 +582,8 @@ ol, ul {
 	padding: 0;
 	margin: 0;
 	text-align: center;
-	text-transform: uppercase;
 	letter-spacing: 0px;
 	font-weight: 700;
-	font-size: 2.4em;
 	color: #222222;
 }
 
@@ -622,15 +651,108 @@ button.gennext-close, button.gennext-arrow {
 	right: 8px;
 	z-index: 1044;
 }
+.section-icon {
+    text-align: center;
+    font-size: 3.2em;
+}
+.title-small, .title-small a {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-weight: 700;
+    color: #222222;
+}
 
+hr.faq-line {
+    border-width: 1px !important;
+    margin-top: 20px;
+    margin-bottom: 24px;
+}
+
+hr {
+    border-top: 2px solid #eaeaea;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+.faq-text {
+    font-size: 1.25em;
+    text-align: justify;
+    margin: 0px;
+}
+.mt-80 {
+    margin-top: 80px !important;
+}
+.mt-20 {
+    margin-top: 20px !important;
+}
+.faq-padding-right {
+    padding-right: 30px;
+}
+.faq-padding-left {
+    padding-left: 30px;
+}
+.mb-40 {
+    margin-bottom: 40px;
+}
+.mb-80 {
+    margin-bottom: 80px !important;
+}
+
+.line-section {
+    width: 55px;
+    height: 1px;
+    margin: 20px auto;
+    background: #27c5c3;
+}
+.pricing-background {
+    background: url(../images/aboutbg.jpg) no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-attachment: fixed;
+    background-position-y: -240px;
+    height: 100%;
+}
+.vertical-parent {
+    display: table;
+    margin: 0 0;
+    height: 100%;
+    width: 100%;
+}
+.vertical-child {
+    display: table-cell;
+    vertical-align: middle;
+}
+.color-overlay {
+    overflow: hidden;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(39,197,195,0.8)), color-stop(100%, rgba(60,211,173,0.8)));
+
+    height: 100%;
+}
+.landing-title {
+    margin: 3px 0;
+    font-weight: 700;
+}
+.pricing-heading {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 140px;
+    line-height: 1em;
+}
+.half-page {
+    height: 315px;
+}
 .title-small, .title-small a {
 	padding: 0;
 	margin: 0;
 	text-align: center;
-	text-transform: uppercase;
 	letter-spacing: 0px;
 	font-weight: 700;
-	font-size: 2.4em;
 	color: #222222;
 }
 
@@ -693,6 +815,14 @@ a[href], input[type='submit'], input[type='image'], label[for], select,
 
 .form-bar:after {
 	right: 50%;
+}
+.how-background {
+    background: url(../images/howitworkbg.jpg) no-repeat;
+    background-size: 100% auto;
+    background-position-x: center;
+    background-attachment: fixed;
+    background-position-y: -150px;
+    height: 100%;
 }
 
 a[href], input[type='submit'], input[type='image'], label[for], select,
@@ -761,4 +891,175 @@ a {
     background-color: #dd4b39 !important;
     border: 2px solid #dd4b39 !important;
     color: #fff !important;
+}
+.vintage-bg {
+    background: url(../images/lbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 165px;
+}
+h6 {
+    margin: 3px 0;
+    font-weight: 700;
+    line-height: 1.4em;
+}
+p {
+    font-size: 1.6em;
+    font-weight: 300;
+    color: #555555;
+    line-height: 1.85;
+    margin: 0 0 1.5em 0;
+}
+.font-light {
+    font-weight: 300;
+}
+.full-page {
+    height: 780px;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+.title-small, .title-small a {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-weight: 700;
+
+    color: #222222;
+}
+.sign-box-cont {
+    margin-left: auto;
+    width: 77%;
+    margin-right: auto;
+    margin-top: -15px;
+}
+.line-section {
+    width: 55px;
+    height: 1px;
+    margin: 20px auto;
+    background: #27c5c3;
+}
+.heading-section {
+    margin: 0;
+    padding: 0;
+    font-family: 'Libre Baskerville', serif !important;
+    font-size: 1.6em;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.3em;
+    color: #555555;
+}
+.sign-box {
+    background: white;
+    border: 1px solid #DFDFDF;
+    border-radius: 3px;
+    max-width: 500px;
+    padding: 50px 0 50px;
+    margin: 0 auto;
+}
+.mt-70 {
+    margin-top: 70px !important;
+}
+.who-big-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0px !important;
+    line-height: 1em;
+    color: white;
+    border: 7px solid white;
+    padding: 60px;
+    width: 51%;
+    margin: 0 auto;
+    background: #ff8f32;
+}
+.who-box {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.who-title {
+    color: white;
+    text-align: left;
+    line-height: 1em;
+    margin-top: 30px;
+}
+
+.mb-10 {
+    margin-bottom: 10px !important;
+}
+
+.white {
+    color: white !important;
+}
+.who-text-developer {
+
+    margin-bottom: 0px;
+    text-align: justify;
+    margin-top: 5px;
+    font-weight: 400;
+    line-height: 1.7em;
+}
+.heading-about {
+    position: relative;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    line-height: 1.1em;
+    padding: 100px;
+    margin-top: 30px;
+}
+
+.about_description {
+    font-family: "Merriweather", "Times New Roman", Times, serif;
+    text-align: justify;
+}
+.team-text {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: "Merriweather", "Times New Roman", Times, serif;
+}
+p {
+    font-size: 1.6em;
+    font-weight: 300;
+    color: #555555;
+    line-height: 1.85;
+    margin: 0 0 1.5em 0;
+}
+
+#about {
+    background: url(../images/teambg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.small-section {
+    padding: 70px 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #edede8;
+}
+.section-icon {
+    text-align: center;
+    font-size: 3.2em;
+}
+.header-photo {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-sizing: border-box;
+    background: white;
+    height: 315px;
 }
