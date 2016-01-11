@@ -130,18 +130,15 @@ webServer.prototype._setRoutes = function(handlers){
 	});
 
 
-	var ApiRouter = EXPRESS.Router();
-	var UserRouter = EXPRESS.Router({mergeParams: true});
-	ApiRouter.use('/api/users/', UserRouter);
 
 	//User Routes
-	UserRouter.get('/google', passport.authenticate('google', {scope: ['email']}), handlers.auth.GoogleSignIn);
-	UserRouter.get('/google/callback', passport.authenticate('google', {failureRedirect: '/#/login', session: false, scope: 'https://www.googleapis.com/auth/plus.login'}), handlers.auth.GoogleSignInCallback);
-	UserRouter.get('/facebook', passport.authenticate('facebook', { failureRedirect: '/login',successRedirect : '/welcome', session: false, scope: ['email'] }), handlers.auth.FacebookSignIn);
-	UserRouter.get('/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login', session: false, scope: [] }), handlers.auth.FacebookSignInCallback);
-	UserRouter.post('/login',passport.authenticate('local', {session: false}), handlers.auth.LocalSignIn);
-	UserRouter.post('/login/social', handlers.auth.LocalSignInWithSocial);
-	UserRouter.post('/', handlers.auth.RegisterLocal);
+	self.app.get('/api/users/google', passport.authenticate('google', {scope: ['email']}), handlers.auth.GoogleSignIn);
+	self.app.get('/api/users/google/callback', passport.authenticate('google', {failureRedirect: '/#/login', session: false, scope: 'https://www.googleapis.com/auth/plus.login'}), handlers.auth.GoogleSignInCallback);
+	self.app.get('/api/users/facebook', passport.authenticate('facebook', { failureRedirect: '/login',successRedirect : '/welcome', session: false, scope: ['email'] }), handlers.auth.FacebookSignIn);
+	self.app.get('/api/users/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login', session: false, scope: [] }), handlers.auth.FacebookSignInCallback);
+	self.app.post('/api/users/login',passport.authenticate('local', {session: false}), handlers.auth.LocalSignIn);
+	self.app.post('/api/users/login/social', handlers.auth.LocalSignInWithSocial);
+	self.app.post('/api/users/', handlers.auth.RegisterLocal);
 
     self.app.post('/api/createTraining', handlers.training.createTraining);
 	self.app.get('/api/getAllTraining', handlers.training.getAllTraining);
@@ -158,11 +155,7 @@ webServer.prototype._setRoutes = function(handlers){
 
 
 
-	// catch 404 and forward to error handler
-	self.app.use(function(req, res, next) {
-	  var e = new Error(404); e.status = 404;
-		return ERROR(e, req, res);
-	});
+
 
 	// error handlers
 
