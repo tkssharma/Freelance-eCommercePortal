@@ -1,27 +1,38 @@
 h1, h2, h3, h4, h5 {
-	font-family: "Roboto Light", sans-serif;
+	font-family: "Roboto Light", sans-serif !important;
 	color: #363636;
 	line-height: 100%;
 	font-weight: 600;
 	margin-top: 0;
 }
 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto Light", sans-serif !important;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
 	body {
 		font-size: 20px;
+		font-family: "Roboto Light", sans-serif !important;
 	}
 	/*h1 font size with override*/
 	h1 {
 		font-size: 56px;
+		font-family: "Roboto Light", sans-serif !important;
 	}
 
 	/*h2 font size with override*/
 	h2 {
 		font-size: 36px;
+		font-family: "Roboto Light", sans-serif !important;
 	}
 
 	/*h3,h4,h5,h6 common for all pages*/
 	h3 {
 		font-size: 30px;
+		font-family: "Roboto Light", sans-serif !important;
 	}
 
 	h4 {
@@ -595,7 +606,6 @@ stuk.io /media="all"
 .heading-section {
 	margin: 0;
 	padding: 0;
-	font-family: 'Libre Baskerville', serif !important;
 	font-size: 1.6em;
 	font-style: italic;
 	font-weight: normal;
@@ -758,7 +768,6 @@ hr {
 
 .text-point {
 	color: #27c5c3;
-	font-family: Montserrat, arial, sans-serif;
 	font-weight: 400;
 }
 
@@ -869,7 +878,7 @@ a {
 .heading-section {
 	margin: 0;
 	padding: 0;
-	font-family: 'Libre Baskerville', serif !important;
+	font-family: "Roboto Light", sans-serif !important;
 	font-size: 1.6em;
 	font-style: italic;
 	font-weight: normal;
@@ -945,7 +954,7 @@ p {
 .heading-section {
     margin: 0;
     padding: 0;
-    font-family: 'Libre Baskerville', serif !important;
+    font-family: "Roboto Light", sans-serif !important;
     font-size: 1.6em;
     font-style: italic;
     font-weight: normal;
@@ -1017,7 +1026,7 @@ p {
 }
 
 .about_description {
-    font-family: "Merriweather", "Times New Roman", Times, serif;
+    font-family: "Roboto Light", sans-serif !important;
     text-align: justify;
 }
 .team-text {
@@ -1025,10 +1034,9 @@ p {
     line-height: 1.6em;
     margin-top: 10px;
     margin-bottom: 10px;
-    font-family: "Merriweather", "Times New Roman", Times, serif;
+    font-family: "Roboto Light", sans-serif !important;
 }
 p {
-    font-size: 1.6em;
     font-weight: 300;
     color: #555555;
     line-height: 1.85;
@@ -1048,7 +1056,6 @@ p {
 }
 .section-icon {
     text-align: center;
-    font-size: 3.2em;
 }
 .header-photo {
     width: 100%;
@@ -1063,3 +1070,138 @@ p {
     background: white;
     height: 315px;
 }
+.mt-30 {
+    margin-top: 30px !important;
+}
+.course-time ul li {
+    display: inline-block;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    padding-right: 10px;
+}
+.course-time ul {
+    padding: 0px;
+}
+.codecast-label {
+    font-size: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    top: 0px;
+    right: 15px;
+    vertical-align: middle;
+    line-height: 2px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 0px;
+    text-transform: uppercase;
+}
+.title-left, .title-left a {
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: "Roboto Bold", sans-serif !important;
+    font-weight: 800;
+    letter-spacing: 0px;
+    font-weight: 400;
+    color: #222222;
+    letter-spacing: 0.3em;
+    margin-bottom: 10px;
+}
+.header-subtitle {
+
+}
+.line-section-gray {
+    width: 100%;
+    height: 1px;
+    background: #efefef;
+}
+.stukcasts-title {
+    letter-spacing: 0.3px;
+
+}
+.courses-thumb {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    padding: 15px;
+}
+.courses-index-box {
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    position: relative;
+    display: inline-block;
+    height: 135px;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 0px;
+}
+.course-time {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: gray;
+    margin-bottom: 15px;
+}
+.mb-15 {
+    margin-bottom: 15px !important;
+}
+
+/***************************************************************************/
+
+
+.navbar .navbar-nav>li>a {
+    color: inherit;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 60px;
+}
+.userNavPic {
+    margin-top: -5px;
+    width: 30px;
+    height: 30px;
+}
+.pull-left {
+    float: left!important;
+}
+.img-circle {
+    border-radius: 50%;
+}
+.navbar.navbar .dropdown-menu, .navbar-default.navbar .dropdown-menu {
+    border-radius: 2px;
+}
+.popover-inner {
+    /* border: 2px solid #009688; */
+    padding: 15px;
+    background-color: #FFFFFF;
+    width: 110%;
+    /* margin-left: -3.7% !important; */
+}
+.user-menu ul {
+    list-style-type: none;
+    margin: 0;
+}
+.dropdown-menu .divider {
+    background-color: rgba(229, 229, 229, 0.12);
+}
+.dropdown-menu .divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+.navbar.navbar .dropdown-menu li > a, .navbar-default.navbar .dropdown-menu li > a {
+    font-size: 16px;
+    padding: 13px 16px;
+}
+.user-menu {
+    position: absolute !important;
+    top: 62px !important;
+    /* max-width: 400px !important; */
+    width: 150% !important;
+}
+

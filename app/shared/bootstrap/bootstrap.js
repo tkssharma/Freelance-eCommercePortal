@@ -42,13 +42,11 @@ myApplication
 		 "$rootScope",
 		 "$state",
 		 "$http",
-		 "$cookieStore",
 		 "AuthenticationService",
 		 "USER_ROLES",
-		 "$localStorage",
 		 '$timeout',
 		 function parentCntl( $scope, $rootScope, $state,
-				 $http,$cookieStore,AuthenticationService,USER_ROLES,$localStorage,$timeout) {
+				 $http,AuthenticationService,USER_ROLES,$timeout) {
 
 			 $scope.currentUser = null;
 			 $scope.userRoles = USER_ROLES;

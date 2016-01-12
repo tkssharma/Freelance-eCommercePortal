@@ -1,13 +1,14 @@
 var NodeMailer = require('nodemailer')
 	,CONFIG = require('../../config')
+	,CONSTANT = require('../../constants')
 	,RegisterEmailTemplate = require('../emailtemplates/registeremailtemplate')
 	,ResetEmailTemplate = require('../emailtemplates/resetpasswordemailtemplate');
 
 var Transporter = NodeMailer.createTransport({
 	service: 'Gmail',
 	auth: {
-		user: CONFIG.GMAIL_SMTP.GMAIL_SMTP_EMAIL_ID,
-		pass: CONFIG.GMAIL_SMTP.GMAIL_SMTP_PASSWORD
+		user: CONSTANT.GMAIL_SMTP.GMAIL_SMTP_EMAIL_ID,
+		pass: CONSTANT.GMAIL_SMTP.GMAIL_SMTP_PASSWORD
 	}
 });
 

@@ -27,8 +27,47 @@
 
 			<ul class="nav navbar-nav navbar-right">
 
-				<li><a data-toggle="modal" href="" data-target="#login" >Sign
+				<li ng-if="! isLoggedIn === true" ><a data-toggle="modal" href="" data-target="#login" >Sign
 						In</a></li>
+
+				<li  ng-if="isLoggedIn === true"
+					class="dropdown open visible-lg visible-md visible-sm"><a
+					href="#" data-toggle="dropdown" class="no-border dropdown-toggle"><div
+							alt="User Thumbnail" class="userNavPic img-circle pull-left"
+							style="background-image: url('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p160x160/11012492_1046109752085971_4790600339148025262_n.jpg?oh=8586318f86ab46271837e5b965a7509d&oe=571F5EA6&__gda__=1457932208_79d5fbc5e3e57fa34e621cd8aabaec5d'); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"></div>
+						<span id="layoutUsername" class="name-position ng-binding">&nbsp;&nbsp;{{currentUserName}}&nbsp;</span><i
+						class="fa fa-caret-down caret-position"></i></a>
+
+						<div id="userMenuPopup" class="popover bottom dropdown-menu user-menu" data-original-title="" title="">
+						<div class="popover-inner col-md-12 ">
+							<div class="col-md-6 col-sm-6 override-col-margin" style="border-right: 2px solid #f2f2f2;">
+								<ul style="padding-left: 0px">
+									<li><a href="#/dashboard" class="no-border"><i class="fa fa-home medium-indent"></i> Dashboard</a></li>
+									<li><a href="/me/listings" class="no-border"><i class="fa fa-cutlery medium-indent"></i> Events</a></li>
+									<li><a href="/me/reviews" class="no-border"><i class="fa fa-star medium-indent"></i> Reviews</a></li>
+									<li class="divider"></li>
+
+									<li><a href="#/dashboard/myProfiletabs/myProfile" class="no-border"><i class="fa fa-user medium-indent"></i> Edit Profile</a></li>
+									<li><a href="/me/credits" class="no-border"><i class="fa fa-cogs medium-indent"></i> Account</a></li>
+									<li><a href="#/signout" class="no-border"><i class="fa fa-sign-out medium-indent"></i> Log Out</a></li>
+								</ul>
+							</div>
+							<div class="col-md-6 col-sm-6 override-col-margin">
+
+								<div class="">
+
+									<ul style="padding-left: 0px">
+
+										<li><a href="/faq" class="no-border"><i class="fa fa-question-circle medium-indent"></i> FAQs</a></li>
+
+										<li><a href="mailto:help@alakarte.com" class="no-border"><i class="fa fa-envelope-o medium-indent"></i> Contact Us</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</li>
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">

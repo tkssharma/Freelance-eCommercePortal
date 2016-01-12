@@ -24,9 +24,10 @@ var
 	,MethodOverride = require("method-override")
 	,CookieParser = require("cookie-parser")
 	,Errorhandler = require("errorhandler")
-	,session = require('express-session');
+	,session = require('express-session'),
+	 CONSTANTS = require('../constants');
 
-	require('./passport')(passport,CONFIG);
+	require('./passport')(passport,CONFIG,CONSTANTS);
 
 
 // ***************************************************************************************************************
@@ -59,6 +60,20 @@ function webServer(config) {
 	self.app.use(CookieParser());
 	self.app.use(EXPRESS.static(PATH.join(__dirname, '../')));
 
+	self.app.use(function(req, res, next){allowCrossDomain(req, res, next);});
+
+	var allowCrossDomain = function(req, res, next) {
+	    res.header('Access-Control-Allow-Origin', self.config.DEV_DOMAIN);
+	    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+	    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+	    if ('OPTIONS' == req.method) {
+	    	res.send(200);
+	    }
+	    else {
+	    	next();
+	    }
+	};
 
     self.app.use(passport.initialize());
     self.app.use(passport.session());

@@ -14,6 +14,58 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 			url: '/home',
 			templateUrl: 'partials/main.html'
 		})
+		.state('welcome', {
+			url: '/welcome',
+			templateUrl: 'partials/welcome.html',
+			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
+				if (! AuthenticationService.isLoggedIn()) {
+					$state.go('login');
+				};
+			}]
+		})
+		.state(
+			"login",
+			{
+				url : "/login",
+				templateUrl : "partials/auth/login.html",
+				onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
+					if (AuthenticationService.isLoggedIn()) {
+						$state.go('home');
+					};
+				}]
+			})
+		.state("signout", {
+			url : "/signout",
+			templateUrl : "partials/main.html",
+			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
+				AuthenticationService.ClearCredentials();
+				$state.go('login');
+			}]
+		})
+		.state(
+			"password",
+			{
+				url : "/password",
+				templateUrl : "partials/auth/forgotpassword.html",
+				onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
+					if (AuthenticationService.isLoggedIn()) {
+						$state.go('home');
+					};
+				}]
+
+			})
+
+		.state(
+			"register",
+			{
+				url : "/register",
+				templateUrl : "app/register/register.html",
+				onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
+					if (AuthenticationService.isLoggedIn()) {
+						$state.go('home');
+					};
+				}]
+			})
 		.state('myaccount', {
 			abstract : true,
 			url: '/myaccount',
@@ -32,16 +84,6 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 			url: '/codecast',
 			templateUrl: 'partials/postlogin/codecasts.html'
 		})
-
-
-		.state('authlogin', {
-			url: '/authlogin',
-			templateUrl: 'partials/auth/login.html'
-		})
-		.state('authregister', {
-			url: '/authregister',
-			templateUrl: 'partials/auth/register.html'
-		})
 		.state('about', {
 			url: '/about',
 			templateUrl: 'partials/about.html'
@@ -49,10 +91,6 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 		.state('team', {
 			url: '/team',
 			templateUrl: 'partials/team.html'
-		})
-		.state('authpassword', {
-			url: '/authpassword',
-			templateUrl: 'partials/auth/forgotpassword.html'
 		})
 		.state('myaccount.contact', {
 			url: '/contact',
@@ -87,6 +125,59 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 			templateUrl: 'partials/myaccount/settings.html'
 		});
 
-	$urlRouterProvider.when("/myaccount","/myaccount/contact");
-	$urlRouterProvider.when("/postlogin","/postlogin/courses");
-});
+		$urlRouterProvider.when("/myaccount","/myaccount/contact");
+		$urlRouterProvider.when("/postlogin","/postlogin/courses");
+	});
+
+
+angular
+.module('Codefun')
+.run(
+	[
+	'$rootScope',
+	'$location',
+	'$stateParams',
+	'$http',
+	'$state',
+	'$q',
+	'AuthenticationService',
+	'AUTH_EVENTS',
+	function($rootScope, $location, $stateParams, $http,
+		$state, $q,AuthenticationService,AUTH_EVENTS) {
+
+		$rootScope
+		.$on(
+			'$stateChangeStart',
+			function(event, toState, toParams,
+				fromState, fromParams) {
+				$(".page-loading")
+				.removeClass("hidden");
+
+			});
+
+		$rootScope.$on('$stateChangeError', function(event,
+			toState, toParams, fromState, fromParams) {
+
+			$(".page-loading").addClass("hidden");
+
+		});
+
+		$rootScope
+		.$on(
+			'$stateChangeSuccess',
+			function(event, toState, toParams,
+				fromState, fromParams) {
+				$rootScope.loading = false;
+             // get user name on route change success
+             $rootScope.isLoggedIn = AuthenticationService.isLoggedIn();
+             $rootScope.currentUserName = AuthenticationService.getCurrentUser();
+             console.log($rootScope.currentUserName)
+             $(".page-loading").addClass("hidden");
+
+
+         });
+
+	} ])
+
+
+

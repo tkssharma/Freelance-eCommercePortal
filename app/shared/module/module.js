@@ -11,14 +11,12 @@
 	angular.module('Codefun')
 
 	.config(function ($httpProvider, $provide) {
-		$provide.factory('httpInterceptor', function ($q, $rootScope,$localStorage , AUTH_EVENTS) {
+		$provide.factory('httpInterceptor', function ($q, $rootScope, AUTH_EVENTS) {
 			return {
 				'request': function (config) {
 					// intercept and change config: e.g. change the URL
 
-					if ($localStorage.token) {
-						// config.headers.Authorization = 'Basic ' + $localStorage.token;
-					}
+
 					return config || $q.when(config);
 				},
 				'response': function (response) {

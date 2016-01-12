@@ -5,8 +5,8 @@
 	.module('Codefun')
 	.factory('AuthenticationService', AuthenticationService);
 
-	AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout', 'UserService','$localStorage','$window'];
-	function AuthenticationService($http, $cookieStore, $rootScope, $timeout, UserService,$localStorage,$window) {
+	AuthenticationService.$inject = ['$http', '$rootScope', '$timeout', 'UserService','$window'];
+	function AuthenticationService($http, $rootScope, $timeout, UserService,$window) {
 		var service = {};
 
 		service.Login = Login;
