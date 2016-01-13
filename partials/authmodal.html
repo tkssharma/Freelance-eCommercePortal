@@ -1,13 +1,12 @@
 
-<div id="login" class="modal fade" tabindex="-1" role="dialog" ng-controller="loginController">
+<div id="login" class="modal fade" ng-controller="authController" tabindex="-1" role="dialog" ng-controller="loginController">
 	<div class="modal-dialog modal-sm">
 		<div class="row modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"
 					aria-hidden="true">×</button>
 				<h4 class="modal-title center">Login to your Account</h4>
-				<div class="heading-section color-primary center">The first
-					step to great things</div>
+
 			</div>
 			<div class="modal-body">
 				<div class="social-buttons override-col-margin col-md-12" style="margin-bottom: 10px;padding: 0px;">
@@ -23,24 +22,43 @@
 							class="fa fa-google-plus "></i> Google</a>
 					</div>
 				</div>
-				<form class="new_user row col-md-12 override-col-margin" id="new_user" action="/en/users/login"
-					accept-charset="UTF-8" method="post">
-					<input name="utf8" type="hidden" value="✓"><input
-						type="hidden" name="authenticity_token"
-						value="2tI3Hw6KImB/tlYLSScMEgV2zV8d2nCz9Vr/4z4dM3QrA3TLjsABUYSljhKDOg45ZoYpwG/k6/4td3WwZBJNVQ==">
+				<div class="col-md-12 override-col-margin row">
+				<form class="form" class="row col-md-12" role="form" novalidate name="loginform"
+					ng-class="{ 'submitted' : loginsubmitted === true}"
+					ng-submit="login(loginform)" accept-charset="UTF-8" id="login-nav">
+
+
 					<div class="form-group">
-						<input autofocus="autofocus" class="form-control"
-							required="required" type="email" value="" name="user[email]"
-							id="user_email"> <span class="form-highlight"></span> <span
+						<input type="email" required ng-model="userData.email"
+							class="form-control" name="email" id="email"
+							placeholder="Email address">
+
+							<span class="form-highlight"></span> <span
 							class="form-bar"></span> <label class="float-label"
 							for="exampleInputEmail1">Enter your email</label>
+
+							 <span
+							class=" label label-danger"
+							data-ng-show="loginsubmitted  && loginform.email.$error.required">Please enter Email !</span>
+							<span
+							class=" label label-danger"
+							data-ng-show="loginsubmitted  && loginform.email.$error.email">Please
+							enter valid Email !</span>
+
 					</div>
 					<div class="form-group mb-30">
-						<input autocomplete="off" class="form-control" required="required"
-							type="password" name="user[password]" id="user_password">
+						<input type="password" required ng-model="userData.password"
+							class="form-control" name="password" id="password"
+							placeholder="Password">
+
 						<span class="form-highlight"></span> <span class="form-bar"></span>
 						<label class="float-label" for="exampleInputEmail1">Enter
 							your password</label>
+
+							<span
+							class=" label label-danger"
+							data-ng-show="loginsubmitted  && loginform.password.$error.required">Please enter password!!</span>
+
 					</div>
 					<div class="row">
 						<div class="col-sm-12 col-md-12">
@@ -67,6 +85,7 @@
 							data-toggle="modal" href="" data-target="#register">Sign up</a>
 					</div>
 				</form>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -74,7 +93,7 @@
 
 
 
-<div id="resetpassword" class="modal fade" tabindex="-1" role="dialog">
+<div id="resetpassword" ng-controller="authController" class="modal fade" tabindex="-1" role="dialog">
 	<div class="modal-dialog modal-sm">
 		<div class="modal-content row">
 			<div class="modal-header">
@@ -99,11 +118,10 @@
 			</div>
 			<div class="modal-body">
 				<div class="sign-box-cont">
-					<form class="new_user row col-md-12 override-col-margin" id="new_user" action="/en/users"
+				<div class="col-md-12 override-col-margin row">
+					<form class="new_user" id="new_user" action="/en/users"
 						accept-charset="UTF-8" method="post">
-						<input name="utf8" type="hidden" value="✓"><input
-							type="hidden" name="authenticity_token"
-							value="d+vNx9MnKn/6vGf5/AgqZR6jZOAUDaclbv0YIXfL74yGOo4TU20JTgGvv+A2FShOfVOAf2YzPGi20JJyLcSRrQ==">
+
 
 						<div class="form-group">
 							<input class="form-control" required="required" type="email"
@@ -122,21 +140,21 @@
 								href="" data-dismiss="modal" data-target="#login">Sign in</a>
 						</div>
 					</form>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div id="register" class="modal fade" tabindex="-1" role="dialog">
+<div id="register" ng-controller="authController" class="modal fade" tabindex="-1" role="dialog">
 	<div class="modal-dialog modal-sm">
 		<div class="modal-content row">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"
 					aria-hidden="true">×</button>
 				<h4 class="modal-title center">Login to your Account</h4>
-				<div class="heading-section color-primary center">The first
-					step to great things</div>
+
 			</div>
 			<div class="modal-body">
 				<div class="social-buttons col-md-12 override-col-margin" style="margin-bottom: 10px;">
@@ -152,40 +170,66 @@
 							class="fa fa-google-plus "></i> Google</a>
 					</div>
 				</div>
+<div class="col-md-12 override-col-margin row">
+				<form class="form" novalidate role="form" name="registerform"
+						ng-submit="register(registerform)"
+						ng-class="{ 'submitted' : registersubmitted === true}"
+						accept-charset="UTF-8" id="login-nav">
 
-				<form class="new_user row col-md-12 override-col-margin" id="new_user" action="/en/users"
-					accept-charset="UTF-8" method="post">
-					<input name="utf8" type="hidden" value="✓"><input
-						type="hidden" name="authenticity_token"
-						value="ksllTF+G/rP5X72xv6AnYN55Xkh2D1wkflJC27ZClMJjGCaY38zdggJMZah1vSVLvYm61wQxx2mmf8iI7E3q4w==">
 					<div class="form-group">
-						<input autofocus="autofocus" class="form-control"
-							required="required" type="text" name="user[name]" id="user_name">
-						<span class="form-highlight"></span> <span class="form-bar"></span>
-						<label class="float-label" for="exampleInputEmail1">Enter
+						<input
+							type="text" ng-model="userData.firstname" class="form-control"
+							id="firstname" name="firstname" placeholder="First Name" required>
+
+							<label class="float-label" for="exampleInputEmail1">Enter
 							your name</label>
+
+							 <span
+							class=" label label-danger"
+							data-ng-show="registersubmitted  && registerform.firstname.$error.required">Please
+							enter Name !</span>
+
+
 					</div>
 					<div class="form-group">
-						<input class="form-control" required="required" type="email"
-							value="" name="user[email]" id="user_email"> <span
-							class="form-highlight"></span> <span class="form-bar"></span> <label
-							class="float-label" for="exampleInputEmail1">Enter your
-							email</label>
+						<input
+							type="text" ng-model="userData.lastname" class="form-control"
+							id="lastname" name="lastname" placeholder="Last Name" required>
+
+							<label class="float-label" for="exampleInputEmail1">Enter
+							Last name</label>
+
+							 <span
+							class=" label label-danger"
+							data-ng-show="registersubmitted  && registerform.lastname.$error.required">Please
+							enter Name !</span>
 					</div>
 					<div class="form-group">
-						<input autocomplete="off" class="form-control" required="required"
-							type="password" name="user[password]" id="user_password">
-						<span class="form-highlight"></span> <span class="form-bar"></span>
-						<label class="float-label" for="exampleInputEmail1">Enter
-							your password</label>
+						<input
+							type="text" ng-model="userData.password" class="form-control"
+							id="password" name="password" placeholder="password" required>
+
+							<label class="float-label" for="exampleInputEmail1">Enter
+							password</label>
+
+							 <span
+							class=" label label-danger"
+							data-ng-show="registersubmitted  && registerform.password.$error.required">Please
+							enter Name !</span>
+
 					</div>
 					<div class="form-group mb-30">
-						<input autocomplete="off" class="form-control" required="required"
-							type="password" name="user[password_confirmation]"
-							id="user_password_confirmation"> <span
-							class="form-highlight"></span> <span class="form-bar"></span> <label
-							class="float-label" for="exampleInputEmail1">Confirm your
+						<input
+							type="text" ng-model="userData.password1" class="form-control"
+							id="password1" name="password1" placeholder="password" required>
+
+							<label class="float-label" for="exampleInputEmail1">Retype
 							password</label>
+
+							 <span
+							class=" label label-danger"
+							data-ng-show="registersubmitted  && registerform.password1.$error.required">Please
+							enter Name !</span>
 					</div>
 					<button name="button" type="submit"
 						class="btn btn-primary btn-sm btn-block"
@@ -197,6 +241,7 @@
 							data-target="#login">Sign in</a>
 					</div>
 				</form>
+				</div>
 			</div>
 		</div>
 	</div>

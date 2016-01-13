@@ -1,0 +1,393 @@
+.intro-headphoto {
+	background-size: cover;
+	background-attachment: fixed;
+	height: 395px;
+	margin-top: 50px;
+	background-position-x: center;
+	background-position-y: -251px;
+}
+
+.container {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.ajax-loader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto; /* presto! */
+	z-index: 9999;
+}
+.heading-sub-introcourse {
+	font-weight: 300;
+	line-height: 1.4em;
+	font-size: 2.4em;
+}
+.mt-90 {
+	margin-top: 90px !important;
+}
+.col-single {
+    padding-right: 50px;
+    padding-left: 50px;
+}
+.label-primary {
+    background-color: #27c5c3;
+}
+.heading-introcourse {
+	position: relative;
+	font-size: 4em;
+	font-weight: 800;
+	line-height: 1.2;
+	width: 82%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.landing-small-info {
+    font-size: 1.10em;
+    line-height: 2em;
+    margin-bottom: 0px;
+    font-family:  "Roboto Light", Times, serif;
+}
+.lecture-section {
+    color: #4f4f4f;
+    background-color: #efefef;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #edede8;
+}
+.pd-15 {
+    padding: 15px;
+}
+.progress-container {
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 50%;
+    left: 15px;
+    line-height: 0;
+    padding: 1px;
+    position: absolute;
+    top: 12px;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+}
+.lecture-box {
+    height: auto;
+    width: 100%;
+    position: relative;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #edede8;
+}
+
+
+/*********************************************************************/
+
+
+.column-style {
+    /* height: 100%; */
+    background-color: #2C3E50;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.headerpadding {
+    margin-left: 20px;
+}
+.nav-tabs.nav-justified {
+    width: 100%;
+    border-bottom: 0;
+}
+
+.border {
+    border-top: 5px solid #1274B2;
+}
+
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    background-color: #fff;
+    color: #2C3E50;
+}
+h2.common {
+    font-size: 20px;
+}
+h2 {
+    margin: 0;
+    padding-top: 0px;
+    font-weight: 300;
+}
+.headerContent>li.active a h2 {
+    color: #2C3E56;
+    background-color: #FFFFFF;
+    font-weight: 800;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+    background-color: #1E3442;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.nav-tabs.nav-justified > li > a:hover ,.nav-tabs.nav-justified > li > a:focus {
+    background-color: #DAEDF7;
+    color: #2C3E56;
+    text-decoration: none;
+}
+
+
+.headerContent>li a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #1274B2;
+    font-size: 24px;
+}
+
+.headerContent>li {
+    background-color: #B7D5E8;
+}
+
+td.leftnavcommon {
+    font-size: 16px;
+}
+.nav-stacked>li.active .vertical-nav-icon-enabled {
+    color: #2C3E50;
+    font-weight: 600;
+}
+.spacing-table-td {
+    padding-left: 10px;
+    color: white;
+}
+.benefit-header3 {
+    color: #2C3E50;
+    /* font-size: 40px; */
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.headertxt {
+    font-weight: 450;
+    color: #2C3E50;
+    line-height: 1.4;
+}
+
+.nav-border>li {
+    margin-right: 5px;
+}
+ul.nav-tabs li a {
+    margin-right: 0;
+}
+.nav-tabs>li>a {
+    left: 0px;
+}
+
+.benefitfindergliflogo {
+    color: #B7D5E8;
+}
+
+.bodyContent {
+     margin-top: 60px;
+    height: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffffff;
+    position: relative;
+}
+.nav-stacked>li.active {
+    border-bottom: 10px solid #142C3F;
+    margin-bottom: 0px;
+}
+
+
+.nav-stacked>li.active>a, .nav-stacked>li.active>a:hover, .nav-stacked>li.active>a:focus
+	{
+	color: #2c3e50;
+	font-weight: 600;
+}
+
+/*default tab icon color */
+.application-vertical-nav-icon-enabled {
+	font-size: 30px;
+	color: #f2f2f2;
+}
+/*default checkmark icon same in all states  */
+.application-vertical-nav-checkmark {
+	font-size: 24px;
+	color: #0E5B15;
+	background-color: white;
+}
+.nav-stacked>li+li {
+	margin-top: 0px;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: none;
+}
+.nav-stacked>li>a:hover {
+    color: #FFFFFF;
+    background-color: #16232F;
+    border-radius: 0px;
+    left: 0px;
+}
+.nav-stacked>li.active>a td {
+    color: #2C3E50;
+}
+.nav-stacked>li>a:focus {
+    color: #FFFFFF;
+    background-color: #16232F;
+    border-radius: 0px;
+    left: 0px;
+}
+.nav-stacked>li>a:active {
+    color: #FFFFFF;
+    background-color: #16232F;
+    border-radius: 0px;
+    left: 0px;
+}
+.nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
+    text-decoration: none;
+    background-color: none;
+}
+
+.nav-stacked>li.active>a {
+    left: 0px;
+    border-radius: 0px;
+    border: 0px solid transparent;
+    color: #2C3E50;
+    background-color: white;
+}
+
+.nav-stacked>li.active .vertical-nav-icon {
+	color: #2C3E50;
+}
+/*tab disable ...*/
+.vertical-nav-icon-disabled {
+	font-size: 30px;
+	color: #B0B0B0;
+}
+
+.nav>li.disabled>a:hover, .nav>li.disabled>a:focus {
+	color: #B0B0B0;
+	text-decoration: none;
+}
+
+.nav>li.disabled>a {
+	color: #B0B0B0;
+}
+
+.vertical-nav-icon-enabled {
+	font-size: 30px;
+	color: #F2F2F2;
+}
+
+.vertical-nav-icon-active {
+	font-size: 30px;
+	color: #2C3E50;
+}
+ul.nav-tabs li a {
+    margin-right: 0;
+}
+.nav-tabs>li>a {
+    left: 0px;
+}
+.nav-stacked>li>a {
+    color: #FFFFFF;
+    background-color: #2C3E50;
+    border-radius: 0px;
+    left: 0px;
+}
+
+.row {
+    margin: 0px;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+    background-color: none;
+    color: none;
+    text-decoration: none;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+    background-color: #b7d5e8 text-decoration: none;
+}
+.nav-tabs, .nav-stacked>li.active>a:hover, .nav-stacked>li>a:hover {
+    background-color: none;
+    border-radius: 0;
+    color: none;
+    text-decoration: none;
+}
+.nav-tabs>li>a {
+    margin-right: 0px;
+    line-height: 1.2;
+    border: 0px solid transparent;
+    margin-bottom: 1px;
+}
+.nav-stacked>li.active .vertical-nav-icon-enabled {
+    color: #2C3E50;
+    font-weight: 600;
+}
+.vertical-nav-icon-enabled {
+    font-size: 30px;
+    color: #F2F2F2;
+}
+.nav-stacked>li.active {
+    border-bottom: 10px solid #142C3F;
+    margin-bottom: 0px;
+}
+.nav-stacked > li {
+    float: none;
+}
+/*active tab will look like bold with these properties*/
+
+i.round-tabs {
+	padding-top: 3.0px;
+	width: 34px;
+	height: 34px;
+	display: inline-block;
+	border-radius: 100px;
+	background: white;
+	text-align: center;
+}
+.custom-tab-content>.active {
+    min-height: 400px;
+}
+
+/*color for active tab */
+.leftnavcommon-active {
+	color: #2c3e50;
+}
+/*when tab active */
+.nav-stacked>li.active .application-vertical-nav-icon-enabled {
+	color: #2c3e50;
+	font-weight: 600;
+}
+.row {
+    margin: 0px;
+}
+
+.panel-heading .accordion-toggle.collapsed:after {
+	/* symbol for "collapsed" panels */
+	content: "\e250"; /* adjust as needed, taken from bootstrap.css */
+}
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+footer {
+    background: #142C3F;
+    font-size: 16px;
+    line-height: 22px;
+    color: #b7b7b7;
+}
+.footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}

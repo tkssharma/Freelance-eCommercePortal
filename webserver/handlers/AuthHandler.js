@@ -1,5 +1,5 @@
 var User = require('../models/user')
-	,MailHandler = require('./MainHandler');
+,MailHandler = require('./MainHandler');
 
 var AuthHandler = function() {
 	this.GoogleSignIn = googleSignIn;
@@ -63,7 +63,7 @@ function LocalSignInWithSocial(req, res, next) {
 			if(err) {
 				res.json({success: false, message: 'AuthError'});
 			} else {
-				res.send({'success': true, token: user.token.token});
+				res.send({'success': true, token: user.token.token,'username':user.email});
 				req.user = user;
 			}
 		});
@@ -75,24 +75,35 @@ function LocalSignInWithSocial(req, res, next) {
 function registerLocal(req, res, next) {
 	console.log("Registering User");
 	console.log(req.body);
-	User.register(
-		new User({
-			username: req.body.email,
-			email:req.body.email,
-			firstname: req.body.firstname,
-			lastname: req.body.lastname,
-			city: req.body.city,
-			role: req.body.role
-		}), req.body.password, function(err){
-			if(err) {
-				console.log(err);
-				console.log("Error Registering User");
-				res.send("Not able to register user");
-			}
-			MailHandler.sendRegisterMail(req.body.email,true);
-			res.send({'success': true});
+
+	User.findUserByEmailId(req.body.email, function(err, user){
+		if(err) {
+			res.json({success: false, message: 'Auth error'});
 		}
-	);
+		else if(user != null && user.length != 0)
+		{
+          res.json({success: false, message: 'User already exist'});
+		}
+		else
+		{
+			User.register(
+				new User({
+					username: req.body.email,
+					email:req.body.email
+				}), req.body.password, function(err){
+					if(err) {
+						console.log(err);
+						console.log("Error Registering User");
+						res.send("Not able to register user");
+					}
+					MailHandler.sendRegisterMail(req.body.email,true);
+					res.send({'success': true});
+				}
+				);
+		}
+	});
+
+
 }
 
 function localSignInCallback(req, res, next) {}

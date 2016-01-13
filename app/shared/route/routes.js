@@ -30,7 +30,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 				templateUrl : "partials/auth/login.html",
 				onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
 					if (AuthenticationService.isLoggedIn()) {
-						$state.go('home');
+						$state.go('welcome');
 					};
 				}]
 			})
@@ -59,31 +59,19 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 			"register",
 			{
 				url : "/register",
-				templateUrl : "app/register/register.html",
+				templateUrl : "partials/auth/register.html",
 				onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
 					if (AuthenticationService.isLoggedIn()) {
-						$state.go('home');
+						$state.go('welcome');
 					};
 				}]
 			})
-		.state('myaccount', {
-			abstract : true,
-			url: '/myaccount',
-			templateUrl: 'partials/myaccount.html'
-		})
-		.state('postlogin', {
-			abstract : true,
-			url: '/postlogin',
-			templateUrl: 'partials/postlogin/main.html'
-		})
-		.state('postlogin.courses', {
-			url: '/courses',
-			templateUrl: 'partials/postlogin/courses.html'
-		})
-		.state('postlogin.codecast', {
+		.state('codecast', {
 			url: '/codecast',
-			templateUrl: 'partials/postlogin/codecasts.html'
+			templateUrl: 'partials/cast/codecast.html'
 		})
+
+
 		.state('about', {
 			url: '/about',
 			templateUrl: 'partials/about.html'
@@ -92,41 +80,29 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 			url: '/team',
 			templateUrl: 'partials/team.html'
 		})
-		.state('myaccount.contact', {
-			url: '/contact',
-			templateUrl: 'partials/myaccount/contact.html'
+		.state('myaccount', {
+			abstract : true,
+			url: '/myaccount',
+			templateUrl: 'partials/myaccount/myaccount.html'
 		})
-		.state('myaccount.password', {
+		.state('myaccount.myaccounttabs', {
+			abstract : true,
+			url: '/myaccounttabs',
+			templateUrl: 'partials/myaccount/myaccounttabs.html'
+		})
+		.state('myaccount.myaccounttabs.password', {
 			url: '/password',
 			templateUrl: 'partials/myaccount/password.html'
 		})
-		.state('myaccount.course', {
-			url: '/course',
-			templateUrl: 'partials/myaccount/course.html'
-		})
-		.state('myaccount.certificates', {
-			url: '/certificates',
-			templateUrl: 'partials/myaccount/certificates.html'
-		})
-		.state('myaccount.employer', {
-			url: '/employer',
-			templateUrl: 'partials/myaccount/employer.html'
-		})
-		.state('myaccount.subscriptions', {
-			url: '/subscriptions',
-			templateUrl: 'partials/myaccount/subscriptions.html'
-		})
-		.state('myaccount.linkedacc', {
-			url: '/linkedacc',
-			templateUrl: 'partials/myaccount/linkedacc.html'
-		})
-		.state('myaccount.settings', {
-			url: '/settings',
-			templateUrl: 'partials/myaccount/settings.html'
-		});
+		;
 
 		$urlRouterProvider.when("/myaccount","/myaccount/contact");
 		$urlRouterProvider.when("/postlogin","/postlogin/courses");
+		$urlRouterProvider.when("/myaccount",
+			"/myaccount/myaccounttabs");
+		$urlRouterProvider.when("/myaccount/myaccounttabs",
+			"/myaccount/myaccounttabs/password");
+
 	});
 
 

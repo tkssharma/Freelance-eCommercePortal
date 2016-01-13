@@ -1,0 +1,44 @@
+
+<div class="bodyContent" style="
+    margin-top: 40px;
+">
+	<div class="headerpadding" id="non-printable">
+		<h1 class="benefit-header1 common">
+
+			<span class="fa-user fa  hostgliflogo"></span> User Dashboard
+		</h1>
+	</div>
+	<div class="container-fluid">
+		<div role="tabpanel">
+			<ul id="non-printable"
+				class="nav nav-tabs nav-border nav-justified headerContent bg-clr border"
+				role="tablist">
+
+
+				<li ui-sref="myaccount.myaccounttabs"
+					ui-sref-active="active" class="tab-align"><a
+					ui-sref="myaccount.myaccounttabs"
+					ui-sref-active="active" aria-controls="questions" role="tab"
+					class="presentation"><h2 class="benefit-tab-txt common">My
+							Profile</h2></a></li>
+				<li role="presentation" ui-sref="dashboard.userDashboard"
+					ui-sref-active="active" class="tab-align"><a
+					ui-sref="dashboard.userDashboard" ui-sref-active="active"
+					aria-controls="results" role="tab" class="presentation"><h2
+							class="benefit-tab-txt common">User Dashboard</h2></a></li>
+				<li ui-sref="dashboard.userAccounttabs.myAccount"
+					ui-sref-active="active" role="presentation" class="tab-align"><a
+					ui-sref="dashboard.userAccounttabs.myAccount"
+					ui-sref-active="active" aria-controls="favorites" role="tab"
+					class="presentation"><h2 class="benefit-tab-txt common">My
+							Account</h2></a></li>
+			</ul>
+			<div class="tab-content custom-tab-content">
+				<div role="tabpanel" class="tab-pane active" id="questions">
+					<div data-ui-view></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

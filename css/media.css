@@ -1,0 +1,355 @@
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+/* Large desktop */
+@media ( min-width : 1199px) and (max-width: 2000px) {
+	body {
+		font-family: "Roboto Light", sans-serif !important;
+		font-size: 18px;
+	}
+	/*h1 font size with override*/
+	h1 {
+		font-size: 42px;
+	}
+	h1.common {
+		font-size: 48px;
+	}
+	/*h3,h4,h5,h6 common for all pages*/
+	h3 {
+		font-size: 30px;
+	}
+
+	h4 {
+		font-size: 20px;
+	}
+	h5 {
+		font-size: 18px;
+	}
+	h6 {
+		font-size: 16px;
+	}
+	h1, h2, h3, h4, h5 {
+		font-family: "Roboto Light", sans-serif !important;
+		color: #363636;
+		line-height: 100%;
+		font-weight: 600;
+		margin-top: 0;
+	}
+	.footer {
+		background-color: #0A2235;
+	}
+
+
+	.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+		font-family: "Roboto Light", sans-serif !important;
+		font-weight: 500;
+		line-height: 1.1;
+		color: inherit;
+	}
+	/*both property will be applied to make wide screen layout work need to improve on this */
+	.container {
+		width: 1200px !important;
+	}
+	/*show horizontal tab on full width when screen is XS/S*/
+	.nav-tabs.nav-justified>li {
+		width: 248px !important;
+	}
+	.bg-clr {
+		background-color: #B7D5E8;
+		padding-left: 16.5% !important;
+	}
+	/* Index page row content with 4 divisions */
+	/* style border added for each division , each division share */
+	/*option only for L M screens */
+	.row.equal [class*="col-"] {
+		margin-bottom: -99999px !important;
+		padding-bottom: 99999px !important;
+	}
+	.row.equal {
+		overflow: hidden;
+	}
+
+}
+
+@media ( min-width : 992px) and (max-width: 1199px) {
+	body {
+		font-size: 18px;
+		font-family: "Roboto Light", sans-serif !important;
+	}
+
+	/*h1 font size with override*/
+	h1 {
+		font-size: 56px;
+	}
+	h1.common {
+		font-size: 40px;
+	}
+	/*h2 font size with override*/
+	h2 {
+		font-size: 36px;
+	}
+
+
+	/*h3,h4,h5,h6 common for all pages*/
+	h3 {
+		font-size: 30px;
+	}
+	h4 {
+		font-size: 20px;
+	}
+	h5 {
+		font-size: 18px;
+	}
+	h1, h2, h3, h4, h5 {
+		font-family: "Roboto Light", sans-serif !important;
+		color: #363636;
+		line-height: 100%;
+		font-weight: 600;
+		margin-top: 0;
+	}
+	.footer {
+		background-color: #0A2235;
+	}
+
+	.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+		font-family: "Roboto Light", sans-serif !important;
+		font-weight: 500;
+		line-height: 1.1;
+		color: inherit;
+	}
+	/* Index page row content with 4 divisions */
+	/* style border added for each division , each division share */
+	/*option only for L M screens */
+	.container {
+		width: 100%;
+	}
+	/*show horizontal tab on full width when screen is XS/S*/
+	.nav-tabs.nav-justified>li {
+		width: 232px !important;
+	}
+	.bg-clr {
+		background-color: #B7D5E8;
+		padding-left: 16.5% !important;
+	}
+	.row.equal [class*="col-"] {
+		margin-bottom: -99999px !important;
+		padding-bottom: 99999px !important;
+	}
+	.row.equal {
+		overflow: hidden;
+	}
+}
+
+/* Portrait tablet to landscape and desktop */
+@media ( min-width : 768px) and (max-width: 992px) {
+	body {
+		font-size: 16px;
+		font-family: "Roboto Light", sans-serif !important;
+	}
+	/*h1 font size with override*/
+	h1 {
+		font-size: 42px;
+	}
+	h1.common {
+		font-size: 30px;
+	}
+	/*h2 font size with override*/
+	h2 {
+		font-size: 32px;
+	}
+
+	/*h3,h4,h5,h6 common for all pages*/
+	h3 {
+		font-size: 26px;
+	}
+	h4 {
+		font-size: 18px;
+	}
+	h5 {
+		font-size: 16px;
+	}
+	h6 {
+		font-size: 16px;
+	}
+	h1, h2, h3, h4, h5 {
+		font-family: "Roboto Light", sans-serif !important;
+		color: #363636;
+		line-height: 100%;
+		font-weight: 600;
+		margin-top: 0;
+	}
+
+	.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+		font-family: "Roboto Light", sans-serif !important;
+		font-weight: 500;
+		line-height: 1.1;
+		color: inherit;
+	}
+
+	/*show horizontal tab on full width when screen is XS/S*/
+	.nav-tabs.nav-justified>li {
+		width: 232px !important;
+	}
+	.bg-clr {
+		background-color: #B7D5E8;
+		padding-left: 25% !important;
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media ( min-width : 480px) and (max-width: 767px) {
+	body {
+		font-size: 16px;
+		font-family: "Roboto Light", sans-serif !important;
+	}
+	/*h1 font size with override*/
+	h1 {
+		font-size: 38px;
+	}
+
+	h1.common {
+		font-size: 24px;
+	}
+	/*h2 font size with override*/
+	h2 {
+		font-size: 30px;
+	}
+
+	/*h3,h4,h5,h6 common for all pages*/
+	h3 {
+		font-size: 24px;
+	}
+	h4 {
+		font-size: 18px;
+	}
+	h5 {
+		font-size: 16px;
+	}
+	h6 {
+		font-size: 14px;
+	}
+
+	/*show horizontal tab on full width when screen is XS/S*/
+	.nav-tabs.nav-justified>li {
+		width: 100% ;
+	}
+	h1, h2, h3, h4, h5 {
+		font-family: "Roboto Light", sans-serif !important;
+		color: #363636;
+		line-height: 100%;
+		font-weight: 600;
+		margin-top: 0;
+	}
+
+	.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+		font-family: "Roboto Light", sans-serif !important;
+		font-weight: 500;
+		line-height: 1.1;
+		color: inherit;
+	}
+
+}
+/* Landscape phones and portrait tablets */
+@media ( max-width : 480px) {
+	body {
+		font-size: 14px;
+	}
+	/*h1 font size with override*/
+	h1 {
+		font-size: 34px;
+	}
+
+	/*h2 font size with override*/
+	h2 {
+		font-size: 28px;
+	}
+
+	/*h3,h4,h5,h6 common for all pages*/
+	h3 {
+		font-size: 22px;
+	}
+	h4 {
+		font-size: 16px;
+	}
+	h5 {
+		font-size: 16px;
+	}
+	h6 {
+		font-size: 14px;
+	}
+	.container {
+		width: 100%;
+	}
+	/*show horizontal tab on full width when screen is XS/S*/
+	.nav-tabs.nav-justified>li {
+		width: 100%;
+	}
+	h1, h2, h3, h4, h5 {
+		font-family: "Roboto Light", sans-serif !important;
+		color: #363636;
+		line-height: 100%;
+		font-weight: 600;
+		margin-top: 0;
+	}
+
+	.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+		font-family: "Roboto Light", sans-serif !important;
+		font-weight: 500;
+		line-height: 1.1;
+		color: inherit;
+	}
+}
+
+/*  /* Custom, iPhone small devices Retina */
+@media only screen and (max-width : 343px) {
+	body {
+		font-size: 14px;
+	}
+	h1 {
+		font-size: 28px;
+	}
+
+	/*h2 font size with override*/
+	h2 {
+		font-size: 26px;
+	}
+
+	/*h3,h4,h5,h6 common for all pages*/
+	h3 {
+		font-size: 20px;
+	}
+	h4 {
+		font-size: 14px;
+	}
+	h5 {
+		font-size: 14px;
+	}
+	h6 {
+		font-size: 14px;
+	}
+
+	.container {
+		width: 100%;
+	}
+
+	/*show horizontal tab on full width when screen is XS/S*/
+	.nav-tabs.nav-justified>li {
+		width: 100%;
+	}
+	h1, h2, h3, h4, h5 {
+		font-family: "Roboto Light", sans-serif !important;
+		color: #363636;
+		line-height: 100%;
+		font-weight: 600;
+		margin-top: 0;
+	}
+
+	.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+		font-family: "Roboto Light", sans-serif !important;
+		font-weight: 500;
+		line-height: 1.1;
+		color: inherit;
+	}
+}
+

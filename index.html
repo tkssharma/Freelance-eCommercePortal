@@ -29,24 +29,29 @@
 	content="GenNext - Learn something new in Technology">
 	<meta property="twitter:site" content="GenNext">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/media.css">
 	<link rel="stylesheet" href="css/freelance.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto'
 	rel='stylesheet' type='text/css'>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/glyphicons.css">
+		<link rel="stylesheet" type="text/css" href="css/cast.css">
 	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
 
 	<!-- Latest compiled and minified JavaScript -->
 
 </head>
 <body data-modal-anti-scroll-helper="" data-ng-class=""
-class="ng-scope responsive">
+class="ng-scope responsive" ng-controller="parentCntl">
 <div id="page-content">
 
 
 
 	<header ng-include="'partials/header.html'"></header>
+			<div class="page-loading">
+				<img src="images/loading.gif" class="ajax-loader">
+			</div>
 	<div ui-view></div>
 	<footer ng-include="'partials/footer.html'"></footer>
 	<header ng-include="'partials/authmodal.html'"></header>
@@ -65,7 +70,7 @@ class="ng-scope responsive">
 <script src="app/shared/module/module.js" type="text/javascript"></script>
 <script src="app/shared/route/routes.js" type="text/javascript"></script>
 <script src="js/angular-storage.js" type="text/javascript"></script>
-<<script src="app/controller/loginController.js" type="text/javascript"></script>
+<<script src="app/controller/authController.js" type="text/javascript"></script>
 </body>
 
 </body>

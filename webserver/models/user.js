@@ -5,6 +5,7 @@ var Mongoose = require("mongoose")
 	, Crypto = require("crypto")
 	, JWT = require("jwt-simple")
 	, config = require('../../config')
+	, CONSTANT = require('../../constants')
 	, UUID = require("node-uuid");
 
 var Token = new Schema({
@@ -52,7 +53,6 @@ var UserSchema =  new Schema(
 			, reset_token_expires_millis: {type: Number}
 			, facebook_profile_id: {type: String, required: false}
 			, google_profile_id: {type: String, required: false}
-			, role : {type: String, required: true}
 			, last_updated : {type: Date, default: Date.now()}
 		}
 );
@@ -64,11 +64,11 @@ function Obfuscate(CreditCard) {
 UserSchema.plugin(PassportLocalMongoose);
 
 UserSchema.statics.encode = function(data) {
-	return JWT.encode(data, config.TOKEN_SECRET, 'HS256');
+	return JWT.encode(data, CONSTANT.TOKEN_SECRET, 'HS256');
 };
 
 UserSchema.statics.decode = function(data) {
-	return JWT.decode(data, config.TOKEN_SECRET);
+	return JWT.decode(data, CONSTANT.TOKEN_SECRET);
 };
 
 UserSchema.statics.findUserByEmailId = function(email, callback) {
@@ -129,7 +129,7 @@ UserSchema.statics.findUser = function(email, token, callback) {
 		} else if (usr.token && usr.token.token && token === usr.token.token) {
 			callback(false, usr);
 		} else {
-			callback(new Error('Token does not exist or does not match.'), null);
+			callback(new Error('Token does not exist or does not match.', null));
 		}
 	});
 };

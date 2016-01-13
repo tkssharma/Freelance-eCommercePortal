@@ -1,7 +1,7 @@
-<div class="container section" ng-controller="loginController">
+<div class="container section" ng-controller="authController">
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3 text-center">
-			<div class="sign-box mt-70">
+			<div class="sign-box row mt-70">
 
 
 				<div class="text-center">
@@ -9,9 +9,9 @@
 					<div class="heading-section color-primary">The first step to great things</div>
 					<div class="line-section mb-30"></div>
 				</div>
-				<div class="sign-box-cont">
+				<div class="sign-box-cont ">
 
-					<div class="social-buttons override-col-margin col-md-12" style="margin-bottom: 10px;padding: 0px;">
+					<div class="social-buttons row  override-col-margin col-md-12" style="margin-bottom: 10px;padding: 0px;">
 						<div class="col-md-6 override-col-margin">
 							<a style="width: 100%" href="/api/users/facebook"
 							class="btn btn-primary facebook btn-fb"><i
@@ -24,43 +24,47 @@
 							class="fa fa-google-plus "></i> Google</a>
 						</div>
 					</div>
+                   <div class="col-md-12 override-col-margin row">
+					<form class="form" class="row col-md-12" role="form" novalidate name="loginform"
+					ng-class="{ 'submitted' : loginsubmitted === true}"
+					ng-submit="login(loginform)" accept-charset="UTF-8" id="login-nav">
+					<div class="form-group">
+						<label class="sr-only" for="exampleInputEmail2">Email
+							address</label> <input type="email" required ng-model="userData.email"
+							class="form-control" name="email" id="email"
+							placeholder="Email address">
 
-					<form class="new_user" id="new_user" action="/en/users/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="mmdcnBLQIIxjCmXWO1sI/IiaYji8ztUg7ca+DM6crLcUFEmwCPUOt/y0a5CA6h7iBa4C6WdbYEoPpCNNPFJIyA==">
+							 <span
+							class=" label label-danger"
+							data-ng-show="loginsubmitted  && loginform.email.$error.required">Please enter Email !</span>
+							<span
+							class=" label label-danger"
+							data-ng-show="loginsubmitted  && loginform.email.$error.email">Please
+							enter valid Email !</span>
+						</div>
 						<div class="form-group">
-							<input autofocus="autofocus" class="form-control" required="required" type="email" value="" name="user[email]" id="user_email">
-							<span class="form-highlight"></span>
-							<span class="form-bar"></span>
-							<label class="float-label" for="exampleInputEmail1">Enter your email</label>
-						</div>
-						<div class="form-group mb-30">
-							<input autocomplete="off" class="form-control" required="required" type="password" name="user[password]" id="user_password">
-							<span class="form-highlight"></span>
-							<span class="form-bar"></span>
-							<label class="float-label" for="exampleInputEmail1">Enter your password</label>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="sign-remember text-left">
-									<input id="user_remember_me" type="checkbox" name="user[remember_me]" class="material_checkbox">
-									<label for="user_remember_me">Remember me</label>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="pull-right mb-30 forgot-password-wrapper">
-									<a href="#/authpassword">Forgot your password?</a>
-								</div>
-							</div>
-						</div>
-						<button name="button" type="submit" class="btn btn-primary btn-sm btn-block" data-disable-with="<i class='fa fa-spinner fa-spin'></i> Signing in...">SIGN IN</button>
-						<div class="signup text-center mt-15">
-							<span>Don’t have an account?</span>
-							<a id="go-to-signup" href="#/authregister">Sign up</a>
-						</div>
-					</form><script type="text/javascript">
-				</script>
+							<label class="sr-only" for="exampleInputPassword2">Password</label>
+							<input type="password" required ng-model="userData.password"
+							class="form-control" name="password" id="password"
+							placeholder="Password"> <span
+							class=" label label-danger"
+							data-ng-show="loginsubmitted  && loginform.password.$error.required">Please enter password!!</span>
 
+							<div style="margin:10px;" class="signup pull-right mt-15">
+							<span></span> <a  href="#/password">Forget password ?</a>
+							</div>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-block btn-primary btn-block">Sign
+								in</button>
+							</div>
+							<div class="signup text-center mt-15">
+							<span>Don’t have an account?</span> <a  href="#/register">Sign up</a>
+							</div>
+						</form>
+</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-</div>

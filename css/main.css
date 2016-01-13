@@ -1,49 +1,10 @@
-h1, h2, h3, h4, h5 {
-	font-family: "Roboto Light", sans-serif !important;
-	color: #363636;
-	line-height: 100%;
-	font-weight: 600;
-	margin-top: 0;
-}
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    font-family: "Roboto Light", sans-serif !important;
-    font-weight: 500;
-    line-height: 1.1;
-    color: inherit;
-}
 
 	body {
-		font-size: 20px;
-		font-family: "Roboto Light", sans-serif !important;
-	}
-	/*h1 font size with override*/
-	h1 {
-		font-size: 56px;
-		font-family: "Roboto Light", sans-serif !important;
-	}
-
-	/*h2 font size with override*/
-	h2 {
-		font-size: 36px;
-		font-family: "Roboto Light", sans-serif !important;
-	}
-
-	/*h3,h4,h5,h6 common for all pages*/
-	h3 {
-		font-size: 30px;
-		font-family: "Roboto Light", sans-serif !important;
-	}
-
-	h4 {
-		font-size: 20px;
-	}
-	h5 {
 		font-size: 18px;
+		font-family: "Roboto Light", sans-serif !important;
 	}
-	h6 {
-		font-size: 16px;
-	}
+
 
 .onboarding-form-group {
 	padding-bottom: 10px
@@ -140,11 +101,15 @@ h1, h2, h3, h4, h5 {
 	background-image: url('../images/header.jpg');
 }
 
-.nav>li>a:focus, .nav>li>a:hover {
-	text-decoration: none;
-	background-color: #1A2E3A !important
+.nav-tabs.nav-justified>li>a {
+    border-bottom: 1px solid #ddd;
+    border-radius: 0px 0px 0 0 !important;
 }
-
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
 .navbar-brand {
 	float: left;
 	height: 50px;
@@ -420,13 +385,7 @@ h2 {
 	border-color: #273B47 !important;
 }
 
-footer {
-	background: #142C3F;
-	padding: 20px 0;
-	font-size: 16px;
-	line-height: 22px;
-	color: #b7b7b7;
-}
+
 
 footer .title {
 	color: #fff;
@@ -1177,7 +1136,6 @@ p {
 .popover-inner {
     /* border: 2px solid #009688; */
     padding: 15px;
-    background-color: #FFFFFF;
     width: 110%;
     /* margin-left: -3.7% !important; */
 }
@@ -1188,6 +1146,14 @@ p {
 .dropdown-menu .divider {
     background-color: rgba(229, 229, 229, 0.12);
 }
+.user-menu ul li {
+    padding-bottom: 5px;
+}
+
+ul li a:focus, ul li a:hover {
+    color: rgba(245, 245, 245, 0.79);
+    text-decoration: underline;
+}
 .dropdown-menu .divider {
     height: 1px;
     margin: 9px 0;
@@ -1196,8 +1162,17 @@ p {
 }
 .navbar.navbar .dropdown-menu li > a, .navbar-default.navbar .dropdown-menu li > a {
     font-size: 16px;
-    padding: 13px 16px;
+
 }
+li a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.popover {
+    position: absolute;
+    max-width: 276px;
+    background-color: #273B47 !important;
+    }
 .user-menu {
     position: absolute !important;
     top: 62px !important;
