@@ -76,15 +76,12 @@ text-align: center;
 .card .avatar {
     margin: 2em auto 1em auto;
 }
-.avatar.avatar--large {
-    width: 7.5rem;
-    height: 7.5rem;
-}
+
 .avatar {
     border-radius: 1000px;
     overflow: hidden;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 80px;
+    height: 80px;
 }
 .card__text {
     min-height: 9rem;

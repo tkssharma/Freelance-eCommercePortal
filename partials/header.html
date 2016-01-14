@@ -29,6 +29,8 @@
 
 				<li ng-if="! isLoggedIn === true" ><a data-toggle="modal" href="" data-target="#login" >Sign
 						In</a></li>
+						<li  ><a href="#/about" >About</a></li>
+						<li  ><a href="#/team" >Technology</a></li>
 
 				<li  ng-if="isLoggedIn === true"
 					class="dropdown open visible-lg visible-md visible-sm"><a
@@ -58,7 +60,9 @@
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a id="catalog" class="dropdown-toggle" href="#/courses/all">Courses</a>
+				<li ng-if="! isLoggedIn === true"><a id="catalog" class="dropdown-toggle" href="#/courses/all">Courses</a>
+				</li>
+				<li ng-if="isLoggedIn === true"><a id="catalog" class="dropdown-toggle" href="#/welcome">Courses</a>
 				</li>
 			</ul>
 
