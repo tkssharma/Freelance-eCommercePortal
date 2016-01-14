@@ -15,7 +15,7 @@ var config = {
 
 			WEBSERVER 					: {
 				PORT 					: 3000,
-				DBURI                   : 'mongodb://localhost/news'
+				DBURI                   : 'mongodb://localhost/myproject'
 			},
 
 		},
