@@ -16,7 +16,35 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 		})
 		.state('welcome', {
 			url: '/welcome',
-			templateUrl: 'partials/welcome.html',
+			abstract : true,
+			templateUrl: 'partials/welcome/welcome.html',
+			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
+				if (! AuthenticationService.isLoggedIn()) {
+					$state.go('login');
+				};
+			}]
+		})
+		.state('welcome.web', {
+			url: '/web',
+			templateUrl: 'partials/welcome/welcome_web.html',
+			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
+				if (! AuthenticationService.isLoggedIn()) {
+					$state.go('login');
+				};
+			}]
+		})
+		.state('welcome.java', {
+			url: '/web',
+			templateUrl: 'partials/welcome/welcome_java.html',
+			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
+				if (! AuthenticationService.isLoggedIn()) {
+					$state.go('login');
+				};
+			}]
+		})
+		.state('welcome.mobile', {
+			url: '/web',
+			templateUrl: 'partials/welcome/welcome_mobile.html',
 			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
 				if (! AuthenticationService.isLoggedIn()) {
 					$state.go('login');
@@ -97,6 +125,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 		;
 
 		$urlRouterProvider.when("/myaccount","/myaccount/contact");
+		$urlRouterProvider.when("/welcome","/welcome/web");
 		$urlRouterProvider.when("/postlogin","/postlogin/courses");
 		$urlRouterProvider.when("/myaccount",
 			"/myaccount/myaccounttabs");
