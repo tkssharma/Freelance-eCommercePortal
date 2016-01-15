@@ -34,7 +34,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 			}]
 		})
 		.state('welcome.java', {
-			url: '/web',
+			url: '/java',
 			templateUrl: 'partials/welcome/welcome_java.html',
 			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
 				if (! AuthenticationService.isLoggedIn()) {
@@ -43,7 +43,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 			}]
 		})
 		.state('welcome.mobile', {
-			url: '/web',
+			url: '/mobile',
 			templateUrl: 'partials/welcome/welcome_mobile.html',
 			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
 				if (! AuthenticationService.isLoggedIn()) {
