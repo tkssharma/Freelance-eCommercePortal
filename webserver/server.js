@@ -79,7 +79,7 @@ function webServer(config) {
     self.app.use(passport.session());
 
 	// Create the database connection
-	MONGOOSE.connect(self.config.WEBSERVER.DBURI);
+	MONGOOSE.connect(process.env.MONGOLAB_URI || self.config.WEBSERVER.DBURI);
 
 	// When successfully connected
 	MONGOOSE.connection.on('connected', function () {
