@@ -11,8 +11,8 @@ var DEV_DOMAIN = 'http://localhost:5000';
 
 var TOKEN_SECRET = 'awesomeallakarte';
 //for Dev and production
-var MONGO_DB_URI='mongodb://localhost:27017/myproject';
-//var MONGO_DB_URI='mongodb://heroku_5j1k7dmw:ols1h2mmdeut9nl53i3j8cf466@ds045664.mongolab.com:45664/heroku_5j1k7dmw';
+//var MONGO_DB_URI='mongodb://localhost:27017/myproject';
+var MONGO_DB_URI='mongodb://heroku_5j1k7dmw:ols1h2mmdeut9nl53i3j8cf466@ds045664.mongolab.com:45664/heroku_5j1k7dmw';
 
 var RESET_TOKEN_IN_HOURS = 6;
 

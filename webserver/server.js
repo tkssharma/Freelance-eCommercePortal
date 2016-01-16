@@ -154,16 +154,18 @@ webServer.prototype._setRoutes = function(handlers){
 	self.app.post('/api/users/login',passport.authenticate('local', {session: false}), handlers.auth.LocalSignIn);
 	self.app.post('/api/users/login/social', handlers.auth.LocalSignInWithSocial);
 	self.app.post('/api/users/', handlers.auth.RegisterLocal);
+    self.app.post('/api/users/reset', handlers.auth.ResetPassword);
+	self.app.post('/api/users/login/resetpassword', handlers.auth.ResetPasswordCallback);
+
 
     self.app.post('/api/createTraining', handlers.training.createTraining);
-	self.app.get('/api/getAllTraining', handlers.training.getAllTraining);
+	self.app.get('/api/getAllTraining', is_authenticated,handlers.training.getAllTraining);
 	self.app.get('/api/getAllTrainingByTechnologyName/:technology', handlers.training.getAllTrainingByTechnologyName);
 
 	self.app.post('/api/createYouTubeVideo', handlers.training.createYouTubeVideo);
 	self.app.get('/api/getAllYouTubeVideos', handlers.training.getAllYouTubeVideos);
 	self.app.get('/api/getAllYouTubeVideosByTechnologyName/:technology', handlers.training.getAllYouTubeVideosByTechnologyName);
 	self.app.get('/api/getYouTubeVideosByCourseId/:course_id', handlers.training.getYouTubeVideosByCourseId);
-
 
 	// STATIC FILES
 	self.app.use(EXPRESS.static(PATH.join(__dirname, '../'))); // defines folder for static assets
@@ -191,6 +193,49 @@ webServer.prototype._setRoutes = function(handlers){
 	});
 
 };
+
+
+function is_authenticated (req, res, next) {
+	if(Constants.IS_AUTHENTICATION_DISABLED_FOR_REST_API_TESTING) {
+		var token = null;//req.body.token || req.query.token || req.headers['x-access-token'];
+		if(req.body.token) {
+			token = req.body.token;
+		} else if(req.query.token) {
+			token = req.query.token;
+		} else if(req.params.token) {
+			token = req.params.token;
+		} else if(req.headers['x-access-token']) {
+			token = req.headers['x-access-token'];
+		}
+
+		var user_id = null;
+
+		if(req.body.user_id) {
+			user_id = req.body.user_id;
+		} else if(req.query.user_id) {
+			user_id = req.query.user_id;
+		} else if(req.params.user_id) {
+			user_id = req.params.user_id;
+		} else if(req.headers['x-user-id']) {
+			user_id = req.headers['x-user-id'];
+		}
+
+		if(token && user_id) {
+			User.FindByUserIdAndToken(user_id, token, function(err, user){
+				if(err || !user) {
+					res.redirect('/#/login');
+				} else {
+					next();
+				}
+			})
+		} else {
+			res.status(403)
+				.send({'status': false, 'error': 'Auth Error'});
+		}
+	} else {
+		next();
+	}
+}
 
 webServer.prototype.start = function(){
 	var self = this;

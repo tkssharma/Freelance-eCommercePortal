@@ -17,12 +17,8 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 		.state('welcome', {
 			url: '/welcome',
 			abstract : true,
-			templateUrl: 'partials/welcome/welcome.html',
-			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
-				if (! AuthenticationService.isLoggedIn()) {
-					$state.go('login');
-				};
-			}]
+			templateUrl: 'partials/welcome/welcome.html'
+
 		})
 		.state('welcome.web', {
 			url: '/web',
@@ -58,7 +54,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 				templateUrl : "partials/auth/login.html",
 				onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
 					if (AuthenticationService.isLoggedIn()) {
-						$state.go('welcome');
+						$state.go('welcome.web');
 					};
 				}]
 			})
@@ -90,7 +86,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 				templateUrl : "partials/auth/register.html",
 				onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
 					if (AuthenticationService.isLoggedIn()) {
-						$state.go('welcome');
+						$state.go('welcome.web');
 					};
 				}]
 			})

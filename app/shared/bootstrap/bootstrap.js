@@ -3,7 +3,7 @@
  * @ bootstrap module added
  */
 
-var myApplication = angular.module("Codefun", [ 'ui.router' ]);
+var myApplication = angular.module("Codefun", [ 'ui.router','ngCookies','ngResource']);
 var initInjector = angular.injector([ "ng" ]);
 var $http = initInjector.get("$http");
 

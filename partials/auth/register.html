@@ -24,7 +24,9 @@
 								class="fa fa-google-plus "></i> Google</a>
 							</div>
 						</div>
- <div class="col-md-12 override-col-margin row">
+					 <div class="col-md-12 override-col-margin row">
+					 <div  class="bg-danger"
+								role="alert">{{registererrormessage}}</div>
 						<form class="form" novalidate role="form" name="registerform"
 						ng-submit="register(registerform)"
 						ng-class="{ 'submitted' : registersubmitted === true}"

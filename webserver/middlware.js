@@ -6,9 +6,6 @@ var
 	ERROR            = require('./error');
 
 
-
-
-
 // validate the authentication header
 exports.validateAuthHeader = function(config){
 	return function (req, res, next) {

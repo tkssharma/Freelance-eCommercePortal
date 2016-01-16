@@ -25,6 +25,8 @@
 						</div>
 					</div>
                    <div class="col-md-12 override-col-margin row">
+                   <div  class="bg-danger"
+								role="alert">{{loginerrormessage}}</div>
 					<form class="form" class="row col-md-12" role="form" novalidate name="loginform"
 					ng-class="{ 'submitted' : loginsubmitted === true}"
 					ng-submit="login(loginform)" accept-charset="UTF-8" id="login-nav">
@@ -59,7 +61,7 @@
 								in</button>
 							</div>
 							<div class="signup text-center mt-15">
-							<span>Don’t have an account?</span> <a  href="#/register">Sign up</a>
+							<span>Don’t have an account?</span> <a  href="">Sign up</a>
 							</div>
 						</form>
 </div>

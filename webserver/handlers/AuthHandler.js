@@ -1,5 +1,5 @@
 var User = require('../models/user')
-,MailHandler = require('./MainHandler');
+,MailHandler = require('./MailHandler');
 
 var AuthHandler = function() {
 	this.GoogleSignIn = googleSignIn;
@@ -13,6 +13,7 @@ var AuthHandler = function() {
 	this.ResetPasswordCallback = ResetPasswordCallback;
 	this.SignOut = SignOut;
 	this.LocalSignInWithSocial = LocalSignInWithSocial;
+	this.LoginWithToken  = LoginWithToken;
 };
 
 function googleSignIn(req, res, next) {
@@ -42,14 +43,14 @@ function facebookSignInCallback(req, res, next) {
 		return res.redirect('/#/login');
 	}
 }
-
 function localSignIn(req, res, next) {
 	if (req.user) {
-		User.createToken(req.user.email, function(err, usersToken) {
+		User.createToken(req.user.email, function(err, user) {
 			if (err) {
 				res.json({success: false, message: 'Issue generating token'});
 			} else {
-				res.send({'success': true, token : usersToken});
+				console.log(user);
+				res.send({'success': true, user : {token: user.token.token, user_id: user.user_id, username: user.email}});
 			}
 		});
 	} else {
@@ -63,15 +64,29 @@ function LocalSignInWithSocial(req, res, next) {
 			if(err) {
 				res.json({success: false, message: 'AuthError'});
 			} else {
-				res.send({'success': true, token: user.token.token,'username':user.email});
 				req.user = user;
+				res.send({'success': true, user : {token: user.token, user_id: user.user_id, username: user.email}});
 			}
 		});
 	} else {
 		res.json({success: false, message: 'AuthError'});
 	}
 }
-
+function LoginWithToken(req, res, next) {
+	if(req.params.user_id && req.body.token) {
+		User.FindByUserIdAndToken(req.params.user_id, req.body.token, function(err, user){
+			if(err || !user) {
+				res.status(403);
+				res.send({'success': false, 'error': err});
+			} else {
+				res.send({'success': true, user : {token: user.token, user_id: user.user_id, username: user.email}});
+			}
+		});
+	} else {
+		res.status(403);
+		res.send({'success': false, message: 'AuthError'});
+	}
+}
 function registerLocal(req, res, next) {
 	console.log("Registering User");
 	console.log(req.body);
@@ -82,7 +97,7 @@ function registerLocal(req, res, next) {
 		}
 		else if(user != null && user.length != 0)
 		{
-          res.json({success: false, message: 'User already exist'});
+			res.json({success: false, message: 'User already exist'});
 		}
 		else
 		{
@@ -110,7 +125,16 @@ function localSignInCallback(req, res, next) {}
 
 function ResetPassword(req, res, next) {
 	User.generateResetToken(req.body.email, function(err, user){
-		MailHandler.SendResetPasswordToken(user);
+		if(err)
+			{
+				res.send({'success': false, message : 'no user found for mentioned email'});
+			}
+		else
+		{
+
+			MailHandler.sendRegisterMail1(user);
+			res.send({'success': true, message : 'Email has been sent to registered email'});
+		}
 	});
 }
 

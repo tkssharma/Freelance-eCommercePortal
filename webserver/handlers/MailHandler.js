@@ -43,8 +43,8 @@ MailHandler.prototype.sendRegisterMail = function(emailAddress, isHost) {
 	});
 };
 
-MailHandler.prototype.sendResetPasswordToken = function(user) {
-	ResetPasswordMailOptions['to'] = user.email;
+MailHandler.prototype.sendRegisterMail1 = function(user) {
+		ResetPasswordMailOptions['to'] = user.email;
 	ResetPasswordMailOptions['html'] = ResetEmailTemplate.EmailTemplate(user.email, user.reset_token);
 	Transporter.sendMail(ResetPasswordMailOptions, function(error, info){
 		if(error) {
@@ -53,5 +53,7 @@ MailHandler.prototype.sendResetPasswordToken = function(user) {
 		console.log('Email Sent'+info.response);
 	});
 };
+
+
 
 module.exports = new MailHandler();

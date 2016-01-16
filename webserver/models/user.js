@@ -147,7 +147,7 @@ UserSchema.statics.createToken = function(email, callback) {
 				callback(err, null);
 			} else {
 				console.log("about to cb with usr.token.token: " + usr.token.token);
-				callback(false, usr.token.token);//token object, in turn, has a token property :)
+				callback(false, usr);//token object, in turn, has a token property :)
 			}
 		});
 	});
