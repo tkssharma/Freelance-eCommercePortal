@@ -7,7 +7,9 @@ var FACEBOOK_APP_ID = '1086250834720928';
 var FACEBOOK_SECRET_KEY = '888f1a92dd4b0341e7b62b21d553704c';
 var FACEBOOK_CALLBACK_URL = '/api/users/facebook/callback';
 
-var DEV_DOMAIN = 'http://localhost:5000';
+var DEV_DOMAIN = 'https://codehs.herokuapp.com/';
+//var DEV_DOMAIN = 'http://localhost:5000';
+
 
 var TOKEN_SECRET = 'awesomeallakarte';
 //for Dev and production
