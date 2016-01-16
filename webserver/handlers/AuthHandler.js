@@ -139,8 +139,9 @@ function ResetPassword(req, res, next) {
 }
 
 function ResetPasswordCallback(req, res, next) {
-	User.findUserByResetToken(req.body.email, req.body.access_token, function(err, user){
-		res.send(user);
+	User.findUserByResetToken(req.body.email,req.body.password, req.body.access_token, function(err, user){
+		res.send({'success': true, message : 'password changed successfully'});
+		//res.send(user);
 	});
 }
 

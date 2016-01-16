@@ -78,7 +78,12 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 				}]
 
 			})
-
+		.state(
+			"changepassword",
+			{
+				url : "/changepassword/:email/:token",
+				templateUrl : "partials/auth/changepassword.html"
+			})
 		.state(
 			"register",
 			{

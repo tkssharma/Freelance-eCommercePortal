@@ -70,7 +70,7 @@
             return $http.post('/api/users/reset', {email: username}).then(handleSuccess, handleError("Error in resetting passoword"));
         }
         function UserchangePassword(password, email, token) {
-            return $http.post('/api/users/login/resetpassword', {email: email, access_token: token}).then(handleSuccess, handleError("Error in Signing out"));
+            return $http.post('/api/users/login/resetpassword', {password: password , email: email, access_token: token}).then(handleSuccess, handleError("Error in Signing out"));
         }
         function SignOut(username, accessToken) {
             return $http.post('/api/users/signout', {email: username, access_token: accessToken}).then(handleSuccess, handleError("Error in Signing out"));

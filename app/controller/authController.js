@@ -3,8 +3,8 @@
 	'use strict';
 	angular.module('Codefun').controller('authController', authController);
 
-	authController.$inject = ['$location', 'AuthenticationService','$scope','$rootScope','AUTH_EVENTS','$state','UserService'];
-	function authController($location, AuthenticationService,$scope,$rootScope,AUTH_EVENTS,$state,UserService) {
+	authController.$inject = ['$location', 'AuthenticationService','$scope','$rootScope','AUTH_EVENTS','$state','UserService','$stateParams'];
+	function authController($location, AuthenticationService,$scope,$rootScope,AUTH_EVENTS,$state,UserService,$stateParams) {
 		$scope.data = {};
 		$scope.loginerrormessage = ''
 		var locationUrl = $location;
@@ -116,9 +116,16 @@
 				return;
 			}
 			$(".page-loading").removeClass("hidden");
-			UserService.UserchangePassword($scope.userData.newpassword1,$rootScope.resetuseremail,$rootScope.userresettoken)
+			UserService.UserchangePassword($scope.userData.newpassword1,$stateParams.email,$stateParams.token)
 			.then(function(response) {
-				$(".page-loading").addClass("hidden");
+			$(".page-loading").addClass("hidden");
+				if (response.success) {
+					$state.go('login');
+				}
+				else
+				{
+					$scope.changepwdmessage = "issue while changing password";
+				}
 			});
 		};
 

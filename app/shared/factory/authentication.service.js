@@ -109,14 +109,7 @@
 		}
 
 		function SetCredentials(username, token, user_id) {
-			//var authdata = Base64.encode(username + ':' + token+':'+user_id);
-			//$rootScope.globals = {
-			//		currentUser: {
-			//			username: username,
-			//			authdata: authdata,
-			//			role: 'host'
-			//		}
-			//};
+
 			$rootScope.globals = {
 				currentUser: {
 					username : username,

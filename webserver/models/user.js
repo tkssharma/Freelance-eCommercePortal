@@ -49,7 +49,7 @@ var UserSchema =  new Schema(
 			, city: {type:String, required:false}
 			, token: {type: Object}
 			, date_created: {type: Date, default: Date.now}
-			, reset_token: {type: String}
+			, reset_token: {type: String , required: false}
 			, reset_token_expires_millis: {type: Number}
 			, facebook_profile_id: {type: String, required: false}
 			, google_profile_id: {type: String, required: false}
@@ -175,9 +175,10 @@ UserSchema.statics.generateResetToken = function(email, callback) {
 		if (err) {
 			callback(err, null);
 		} else if (user) {
+			console.log("starting reset token.....");
 			user.reset_token = Crypto.randomBytes(32).toString('hex');
 			var now = new Date();
-			var expires = new Date(now.getTime() + (config.RESET_TOKEN_IN_HOURS * 60 * 1000)).getTime();
+			var expires = new Date(now.getTime() + (CONSTANT.RESET_TOKEN_IN_HOURS * 60 * 1000)).getTime();
 			user.reset_token_expires_millis = expires;
 			user.save();
 			callback(false, user);
@@ -187,17 +188,16 @@ UserSchema.statics.generateResetToken = function(email, callback) {
 	});
 };
 
-UserSchema.statics.findUserByResetToken = function(email, resetToken, callback) {
+UserSchema.statics.findUserByResetToken = function(email,password,resetToken, callback) {
 	console.log("Reset Token: "+resetToken);
 	this.findOne({reset_token: resetToken}, function(err, user){
-		console.log("findOne...");
-		if(err) {
+		if(user == null || err) {
 			callback(new Error("Reset Token not found ..."), null);
 		} else if (user) {
 			var now = new Date();
 			console.log(now.getTime());
-			if(user.email == email &&  user.reset_token_expires_millis < now.getTime()) {
-				user.setPassword("demo", function(){
+			if(user.email === email &&  user.reset_token_expires_millis < now.getTime()) {
+				user.setPassword(password, function(){
 					user.save();
 					callback(false, user);
 				});
