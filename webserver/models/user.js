@@ -199,6 +199,7 @@ UserSchema.statics.findUserByResetToken = function(email,password,resetToken, ca
 			if(user.email === email &&  user.reset_token_expires_millis < now.getTime()) {
 				user.setPassword(password, function(){
 					user.save();
+					console.log("password changed successfully...");
 					callback(false, user);
 				});
 				//callback(false, user);
