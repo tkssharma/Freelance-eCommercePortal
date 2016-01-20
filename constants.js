@@ -7,12 +7,14 @@ var FACEBOOK_APP_ID = '1086250834720928';
 var FACEBOOK_SECRET_KEY = '888f1a92dd4b0341e7b62b21d553704c';
 var FACEBOOK_CALLBACK_URL = '/api/users/facebook/callback';
 
-var DEV_DOMAIN = 'http://localhost:5000';
+var DEV_DOMAIN = 'https://codehs.herokuapp.com/';
+//var DEV_DOMAIN = 'http://localhost:5000';
+
 
 var TOKEN_SECRET = 'awesomeallakarte';
 //for Dev and production
-var MONGO_DB_URI='mongodb://localhost:27017/myproject';
-//var MONGO_DB_URI='mongodb://heroku_5j1k7dmw:ols1h2mmdeut9nl53i3j8cf466@ds045664.mongolab.com:45664/heroku_5j1k7dmw';
+//var MONGO_DB_URI='mongodb://localhost:27017/myproject';
+var MONGO_DB_URI='mongodb://heroku_xgf1ghk8:u901lccncodu74h9012mn81eks@ds037185.mongolab.com:37185/heroku_xgf1ghk8';
 
 var RESET_TOKEN_IN_HOURS = 6;
 

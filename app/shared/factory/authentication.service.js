@@ -5,8 +5,8 @@
 	.module('Codefun')
 	.factory('AuthenticationService', AuthenticationService);
 
-	AuthenticationService.$inject = ['$http', '$rootScope', '$timeout', 'UserService','$window'];
-	function AuthenticationService($http, $rootScope, $timeout, UserService,$window) {
+	AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout', 'UserService','$window'];
+	function AuthenticationService($http, $cookieStore, $rootScope, $timeout, UserService,$window) {
 		var service = {};
 
 		service.Login = Login;
@@ -22,6 +22,10 @@
 		service.SignOut = SignOut;
 		service.changepassword = changepassword;
 		service.LoginUsingToken = LoginUsingToken;
+		service.saveUserId = saveUserId;
+		service.getUserId = getUserId;
+		service.getUserName = getUserName;
+		service.saveUserName = saveUserName;
 		//service.UserchangePassword = UserchangePassword
 
 		$rootScope.globals = {
@@ -29,18 +33,36 @@
 		};
 		return service;
 
+		function saveUserName(username) {
+			$window.localStorage['alakarte-food.username'] = username;
+		}
+
+		function getUserName() {
+			return $window.localStorage['alakarte-food.username'];
+		}
 
 		function getToken(){
-			return $window.localStorage['alakarte-food'];
+			return $window.localStorage['alakarte-food.token'];
 		}
 		function saveToken(token){
-			$window.localStorage['alakarte-food'] = token;
+			$window.localStorage['alakarte-food.token'] = token;
+		}
+
+		function saveUserId(user_id) {
+			$window.localStorage['alakarte-food.user_id'] = user_id;
+		}
+
+		function getUserId() {
+			return $window.localStorage['alakarte-food.user_id'];
 		}
 		function isLoggedIn(){
 			var token = service.getToken();
-			//console.log(token);
-			if (token) {
-				// var payload = JSON.parse($window.atob(token.split('.')[1]));
+			var user_id = service.getUserId();
+			if (token && user_id) {
+				//UserService.GetByUserIdAndToken(user_id, token)
+				//	.then(function(response) {
+				//		callback(response);
+				//	});
 				return true;
 			} else {
 				return false;
@@ -48,9 +70,9 @@
 		}
 		function getCurrentUser(){
 			if (service.isLoggedIn()) {
-				var token = service.getToken();
-				var payload = Base64.decode(token);
-				return payload.substr(0, payload.indexOf(':'));
+				return {token: this.getToken(),
+						username: this.getUserName(),
+						user_id: this.getUserId()};
 			}
 		}
 
@@ -86,22 +108,29 @@
 			});
 		}
 
-		function SetCredentials(username, password) {
-			var authdata = Base64.encode(username + ':' + password);
+		function SetCredentials(username, token, user_id) {
+
 			$rootScope.globals = {
-					currentUser: {
-						username: username,
-						authdata: authdata,
-						role: 'host'
-					}
+				currentUser: {
+					username : username,
+					user_id : user_id,
+					token : token
+				}
 			};
-			$http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
-			$window.localStorage['alakarte-food'] = authdata;
+
+			this.saveToken(token);
+			this.saveUserName(username);
+			this.saveUserId(user_id);
+			//$http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
+			//$window.localStorage['alakarte-food'] = authdata;
 		}
 
 		function ClearCredentials() {
 			$rootScope.globals = {};
 			$window.localStorage.removeItem('alakarte-food');
+			$window.localStorage.removeItem('alakarte-food.token');
+			$window.localStorage.removeItem('alakarte-food.username');
+			$window.localStorage.removeItem('alakarte-food.user_id');
 			$http.defaults.headers.common.Authorization = 'Basic';
 		}
 

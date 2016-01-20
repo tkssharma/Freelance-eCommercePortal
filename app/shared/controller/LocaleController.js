@@ -7,7 +7,7 @@
 
 
 
-	angular.module("Alacarte.food").controller("localController", localController)
+	angular.module("router added").controller("localController", localController)
 	/* .factory("springRestLocalFetchservice",springRestLocalFetchservice) */
 	.factory("asyncLoader", asyncLoader)
 	.config(config);
@@ -52,7 +52,7 @@
 	//@controller
 	localController.$inject = [ '$translate', '$scope','$rootScope','$state'];
 	function localController($translate, $scope,$rootScope,$state) {
-		$scope.defaultlanguage = true;	
+		$scope.defaultlanguage = true;
 		$scope.state= $state;
 		$scope.changeLanguage = function(langKey) {
 
@@ -61,13 +61,13 @@
 				if(langKey === 'en')
 				{
 					$rootScope.lang= "en";
-					$scope.defaultlanguage = true;	
+					$scope.defaultlanguage = true;
 					changeLanguageFeedbackPanel(langKey);
 				}
 				if(langKey === 'sp')
 				{
 					$rootScope.lang= "sp";
-					$scope.defaultlanguage = false;	
+					$scope.defaultlanguage = false;
 					changeLanguageFeedbackPanel(langKey);
 				}
 			}

@@ -16,7 +16,31 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 		})
 		.state('welcome', {
 			url: '/welcome',
-			templateUrl: 'partials/welcome.html',
+			abstract : true,
+			templateUrl: 'partials/welcome/welcome.html'
+
+		})
+		.state('welcome.web', {
+			url: '/web',
+			templateUrl: 'partials/welcome/welcome_web.html',
+			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
+				if (! AuthenticationService.isLoggedIn()) {
+					$state.go('login');
+				};
+			}]
+		})
+		.state('welcome.java', {
+			url: '/java',
+			templateUrl: 'partials/welcome/welcome_java.html',
+			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
+				if (! AuthenticationService.isLoggedIn()) {
+					$state.go('login');
+				};
+			}]
+		})
+		.state('welcome.mobile', {
+			url: '/mobile',
+			templateUrl: 'partials/welcome/welcome_mobile.html',
 			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
 				if (! AuthenticationService.isLoggedIn()) {
 					$state.go('login');
@@ -30,7 +54,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 				templateUrl : "partials/auth/login.html",
 				onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
 					if (AuthenticationService.isLoggedIn()) {
-						$state.go('welcome');
+						$state.go('welcome.web');
 					};
 				}]
 			})
@@ -54,7 +78,12 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 				}]
 
 			})
-
+		.state(
+			"changepassword",
+			{
+				url : "/changepassword/:email/:token",
+				templateUrl : "partials/auth/changepassword.html"
+			})
 		.state(
 			"register",
 			{
@@ -62,13 +91,17 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 				templateUrl : "partials/auth/register.html",
 				onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
 					if (AuthenticationService.isLoggedIn()) {
-						$state.go('welcome');
+						$state.go('welcome.web');
 					};
 				}]
 			})
 		.state('codecast', {
 			url: '/codecast',
 			templateUrl: 'partials/cast/codecast.html'
+		})
+		.state('codecast.webcast', {
+			url: '/webcast',
+			templateUrl: 'partials/cast/webcast.html'
 		})
 
 
@@ -97,6 +130,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 		;
 
 		$urlRouterProvider.when("/myaccount","/myaccount/contact");
+		$urlRouterProvider.when("/welcome","/welcome/web");
 		$urlRouterProvider.when("/postlogin","/postlogin/courses");
 		$urlRouterProvider.when("/myaccount",
 			"/myaccount/myaccounttabs");

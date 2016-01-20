@@ -5,8 +5,6 @@ var Mongoose = require("mongoose")
 ,Crypto = require("crypto")
 ,JWT = require("jwt-simple");
 
-
-
 var TrainingSchema =  new Schema(
 		{
 		 training_id: {type: String, required: false}
@@ -18,9 +16,5 @@ var TrainingSchema =  new Schema(
 
 		}
 );
-
-
-
-
 Mongoose.model('Training', TrainingSchema);
 

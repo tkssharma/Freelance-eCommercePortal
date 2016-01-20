@@ -1,5 +1,3 @@
-
-
 var mongoose = require('mongoose');
 
 var snippet_schema = new mongoose.Schema(

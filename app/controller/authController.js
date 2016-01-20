@@ -3,26 +3,32 @@
 	'use strict';
 	angular.module('Codefun').controller('authController', authController);
 
-	authController.$inject = ['$location', 'AuthenticationService','$scope','$rootScope','AUTH_EVENTS','$state','UserService'];
-	function authController($location, AuthenticationService,$scope,$rootScope,AUTH_EVENTS,$state,UserService) {
-		$scope.user = {};
+	authController.$inject = ['$location', 'AuthenticationService','$scope','$rootScope','AUTH_EVENTS','$state','UserService','$stateParams'];
+	function authController($location, AuthenticationService,$scope,$rootScope,AUTH_EVENTS,$state,UserService,$stateParams) {
+		$scope.data = {};
+		$scope.loginerrormessage = ''
 		var locationUrl = $location;
 		var searchObject = locationUrl.search();
 		if(searchObject["token"] && searchObject["user"]) {
 			$(".page-loading").removeClass("hidden");
-			$scope.user.email = searchObject["user"];
-			$scope.user.token = searchObject["token"];
-			AuthenticationService.LoginUsingToken($scope.user.email, $scope.user.token, function(response){
+			$scope.data.email = searchObject["user"];
+			$scope.data.token = searchObject["token"];
+			AuthenticationService.LoginUsingToken($scope.data.email, $scope.data.token, function(response){
 				if(response.success) {
 					$(".page-loading").addClass("hidden");
-					AuthenticationService.SetCredentials(response.username,response.token);
+					AuthenticationService.SetCredentials($scope.data.email, $scope.data.token, $scope.user.user_id);
+					AuthenticationService.saveToken($scope.data.token);
+					AuthenticationService.saveUserId(response.user.user_id);
+					AuthenticationService.saveUserName($scope.data.email);
 					$rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
-					$state.go('welcome');
+					$state.go('welcome.web');
 				} else {
 					$(".page-loading").addClass("hidden");
 					$rootScope.$broadcast(AUTH_EVENTS.loginFailed);
 					//FlashService.Error(response.message);
 					$scope.loginerrormessage = "Failed to login in using other service providers";
+
+
 				}
 			});
 		}
@@ -47,9 +53,17 @@
 				} else {
 					$(".page-loading")
 					.addClass("hidden");
-					$scope.registererrormessage = "Unable to resgister user"
-						//FlashService.Error(response);
-						$scope.dataLoading = false;
+
+					if(response.message != null)
+					{
+						$scope.registererrormessage = response.message;
+					}
+					else
+					{
+						$scope.registererrormessage = 'unable to register User..'
+					}
+
+					$scope.dataLoading = false;
 				}
 			});
 		};
@@ -62,10 +76,14 @@
 			$(".page-loading").removeClass("hidden");
 			AuthenticationService.Login($scope.userData.email, $scope.userData.password, function (response) {
 				if (response.success) {
+
 					$(".page-loading").addClass("hidden");
-					AuthenticationService.SetCredentials($scope.userData.email, $scope.userData.password);
+					AuthenticationService.SetCredentials(response.user.email, response.user.token, response.user.user_id);
+					AuthenticationService.saveToken(response.user.token);
+					AuthenticationService.saveUserId(response.user.user_id);
+					AuthenticationService.saveUserName(response.user.username);
 					$rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
-					$state.go('welcome');
+					$state.go('welcome.web');
 				} else {
 					$(".page-loading").addClass("hidden");
 					$rootScope.$broadcast(AUTH_EVENTS.loginFailed);
@@ -98,15 +116,22 @@
 				return;
 			}
 			$(".page-loading").removeClass("hidden");
-			UserService.UserchangePassword($scope.userData.newpassword1,$rootScope.resetuseremail,$rootScope.userresettoken)
+			UserService.UserchangePassword($scope.userData.newpassword1,$stateParams.email,$stateParams.token)
 			.then(function(response) {
-				$(".page-loading").addClass("hidden");
+			$(".page-loading").addClass("hidden");
+				if (response.success) {
+					$state.go('login');
+				}
+				else
+				{
+					$scope.changepwdmessage = "issue while changing password";
+				}
 			});
 		};
 
 		$scope.signOut = function() {
 			AuthenticationService.SignOut($scope.user.email, $scope.user.accessToken, function(response){
-				//console.log(response);
+				$state.go('login');
 			});
 		};
 
