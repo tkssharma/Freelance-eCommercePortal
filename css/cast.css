@@ -11,6 +11,36 @@
     background-position-y: -150px;
     height: 100%;
 }
+
+
+.image-homepage-banner-cast {
+    background-image: url('../images/codecast.jpg');
+}
+.image-homepage-banner-cast .sliding-text-wrapper .stationary-text-top {
+    font-size: 40px;
+    font-weight: 400;
+}
+.image-homepage-banner-cast .sliding-text-wrapper .sliding-text {
+    height: 56px;
+    font-size: 50px;
+    font-weight: 400;
+}
+.image-homepage-banner-cast .sliding-text-wrapper .sliding-text>div {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    opacity: 0;
+}
+.image-homepage-banner-cast .sliding-text-wrapper .stationary-text-bottom {
+    font-size: 30px;
+    font-weight: 400;
+}
+.image-homepage-banner-cast .sliding-text-wrapper {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
 .color-overlay {
     overflow: hidden;
         background: linear-gradient(to right, rgba(39, 59, 71, 0.19) 0, rgb(39, 59, 71) 100%);

@@ -99,6 +99,10 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 			url: '/codecast',
 			templateUrl: 'partials/cast/codecast.html'
 		})
+		.state('codecast.webcast', {
+			url: '/webcast',
+			templateUrl: 'partials/cast/webcast.html'
+		})
 
 
 		.state('about', {
