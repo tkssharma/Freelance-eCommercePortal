@@ -97,11 +97,19 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 			})
 		.state('codecast', {
 			url: '/codecast',
-			templateUrl: 'partials/cast/codecast.html'
+			templateUrl: 'partials/cast/codecast.html',
+			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
+				AuthenticationService.ClearCredentials();
+				$state.go('login');
+			}]
 		})
 		.state('codecast.webcast', {
 			url: '/webcast',
-			templateUrl: 'partials/cast/webcast.html'
+			templateUrl: 'partials/cast/webcast.html',
+			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
+				AuthenticationService.ClearCredentials();
+				$state.go('login');
+			}]
 		})
 
 
