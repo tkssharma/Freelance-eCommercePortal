@@ -17,11 +17,20 @@
 .trail-module-item {
     background-color: #fff;
     border-radius: 8px;
+    border: solid 2px #ccc;
     position: relative;
     margin-bottom: 20px;
     -webkit-box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
     -moz-box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
     box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
+}
+.trail-module-item.trailhead-item-tile-trail .progress-time-text {
+    padding-top: 6px;
+}
+.trailhead-item-tile.trailhead-item-tile-trail .progress-time-text {
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
 }
 .trailhead-item-tile {
     height: 280px;

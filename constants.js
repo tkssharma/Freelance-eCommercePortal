@@ -11,8 +11,8 @@ var DEV_DOMAIN = 'https://codehs.herokuapp.com/';
 //var DEV_DOMAIN = 'http://localhost:5000';
 var TOKEN_SECRET = 'awesomeallakarte';
 //for Dev and production
-var MONGO_DB_URI='mongodb://localhost:27017/myproject';
-//var MONGO_DB_URI='mongodb://heroku_xgf1ghk8:u901lccncodu74h9012mn81eks@ds037185.mongolab.com:37185/heroku_xgf1ghk8';
+//var MONGO_DB_URI='mongodb://localhost:27017/myproject';
+var MONGO_DB_URI='mongodb://heroku_xgf1ghk8:u901lccncodu74h9012mn81eks@ds037185.mongolab.com:37185/heroku_xgf1ghk8';
 
 var RESET_TOKEN_IN_HOURS = 6;
 
