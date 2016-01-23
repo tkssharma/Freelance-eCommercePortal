@@ -32,6 +32,11 @@
 		"passport-twitter": "~1.0.2"
 
   },
+  "devDependencies": {
+    "mocha": "~1.12.1",
+    "should": "~1.2.2",
+    "supertest": "~0.7.1"
+  },
   "engines": {
     "node": "4.1.1"
   },
