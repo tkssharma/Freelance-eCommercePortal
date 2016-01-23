@@ -9,8 +9,6 @@ var FACEBOOK_CALLBACK_URL = '/api/users/facebook/callback';
 
 var DEV_DOMAIN = 'https://codehs.herokuapp.com/';
 //var DEV_DOMAIN = 'http://localhost:5000';
-
-
 var TOKEN_SECRET = 'awesomeallakarte';
 //for Dev and production
 //var MONGO_DB_URI='mongodb://localhost:27017/myproject';

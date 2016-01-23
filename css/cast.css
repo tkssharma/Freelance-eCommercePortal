@@ -2,6 +2,7 @@
 {
     padding: 15px !important;
     border: solid 5px #f2f2f2;
+        height: 350px;
 }
 .how-background {
     background: url(../images/cast.jpg) no-repeat;
@@ -10,6 +11,103 @@
     background-attachment: fixed;
     background-position-y: -150px;
     height: 100%;
+}
+.trail-module-item.trailhead-item {
+    padding: 0;
+}
+.label {
+    top: 15px !important;
+}
+.trail-module-item {
+    background-color: #fff;
+    border-radius: 8px;
+    border: solid 2px #ccc;
+    position: relative;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
+    box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
+}
+.trail-module-item.trailhead-item-tile-trail .progress-time-text {
+    padding-top: 6px;
+}
+.trailhead-item-tile.trailhead-item-tile-trail .progress-time-text {
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+}
+.trailhead-item-tile {
+    height: 280px;
+}
+.trail-module-item.trailhead-item-tile-trail .module-padding {
+    padding: 0 20px !important;
+}
+.trail-module-item.trailhead-item .module-header {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.trail-module-item.trailhead-item-tile-trail .module-padding {
+    padding: 0 20px !important;
+}
+.trail-module-item .module-title a, .trail-module-item .module-title {
+    color: #189cd7;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 22px;
+    max-height: 44px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+.trail-module-item .module-description {
+    color: #666;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 18px;
+    max-height: 72px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.trail-module-item .module-content .module-tags {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    bottom: 10px;
+    height: 16px;
+    position: absolute;
+    right: 20px;
+    width: 90%;
+    word-wrap: normal;
+}
+.trail-module-item.trailhead-item-tile-trail .module-icon img {
+    height: 100px;
+    width: 100px;
+}
+.trail-module-item.trailhead-item-tile-trail .module-info {
+    padding-top: 14px;
+}
+.trail-module-item .module-info {
+    margin-bottom: 0;
+}
+ul.inline, ol.inline {
+    margin-left: 0;
+    list-style: none;
+}
+.trailhead-progress {
+    margin-bottom: 0;
+}
+ul.inline.trailhead-progress>li {
+    padding-left: 0;
+    padding-right: 0;
+}
+.trail-module-item .module-info li {
+    padding: 0;
+}
+.trailhead-item-tile.trailhead-item-tile-trail .progress-amount {
+    color: #fff;
+}
+.trail-module-item.trailhead-item-tile-trail .progress-time-text {
+    padding-top: 6px;
 }
 
 
