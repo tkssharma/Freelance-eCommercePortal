@@ -2,6 +2,7 @@
 {
     padding: 15px !important;
     border: solid 5px #f2f2f2;
+        height: 350px;
 }
 .how-background {
     background: url(../images/cast.jpg) no-repeat;

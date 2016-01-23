@@ -99,8 +99,8 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 			url: '/codecast',
 			templateUrl: 'partials/cast/codecast.html',
 				onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
-					if (AuthenticationService.isLoggedIn()) {
-						$state.go('codecast');
+					if (! AuthenticationService.isLoggedIn()) {
+						$state.go('login');
 					};
 				}]
 		})
@@ -108,8 +108,8 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 			url: '/webcast',
 			templateUrl: 'partials/cast/webcast.html',
 				onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
-					if (AuthenticationService.isLoggedIn()) {
-						$state.go('codecast.webcast');
+					if (! AuthenticationService.isLoggedIn()) {
+						$state.go('login');
 					};
 				}]
 		})
