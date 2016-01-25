@@ -2,13 +2,10 @@
 var GOOGLE_CLIENT_ID = '295902945278-b3oqgi2daricc22mnnem3gca13q0ea12.apps.googleusercontent.com';
 var GOOGLE_SECRET_KEY = 'rMT_E9TFqlSC9B497i9WTQS9';
 var GOOGLE_CALLBACK_URL = '/api/users/google/callback';
-
 var FACEBOOK_APP_ID = '1086250834720928';
 var FACEBOOK_SECRET_KEY = '888f1a92dd4b0341e7b62b21d553704c';
 var FACEBOOK_CALLBACK_URL = '/api/users/facebook/callback';
-
 var DEV_DOMAIN = 'https://codehs.herokuapp.com/';
-//var DEV_DOMAIN = 'http://localhost:5000';
 var TOKEN_SECRET = 'awesomeallakarte';
 //for Dev and production
 //var MONGO_DB_URI='mongodb://localhost:27017/myproject';
