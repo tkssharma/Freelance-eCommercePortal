@@ -26,7 +26,7 @@
 			id="navbar-collapse" role="navigation" style="height: 1px;">
 
 			<ul class="nav navbar-nav navbar-right">
-			<li  ><a href="#/about" >About</a></li>
+
 						<li  ><a href="#/team" >Technology</a></li>
 				<li ng-if="! isLoggedIn === true" ><a data-toggle="modal" href="" data-target="#login" >Sign
 						In</a></li>
@@ -67,7 +67,8 @@
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#/codecast">Codecasts</a></li>
+				<li ng-if="isLoggedIn === true" ><a href="#/codecast">Codecasts</a></li>
+				<li  ><a href="#/about" >About</a></li>
 			</ul>
 
 
