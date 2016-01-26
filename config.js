@@ -5,12 +5,6 @@
 var config = {
 
 	ENVIRONMENT 					: process.env.NODE_ENV || 'development',
-    //DBURI                   : 'mongodb://heroku_xgf1ghk8:u901lccncodu74h9012mn81eks@ds037185.mongolab.com:37185/heroku_xgf1ghk8'
-	/* This is common config that will be loaded first
-		After this the enviroment configs will be loaded and will overwrite these settings
-
-		PUT settings here which are common for both envs
-		*/
 		COMMON 							: {
 
 			WEBSERVER 					: {
