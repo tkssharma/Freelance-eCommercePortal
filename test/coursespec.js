@@ -1,54 +1,55 @@
-describe('User', function() {
-  describe('#save()', function() {
-    it('should save without error', function(done) {
-      var user = new User('Luna');
-      user.save(done);
-    });
-  });
+var app = require('./helpers/app');
 
+var should = require('should'),
+	supertest = require('supertest');
 
-describe('hooks', function() {
+describe('flights', function () {
 
-  before(function() {
-    // runs before all tests in this block
-  });
+	it('should return valid flight data for flight 18',
+	function (done) {
 
-  after(function() {
-    // runs after all tests in this block
-  });
+		supertest(app)
+		.get('/api/getAllYouTubeVideos')
+		.expect(200)
+		.end(function (err, res) {
+			res.status.should.equal(200);
+			done();
+		});
 
-  beforeEach(function() {
-    // runs before each test in this block
-  });
+	});
 
-  afterEach(function() {
-    // runs after each test in this block
-  });
+	it('should return an error for an invalid flight',
+	function (done) {
 
-  // test cases
-});
+		supertest(app)
+		.get('/api/getAllYouTubeVideos')
+		.expect(404)
+		.end(function (err, res) {
+			res.status.should.equal(404);
+			done();
+		});
 
+	});
 
-describe('Connection', function() {
-  var db = new Connection,
-    tobi = new User('tobi'),
-    loki = new User('loki'),
-    jane = new User('jane');
+	it('should mark a flight as arrived',
+	function (done) {
+		supertest(app)
+		.put('/api/getAllTraining')
+		.expect(200)
+		.end(function  (err, res) {
+			res.status.should.equal(200);
+			res.body.status.should.equal('done');
 
-  beforeEach(function(done) {
-    db.clear(function(err) {
-      if (err) return done(err);
-      db.save([tobi, loki, jane], done);
-    });
-  });
+			supertest(app)
+			.get('/api/getAllTraining')
+			.expect(200)
+			.end(function (err, res) {
+				res.status.should.equal(200);
+				res.body.actualArrive
+				.should.not.equal(undefined);
 
-  describe('#find()', function() {
-    it('respond with matching records', function(done) {
-      db.find({type: 'User'}, function(err, res) {
-        if (err) return done(err);
-        res.should.have.length(3);
-        done();
-      });
-    });
-  });
+				done();
+			})
+		});
+	});
 });

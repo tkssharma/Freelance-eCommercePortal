@@ -11,28 +11,11 @@ angular
 .element(document)
 .ready(
 		function() {
-
-			// inject the http provider so that it can work even during
-			// manual bootstrap
-			// @
-			myApplication
-			.config([
-			         '$httpProvider',
-			         function($httpProvider) {
-			        	 // initialize get if not there
-			        	 if (!$httpProvider.defaults.headers.get) {
-			        		 $httpProvider.defaults.headers.get = {};
-			        	 }
-			        	 $httpProvider.defaults.headers.get['If-Modified-Since'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
-			        	 $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
-			        	 $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
-			         } ]);
+			//manual bootstrap angular root module
 			// bootstrap app when DOM loaded
 			angular.bootstrap(document,[ "Codefun" ]);
 
 		});
-
-
 
 myApplication
 .controller(
