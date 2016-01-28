@@ -9,7 +9,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 
 	$stateProvider
 
-		// HOME STATES AND NESTED VIEWS ========================================
+
 		.state('home', {
 			url: '/home',
 			templateUrl: 'partials/main.html'
@@ -149,7 +149,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 
 	});
 
-
+//Route change handlers
 angular
 .module('Codefun')
 .run(
