@@ -3,7 +3,6 @@
 
 
 var config = {
-
 	ENVIRONMENT 					: process.env.NODE_ENV || 'development',
 		COMMON 							: {
 
