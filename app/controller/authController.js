@@ -2,7 +2,6 @@
 (function () {
 	'use strict';
 	angular.module('Codefun').controller('authController', authController);
-
 	authController.$inject = ['$location', 'AuthenticationService','$scope','$rootScope','AUTH_EVENTS','$state','UserService','$stateParams'];
 	function authController($location, AuthenticationService,$scope,$rootScope,AUTH_EVENTS,$state,UserService,$stateParams) {
 		$scope.data = {};

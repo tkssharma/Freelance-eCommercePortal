@@ -4,11 +4,7 @@
  * @ LocalController to fetch Translate data
  */
 (function() {
-
-
-
 	angular.module("router added").controller("localController", localController)
-	/* .factory("springRestLocalFetchservice",springRestLocalFetchservice) */
 	.factory("asyncLoader", asyncLoader)
 	.config(config);
 
@@ -19,7 +15,6 @@
 		$translateProvider.useLoader('asyncLoader');
 
 	}
-
 	// @factory
 	asyncLoader.$inject = [ '$q', '$timeout', '$http' , 'Logger','ContextRoot' ];
 	function asyncLoader($q, $timeout, $http,Logger,ContextRoot) {
