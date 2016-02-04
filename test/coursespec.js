@@ -30,7 +30,6 @@ describe('flights', function () {
 		});
 
 	});
-
 	it('should mark a flight as arrived',
 	function (done) {
 		supertest(app)
