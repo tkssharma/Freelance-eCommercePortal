@@ -1,5 +1,6 @@
  // Localstorage service
-
+ (function () {
+	'use strict';
 	var app = angular.module('code-fun');
 
 	app.factory('$localStorage', ['$window', function($window) {
@@ -23,7 +24,7 @@
 	}]);
 
 	  // Back button history
-	app.run(['$location', '$rootScope', '$window','$URL','$http',
+	  app.run(['$location', '$rootScope', '$window','$URL','$http',
 		function ($location, $rootScope,  $window, $URL, $http) {
 
 			var history = [];
@@ -49,5 +50,7 @@
 					.toLowerCase() // Camel case is bad
 					.replace(/[^a-z0-9_\-~!\+\s]+/g, '') // Exchange invalid chars
 					.replace(/[\s]+/g, '-'); // Swap whitespace for single hyphen
-			};
-	}]);
+				};
+			}]);
+
+})();

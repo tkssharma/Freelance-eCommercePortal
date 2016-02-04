@@ -1,6 +1,6 @@
 // app.js
-
-
+(function () {
+	'use strict';
 var routerApp = angular.module("Codefun");
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
@@ -198,6 +198,6 @@ angular
          });
 
 	} ])
-
+})();
 
 
