@@ -31,7 +31,7 @@ if (env==='development') {
 	sassStyle = 'compressed';
 }
 
-coffeeSources = ['components/coffee/tagline.coffee'];
+
 jsSources = [
     'components/lib/jquery.min.js',
     'components/lib/angular.min.js',
@@ -44,12 +44,7 @@ sassSources = ['components/sass/style.scss'];
 htmlSources = [ outputDir + '*.html'];
 jsonSources = [ outputDir + 'js/*.json'];
 
-gulp.task('coffee', function() {
-	gulp.src(coffeeSources)
-	  .pipe(coffee({ bare: true })
-	  	.on('error', gutil.log))
-	  .pipe(gulp.dest('components/scripts'))  
-});
+
 
 gulp.task('js', function() {
 	gulp.src(jsSources)
@@ -84,7 +79,7 @@ gulp.task('watch', function() {
 	gulp.watch('builds/development/js/*.json', ['json']);
 });
 
-gulp.task('default', ['html', 'coffee', 'js', 'json', 'compass', 'connect', 'watch']);
+gulp.task('default', ['html', 'js', 'json', 'compass', 'connect', 'watch']);
 
 gulp.task('connect', function() {
 	connect.server({
