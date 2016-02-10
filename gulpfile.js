@@ -33,14 +33,11 @@ if (env==='development') {
 
 
 jsSources = [
-    'components/lib/jquery.min.js',
-    'components/lib/angular.min.js',
-	'components/lib/angular-ui-router.min.js',
-	'components/scripts/main.js',
-	'components/scripts/tagline.coffee',
-	'components/scripts/template.js'
+    'js/jquery.min.js',
+    'js/angular.min.js',
+	'js/angular-ui-router.min.js',
+	'js/scripts/main.js'
 ];
-sassSources = ['components/sass/style.scss'];
 htmlSources = [ outputDir + '*.html'];
 jsonSources = [ outputDir + 'js/*.json'];
 
@@ -55,21 +52,6 @@ gulp.task('js', function() {
 	  .pipe(connect.reload())
 });
 
-/* I need to replace gulp-compass as I cannot get it to work properly*/
-gulp.task('compass', function() {
-  gulp.src(sassSources)
-    .pipe(compass({
-      sass: 'components/sass',
-      image: outputDir + 'images',
-      style: sassStyle,
-      sourcemap: true,
-      debug: true,
-      comments: true
-    })
-    .on('error', gutil.log))
-    .pipe(gulp.dest( outputDir + 'css'))
-    .pipe(connect.reload())
-});
 
 gulp.task('watch', function() {
 	gulp.watch(coffeeSources, ['coffee']);
