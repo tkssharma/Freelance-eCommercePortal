@@ -11,7 +11,6 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat');
 
 var env,
-    coffeeSources,
     jsSources,
     sassSources,
     htmlSources,
