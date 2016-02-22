@@ -1,5 +1,5 @@
 /*jshint multistr: true ,node: true*/
-"use strict";
+
 
 var
   /* 3rd Party */

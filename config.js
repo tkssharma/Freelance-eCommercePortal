@@ -1,14 +1,14 @@
 /*jshint multistr: true ,node: true*/
-"use strict";
 
 
+// mongodb://heroku_xgf1ghk8:u901lccncodu74h9012mn81eks@ds037185.mongolab.com:37185/heroku_xgf1ghk8'
 var config = {
 	ENVIRONMENT 					: process.env.NODE_ENV || 'development',
 		COMMON 							: {
 
 			WEBSERVER 					: {
 				PORT 					: 3000,
-				DBURI                   : 'mongodb://heroku_xgf1ghk8:u901lccncodu74h9012mn81eks@ds037185.mongolab.com:37185/heroku_xgf1ghk8'
+				DBURI                   : 'mongodb://localhost:27017/myproject'
 			},
 
 		},

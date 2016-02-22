@@ -38,7 +38,6 @@ jsSources = [
 	'js/scripts/main.js'
 ];
 htmlSources = [ outputDir + '*.html'];
-jsonSources = [ outputDir + 'js/*.json'];
 
 
 
