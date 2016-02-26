@@ -42,7 +42,13 @@ if (env==='production') {
 	'app/shared/factory/*.js',
 	'app/shared/route/*.js',
 ];
+  CssSources = [
+    'css/main.css',
+	'css/media.css',
+	'css/freelance.min.css',
+	'css/cast.css'
 
+];
 
 
 
@@ -57,7 +63,7 @@ gulp.task('js', function() {
 
 /* I need to replace gulp-compass as I cannot get it to work properly*/
 gulp.task('minify-css', function() {
-  return gulp.src('css/*.css')
+  return gulp.src(CssSources)
     .pipe(concat('main.min.css'))
     .pipe(minifyCss())
     .pipe(gulp.dest( outputDir + 'css'));
