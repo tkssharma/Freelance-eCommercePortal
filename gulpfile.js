@@ -8,36 +8,41 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	minHTML = require('gulp-htmlmin'),
 	minJson = require('gulp-jsonminify'),
-	concat = require('gulp-concat');
+	concat = require('gulp-concat'),
+    minifyCss = require('gulp-minify-css');
 
 var env,
     jsSources,
-    sassSources,
     htmlSources,
     jsonSources,
-    ouputDir,
-    sassStyle;
+    ouputDir;
 
 
-var env = process.env.NODE_ENV || 'production';
+var env = process.env.NODE_ENV || 'development';
 
 
-if (env==='development') {
-	outputDir = 'builds/development/';
-	sassStyle = 'expanded';
-} else {
-	outputDir = 'builds/production/';
+if (env==='production') {
+	outputDir = 'app/build/production/';
 	sassStyle = 'compressed';
+} else {
+	outputDir = 'app/build/development/';
+	sassStyle = 'expanded';
 }
 
-
-jsSources = [
-    'js/jquery.min.js',
+  jsSources = [
     'js/angular.min.js',
-	'js/angular-ui-router.min.js',
-	'js/scripts/main.js'
+	'js/angular-router.min.js',
+	'js/angular-cookies.min.js',
+	'js/angular-storage.js',
+	'js/angular-resource.min.js',
+	'app/controller/authController.js',
+	'app/shared/bootstrap/bootstrap.js',
+	'app/shared/module/*.js',
+	'app/shared/controller/*.js',
+	'app/shared/factory/*.js',
+	'app/shared/route/*.js',
 ];
-htmlSources = [ outputDir + '*.html'];
+
 
 
 
@@ -50,36 +55,28 @@ gulp.task('js', function() {
 	  .pipe(connect.reload())
 });
 
-
-gulp.task('watch', function() {
-	gulp.watch(coffeeSources, ['coffee']);
-	gulp.watch(jsSources, ['js']);
-	gulp.watch('components/sass/*.scss', ['compass']);
-	gulp.watch('builds/development/*.html', ['html']);
-	gulp.watch('builds/development/js/*.json', ['json']);
+/* I need to replace gulp-compass as I cannot get it to work properly*/
+gulp.task('minify-css', function() {
+  return gulp.src('css/*.css')
+    .pipe(concat('main.min.css'))
+    .pipe(minifyCss())
+    .pipe(gulp.dest( outputDir + 'css'));
 });
 
-gulp.task('default', ['html', 'js', 'json', 'compass', 'connect', 'watch']);
+gulp.task('watch', function() {
+	gulp.watch(jsSources, ['js']);
+	gulp.watch('css/*.css', ['minify-css']);
+});
+
+gulp.task('default', [ 'js', 'minify-css','watch','connect']);
 
 gulp.task('connect', function() {
 	connect.server({
-		root: 'builds/development',
+		root: 'app/builds/development',
 		livereload: true
 	});
 });
 
-gulp.task('html', function () {
-	gulp.src('builds/development/js/*.html')
-	.pipe(gulpif(env === 'production', minHTML({collapseWhitespace: true})))
-	.pipe(gulpif(env === 'production', gulp.dest(outputDir)))
-	.pipe(connect.reload())
-});
 
-gulp.task('json', function () {
-	gulp.src('builds/development/js/*.json')
-	.pipe(gulpif(env === 'production', minJson()))
-	.pipe(gulpif(env === 'production', gulp.dest('builds/production/js')))
-	.pipe(connect.reload())
-});
 
 

@@ -20,13 +20,10 @@
 }
 .trail-module-item {
     background-color: #fff;
-    border-radius: 8px;
-    border: solid 2px #ccc;
+    border: solid 2px rgba(204, 204, 204, 0.12);
     position: relative;
     margin-bottom: 20px;
-    -webkit-box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
-    -moz-box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
-    box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
+
 }
 .trail-module-item.trailhead-item-tile-trail .progress-time-text {
     padding-top: 6px;
@@ -42,10 +39,7 @@
 .trail-module-item.trailhead-item-tile-trail .module-padding {
     padding: 0 20px !important;
 }
-.trail-module-item.trailhead-item .module-header {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
+
 .trail-module-item.trailhead-item-tile-trail .module-padding {
     padding: 0 20px !important;
 }
@@ -136,6 +130,7 @@ ul.inline.trailhead-progress>li {
 .image-homepage-banner-cast .sliding-text-wrapper {
     position: relative;
     display: block;
+        color: #ffffff;
     text-align: center;
 }
 

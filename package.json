@@ -48,9 +48,11 @@
 		"gulp-ruby-sass": "^2.0.6",
 		"gulp-uglify": "^1.5.1",
 		"gulp-util": "^3.0.7",
+		 "gulp-minify-css" : "*",
 		"jquery": "^2.1.4",
 		"mustache": "^2.2.1",
-		"util": "^0.10.3"
+		"util": "^0.10.3",
+		"source-map" : "*"
 	},
 	"engines": {
 		"node": "4.1.1"
