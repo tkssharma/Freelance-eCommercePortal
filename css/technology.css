@@ -1,0 +1,1191 @@
+.technology-pages-wrapper h1,.technology-pages-wrapper h2,.technology-pages-wrapper h3,.technology-pages-wrapper h4 {
+	font-family: 'proxima-nova';
+	font-weight: 600;
+	color: #545454;
+	margin-top: 0
+}
+
+.technology-pages-wrapper h1 a,.technology-pages-wrapper h1 .browse-all-lessons-holder .playlist-edit,.browse-all-lessons-holder .technology-pages-wrapper h1 .playlist-edit,.technology-pages-wrapper h2 a,.technology-pages-wrapper h2 .browse-all-lessons-holder .playlist-edit,.browse-all-lessons-holder .technology-pages-wrapper h2 .playlist-edit,.technology-pages-wrapper h3 a,.technology-pages-wrapper h3 .browse-all-lessons-holder .playlist-edit,.browse-all-lessons-holder .technology-pages-wrapper h3 .playlist-edit,.technology-pages-wrapper h4 a,.technology-pages-wrapper h4 .browse-all-lessons-holder .playlist-edit,.browse-all-lessons-holder .technology-pages-wrapper h4 .playlist-edit {
+	color: inherit;
+	text-decoration: none
+}
+
+.technology-pages-wrapper p {
+	margin: 0 0 20px 0
+}
+
+.technology-pages-wrapper p:last-child {
+	margin-bottom: 0
+}
+
+.technology-pages-wrapper .badge {
+	font-size: 14px;
+	line-height: 14px;
+	padding: 1px 7px;
+	border-radius: 8px;
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	color: white;
+	font-weight: 700
+}
+
+.technology-pages-wrapper .badge.badge-info {
+	background: #8fa1ac
+}
+
+.technology-pages-wrapper .badge.badge-alert {
+	background: #e13137
+}
+
+@media only screen and (max-width: 767px) {
+	.technology-pages-wrapper .badge {
+		font-size:10px
+	}
+}
+
+.technology-pages-wrapper .lesson-watched {
+	border: 1px solid rgba(70,88,105,0.3);
+	border-radius: 3px;
+	padding: 0 5px;
+	margin: 0;
+	font-size: 6px;
+	text-transform: uppercase;
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center
+}
+
+.technology-pages-wrapper .lesson-watched>span {
+	font-size: 12px
+}
+
+.technology-pages-wrapper .section-jump-into-technologies .section-title-holder {
+	position: relative;
+	z-index: 1;
+	padding: 40px 0;
+	background: url(url(//d1xwtr0qwr70yv.cloudfront.net/assets/elements/section-title-bg-6a892be9756d88eac2ddf60d7c8b8837.png)) 0 0 repeat;
+	background-size: 150px 150px;
+	text-align: center;
+	box-shadow: 0 2px 5px #dfdfdf
+}
+
+.technology-pages-wrapper .section-jump-into-technologies .section-title-holder .title {
+	font-style: italic;
+	font-size: 40px;
+	line-height: 50px;
+	color: #262626;
+	margin: 0
+}
+
+@media only screen and (max-width: 991px) {
+	.technology-pages-wrapper .section-jump-into-technologies .section-title-holder {
+		padding:20px 30px
+	}
+
+	.technology-pages-wrapper .section-jump-into-technologies .section-title-holder .title {
+		font-size: 30px;
+		line-height: 40px
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.technology-pages-wrapper .section-jump-into-technologies .section-title-holder {
+		padding:15px;
+		background: whitesmoke;
+		box-shadow: none;
+		-webkit-flex-shrink: 0;
+		-ms-flex-negative: 0;
+		flex-shrink: 0
+	}
+
+	.technology-pages-wrapper .section-jump-into-technologies .section-title-holder .title {
+		font-size: 18px;
+		line-height: 20px;
+		text-align: left
+	}
+}
+
+.technology-pages-wrapper .section-jump-into-technologies .section-content-holder {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	padding: 25px 0;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	background: white
+}
+
+@media only screen and (max-width: 991px) {
+	.technology-pages-wrapper .section-jump-into-technologies .section-content-holder {
+		padding-left:30px;
+		padding-right: 30px
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.technology-pages-wrapper .section-jump-into-technologies .section-content-holder {
+		padding:0;
+		background: whitesmoke
+	}
+}
+
+.technology-pages-wrapper .section-jump-into-technologies .jump-into-technologies {
+	overflow: hidden
+}
+
+@media only screen and (max-width: 767px) {
+	.technology-pages-wrapper .section-jump-into-technologies .jump-into-technologies {
+		display:-webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-transition: all 300ms 0s ease-in;
+		transition: all 300ms 0s ease-in;
+		box-shadow: 0 2px 4px rgba(152,152,152,0.2);
+		background: whitesmoke;
+		position: relative
+	}
+}
+
+.technology-pages-wrapper .section-jump-into-technologies .technologies-list {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	max-width: 930px
+}
+
+.technology-pages-wrapper .section-jump-into-technologies .technologies-list a,.technology-pages-wrapper .section-jump-into-technologies .technologies-list .browse-all-lessons-holder .playlist-edit,.browse-all-lessons-holder .technology-pages-wrapper .section-jump-into-technologies .technologies-list .playlist-edit,.technology-pages-wrapper .section-jump-into-technologies .technologies-list a:hover,.technology-pages-wrapper .section-jump-into-technologies .technologies-list .browse-all-lessons-holder .playlist-edit:hover,.browse-all-lessons-holder .technology-pages-wrapper .section-jump-into-technologies .technologies-list .playlist-edit:hover,.technology-pages-wrapper .section-jump-into-technologies .technologies-list a:visited,.technology-pages-wrapper .section-jump-into-technologies .technologies-list .browse-all-lessons-holder .playlist-edit:visited,.browse-all-lessons-holder .technology-pages-wrapper .section-jump-into-technologies .technologies-list .playlist-edit:visited {
+	color: inherit;
+	text-decoration: none
+}
+
+.technology-pages-wrapper .section-jump-into-technologies .technologies-list a:hover .text-holder,.technology-pages-wrapper .section-jump-into-technologies .technologies-list .browse-all-lessons-holder .playlist-edit:hover .text-holder,.browse-all-lessons-holder .technology-pages-wrapper .section-jump-into-technologies .technologies-list .playlist-edit:hover .text-holder {
+	color: #878787
+}
+
+.technology-pages-wrapper .section-jump-into-technologies .technologies-list .item-wrapper {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-basis: 33.33333%;
+	-ms-flex-preferred-size: 33.33333%;
+	flex-basis: 33.33333%
+}
+
+.technology-pages-wrapper .section-jump-into-technologies .technologies-list .item {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 15px 40px 15px 0
+}
+
+.technology-pages-wrapper .section-jump-into-technologies .technologies-list .tech-logo-holder {
+	padding-right: 20px;
+	margin-top: 8px;
+	-webkit-flex-shrink: 0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0
+}
+
+.technology-pages-wrapper .section-jump-into-technologies .technologies-list .tech-logo {
+	width: 46px;
+	max-height: 50px;
+	display: block
+}
+
+.technology-pages-wrapper .section-jump-into-technologies .technologies-list .title-holder {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	margin-bottom: 3px
+}
+
+.technology-pages-wrapper .section-jump-into-technologies .technologies-list .title {
+	margin: 0;
+	color: #545454;
+	font-size: 16px;
+	margin-right: 10px
+}
+
+@media only screen and (max-width: 991px) {
+	.technology-pages-wrapper .section-jump-into-technologies .technologies-list .tech-logo-holder {
+		padding-right:15px
+	}
+
+	.technology-pages-wrapper .section-jump-into-technologies .technologies-list .tech-logo {
+		width: 35px;
+		max-height: 38px
+	}
+
+	.technology-pages-wrapper .section-jump-into-technologies .technologies-list .title {
+		font-size: 14px
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.technology-pages-wrapper .section-jump-into-technologies .technologies-list {
+		-webkit-justify-content:space-around;
+		-ms-flex-pack: distribute;
+		justify-content: space-around;
+		padding: 0 15px 30px 15px
+	}
+
+	.technology-pages-wrapper .section-jump-into-technologies .technologies-list .item-wrapper {
+		-webkit-flex-basis: 25%;
+		-ms-flex-preferred-size: 25%;
+		flex-basis: 25%;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		-ms-grid-row-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center
+	}
+
+	.technology-pages-wrapper .section-jump-into-technologies .technologies-list .item {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		padding: 18px;
+		border: 1px solid rgba(171,171,171,0.3);
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		-ms-grid-row-align: center;
+		align-items: center;
+		-webkit-box-pack: justify;
+		-webkit-justify-content: space-between;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		background: rgba(255,255,255,0.4);
+		border-radius: 3px;
+		margin-bottom: 15px
+	}
+
+	.technology-pages-wrapper .section-jump-into-technologies .technologies-list .text-holder {
+		display: none
+	}
+
+	.technology-pages-wrapper .section-jump-into-technologies .technologies-list .title-holder {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		-ms-grid-row-align: center;
+		align-items: center
+	}
+
+	.technology-pages-wrapper .section-jump-into-technologies .technologies-list .badge {
+		-webkit-align-self: center;
+		-ms-flex-item-align: center;
+		align-self: center;
+		display: none
+	}
+
+	.technology-pages-wrapper .section-jump-into-technologies .technologies-list .title {
+		display: none
+	}
+
+	.technology-pages-wrapper .section-jump-into-technologies .technologies-list .tech-logo-holder {
+		padding: 0;
+		margin: 0
+	}
+
+	.technology-pages-wrapper .section-jump-into-technologies .technologies-list .tech-logo {
+		width: 38px;
+		max-height: 41px
+	}
+}
+
+@media only screen and (max-width: 479px) {
+	.technology-pages-wrapper .section-jump-into-technologies .technologies-list .item-wrapper {
+		-webkit-flex-basis:33.33333%;
+		-ms-flex-preferred-size: 33.33333%;
+		flex-basis: 33.33333%
+	}
+}
+
+.technology-pages-wrapper .section-technology-details {
+	padding: 55px 0
+}
+
+.technology-pages-wrapper .section-technology-details .section-inner {
+	max-width: 1260px;
+	padding: 0 20px;
+	margin: 0 auto
+}
+
+.technology-pages-wrapper .section-technology-details .technology-set:not(:last-child) {
+	margin-bottom: 100px
+}
+
+.technology-pages-wrapper .section-technology-details .section-title-holder {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	margin-bottom: 20px
+}
+
+.technology-pages-wrapper .section-technology-details .section-title-holder .tech-logo {
+	width: 70px;
+	max-height: 75px;
+	margin-right: 10px
+}
+
+.technology-pages-wrapper .section-technology-details .section-title-holder .section-title {
+	color: #313232;
+	font-size: 50px;
+	line-height: 50px;
+	font-weight: 400;
+	margin: 0
+}
+
+@media only screen and (max-width: 991px) {
+	.technology-pages-wrapper .section-technology-details .section-title-holder .tech-logo {
+		width:38px;
+		max-height: 41px
+	}
+
+	.technology-pages-wrapper .section-technology-details .section-title-holder .section-title {
+		font-size: 36px;
+		line-height: 40px
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.technology-pages-wrapper .section-technology-details .section-title-holder {
+		margin-bottom:10px
+	}
+
+	.technology-pages-wrapper .section-technology-details .section-title-holder .tech-logo {
+		width: 30px;
+		max-height: 33px
+	}
+
+	.technology-pages-wrapper .section-technology-details .section-title-holder .section-title {
+		font-size: 32px;
+		line-height: 34px
+	}
+}
+
+.technology-pages-wrapper .section-technology-details .grid-row {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: stretch;
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch
+}
+
+@media only screen and (max-width: 479px) {
+	.technology-pages-wrapper .section-technology-details .grid-row {
+		-webkit-box-orient:vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column
+	}
+}
+
+.technology-pages-wrapper .section-technology-details .grid-item {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	position: relative
+}
+
+.technology-pages-wrapper .section-technology-details a.link-overlay,.technology-pages-wrapper .section-technology-details .browse-all-lessons-holder .link-overlay.playlist-edit,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .link-overlay.playlist-edit {
+	position: absolute;
+	content: '';
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0
+}
+
+.technology-pages-wrapper .section-technology-details .card-base,.technology-pages-wrapper .section-technology-details .card-course,.technology-pages-wrapper .section-technology-details .card-lesson,.technology-pages-wrapper .section-technology-details .card-featured-playlist {
+	background: white;
+	border: 1px solid #dfdfdf;
+	box-shadow: 0 2px 4px #dfdfdf;
+	padding: 20px;
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	font-size: 15px;
+	color: #40434b;
+	position: relative
+}
+
+.technology-pages-wrapper .section-technology-details .card-base .info-row,.technology-pages-wrapper .section-technology-details .card-course .info-row,.technology-pages-wrapper .section-technology-details .card-lesson .info-row,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center
+}
+
+.technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line,.technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center
+}
+
+.technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line a,.technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line a,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line a,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line a,.technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line .playlist-edit,.technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line .playlist-edit,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line .playlist-edit,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line .playlist-edit,.technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line span,.technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line span,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line span,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line span {
+	margin-left: 15px;
+	color: dimgrey;
+	text-decoration: none
+}
+
+.technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line a:first-child,.technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line a:first-child,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line a:first-child,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line a:first-child,.technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit:first-child,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line .playlist-edit:first-child,.technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit:first-child,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line .playlist-edit:first-child,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit:first-child,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line .playlist-edit:first-child,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit:first-child,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line .playlist-edit:first-child,.technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line span:first-child,.technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line span:first-child,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line span:first-child,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line span:first-child {
+	margin-left: 0
+}
+
+.technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-tech-logo,.technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-tech-logo,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-tech-logo,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-tech-logo {
+	width: 18px;
+	max-height: 20px;
+	margin-right: 20px
+}
+
+.technology-pages-wrapper .section-technology-details .card-base .info-row .author,.technology-pages-wrapper .section-technology-details .card-course .info-row .author,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .author,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .author {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center
+}
+
+.technology-pages-wrapper .section-technology-details .card-base .info-row .author .author-avatar,.technology-pages-wrapper .section-technology-details .card-course .info-row .author .author-avatar,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .author .author-avatar,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .author .author-avatar {
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	margin-right: 5px
+}
+
+.technology-pages-wrapper .section-technology-details .card-base .info-row .duration .icon,.technology-pages-wrapper .section-technology-details .card-course .info-row .duration .icon,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .duration .icon,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .duration .icon {
+	margin-right: 3px
+}
+
+.technology-pages-wrapper .section-technology-details .card-base .info-row .link-add-to,.technology-pages-wrapper .section-technology-details .card-course .info-row .link-add-to,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .link-add-to,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .link-add-to {
+	color: dimgrey;
+	text-decoration: none;
+	font-size: 14px
+}
+
+.technology-pages-wrapper .section-technology-details .card-base .info-row .link-add-to .icon,.technology-pages-wrapper .section-technology-details .card-course .info-row .link-add-to .icon,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .link-add-to .icon,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .link-add-to .icon {
+	margin-right: 5px
+}
+
+.technology-pages-wrapper .section-technology-details .card-base .info-row .btn-play,.technology-pages-wrapper .section-technology-details .card-course .info-row .btn-play,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .btn-play,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .btn-play {
+	font-size: 20px;
+	color: #b6c3c6;
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	text-decoration: none;
+	height: 36px;
+	border: 1px solid #dfdfdf;
+	border-radius: 10px;
+	padding: 9px 20px
+}
+
+@media only screen and (max-width: 767px) {
+	.technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line,.technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line {
+		font-size:12px
+	}
+
+	.technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line a,.technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line a,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line a,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line a,.technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line .playlist-edit,.technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line .playlist-edit,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line .playlist-edit,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line .playlist-edit,.technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line span,.technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line span,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line span,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line span {
+		margin-left: 10px
+	}
+
+	.technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line a:first-child,.technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line a:first-child,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line a:first-child,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line a:first-child,.technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit:first-child,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line .playlist-edit:first-child,.technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit:first-child,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line .playlist-edit:first-child,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit:first-child,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line .playlist-edit:first-child,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line .browse-all-lessons-holder .playlist-edit:first-child,.browse-all-lessons-holder .technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line .playlist-edit:first-child,.technology-pages-wrapper .section-technology-details .card-base .info-row .lesson-info-line span:first-child,.technology-pages-wrapper .section-technology-details .card-course .info-row .lesson-info-line span:first-child,.technology-pages-wrapper .section-technology-details .card-lesson .info-row .lesson-info-line span:first-child,.technology-pages-wrapper .section-technology-details .card-featured-playlist .info-row .lesson-info-line span:first-child {
+		margin-left: 0
+	}
+}
+
+.technology-pages-wrapper .section-technology-details .card-course {
+	padding: 30px;
+	position: relative;
+	height: auto;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: stretch;
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	min-width: 400px
+}
+
+.technology-pages-wrapper .section-technology-details .card-course .course-author-avatar {
+	width: 36px;
+	height: 36px;
+	border: 3px solid whitesmoke;
+	border-radius: 50%;
+	position: absolute;
+	top: -18px;
+	left: 50%;
+	margin-left: -18px;
+	z-index: 1
+}
+
+.technology-pages-wrapper .section-technology-details .card-course .course-subtitle {
+	color: #b6c3c6;
+	text-transform: uppercase;
+	font-size: 12px;
+	line-height: 14px;
+	text-align: center;
+	margin-bottom: 10px
+}
+
+.technology-pages-wrapper .section-technology-details .card-course .course-title {
+	margin-bottom: 20px;
+	font-size: 23px;
+	line-height: 24px;
+	text-align: center;
+	height: 60px;
+	color: #637b81;
+	font-weight: 400;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center
+}
+
+.technology-pages-wrapper .section-technology-details .card-course .card-content {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: stretch;
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1
+}
+
+.technology-pages-wrapper .section-technology-details .card-course .card-content .course-image-holder {
+	-webkit-flex-basis: 25%;
+	-ms-flex-preferred-size: 25%;
+	flex-basis: 25%;
+	-webkit-flex-shrink: 0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	margin-right: 20px;
+	position: relative
+}
+
+.technology-pages-wrapper .section-technology-details .card-course .card-content .course-image-holder .tech-logo {
+	position: absolute;
+	margin: auto;
+	top: -9%;
+	left: 1%;
+	bottom: 0;
+	right: 0;
+	width: 32%;
+	height: 32%;
+	z-index: 1;
+	-webkit-filter: drop-shadow(0px 0px 5px #000);
+	filter: url(shadow.svg#drop-shadow)
+}
+
+.technology-pages-wrapper .section-technology-details .card-course .card-content .course-image,.technology-pages-wrapper .section-technology-details .card-course .card-content .course-icon-overlay {
+	position: relative;
+	width: 100%
+}
+
+.technology-pages-wrapper .section-technology-details .card-course .card-content .course-description-holder {
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column
+}
+
+.technology-pages-wrapper .section-technology-details .card-course .card-content .description-text {
+	font-size: 16px;
+	line-height: 20px;
+	color: #989898;
+	margin-bottom: 20px;
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1
+}
+
+.technology-pages-wrapper .section-technology-details .card-course .lessons-in-course-number-holder .title {
+	font-size: 20px;
+	font-style: italic;
+	color: #465869;
+	margin-bottom: 15px
+}
+
+@media only screen and (max-width: 479px) {
+	.technology-pages-wrapper .section-technology-details .card-course {
+		padding:25px 15px 15px 15px;
+		min-width: auto;
+		width: 100%
+	}
+
+	.technology-pages-wrapper .section-technology-details .card-course .course-subtitle {
+		font-size: 10px;
+		margin-bottom: 5px
+	}
+
+	.technology-pages-wrapper .section-technology-details .card-course .course-title {
+		font-size: 20px;
+		line-height: 18px;
+		margin-bottom: 15px;
+		height: auto
+	}
+
+	.technology-pages-wrapper .section-technology-details .card-course .card-content .course-image-holder {
+		margin-right: 15px
+	}
+
+	.technology-pages-wrapper .section-technology-details .card-course .card-content .description-text {
+		font-size: 15px;
+		line-height: 15px;
+		margin-bottom: 10px
+	}
+
+	.technology-pages-wrapper .section-technology-details .card-course .lessons-in-course-number-holder .title {
+		font-size: 12px;
+		margin-bottom: 5px
+	}
+}
+
+.technology-pages-wrapper .section-technology-details .card-lesson {
+	padding: 15px 25px;
+	height: auto;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-width: 380px
+}
+
+.technology-pages-wrapper .section-technology-details .card-lesson .title {
+	font-size: 15px;
+	color: #313232;
+	margin-bottom: 7px
+}
+
+.technology-pages-wrapper .section-technology-details .card-lesson .description-holder {
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	margin-bottom: 10px
+}
+
+@media only screen and (max-width: 479px) {
+	.technology-pages-wrapper .section-technology-details .card-lesson {
+		padding:15px;
+		min-width: auto;
+		width: 100%
+	}
+
+	.technology-pages-wrapper .section-technology-details .card-lesson .title {
+		font-size: 13px;
+		margin-bottom: 5px
+	}
+
+	.technology-pages-wrapper .section-technology-details .card-lesson .description-holder {
+		font-size: 12px
+	}
+}
+
+.technology-pages-wrapper .section-technology-details .card-featured-playlist {
+	padding: 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	height: auto;
+	position: relative;
+	width: 410px
+}
+
+.technology-pages-wrapper .section-technology-details .card-featured-playlist .card-spine {
+	padding: 15px 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	background: rgba(171,171,171,0.8);
+	color: white;
+	font-size: 18px;
+	-webkit-flex-basis: 26px;
+	-ms-flex-preferred-size: 26px;
+	flex-basis: 26px;
+	-webkit-flex-shrink: 0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0
+}
+
+.technology-pages-wrapper .section-technology-details .card-featured-playlist .card-content {
+	padding: 15px 15px 15px 10px;
+	width: 100%;
+	max-width: 380px;
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column
+}
+
+.technology-pages-wrapper .section-technology-details .card-featured-playlist .title {
+	font-size: 16px;
+	color: #313232;
+	margin-bottom: 7px
+}
+
+.technology-pages-wrapper .section-technology-details .card-featured-playlist .description-holder {
+	margin-bottom: 10px
+}
+
+.technology-pages-wrapper .section-technology-details .card-featured-playlist .lessons-preview {
+	margin-bottom: 15px;
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1
+}
+
+.technology-pages-wrapper .section-technology-details .card-featured-playlist .lessons-preview .title {
+	font-size: 14px;
+	font-style: italic;
+	margin-bottom: 5px
+}
+
+.technology-pages-wrapper .section-technology-details .card-featured-playlist .lessons-preview .title span {
+	font-size: 13px;
+	font-weight: 400
+}
+
+.technology-pages-wrapper .section-technology-details .card-featured-playlist .lessons-list {
+	margin: 0;
+	padding: 0 0 0 7px;
+	list-style: none;
+	position: relative;
+	display: block
+}
+
+.technology-pages-wrapper .section-technology-details .card-featured-playlist .lessons-list:before {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.9) 100%);
+	background-image: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.9) 100%);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1AFFFFFF', endColorstr='#E6FFFFFF', GradientType=0)
+}
+
+.technology-pages-wrapper .section-technology-details .card-featured-playlist .lessons-list li {
+	position: relative;
+	padding-left: 10px;
+	border-left: 2px solid #ababab;
+	display: block
+}
+
+.technology-pages-wrapper .section-technology-details .card-featured-playlist .lessons-list li div {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+.technology-pages-wrapper .section-technology-details .card-featured-playlist .lessons-list li:before {
+	content: '';
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: #ababab;
+	left: -3px;
+	top: 5px;
+	display: block
+}
+
+.technology-pages-wrapper .section-technology-details .card-featured-playlist .progress-bar-row {
+	margin-bottom: 15px
+}
+
+@media only screen and (max-width: 479px) {
+	.technology-pages-wrapper .section-technology-details .card-featured-playlist {
+		width:320px
+	}
+
+	.technology-pages-wrapper .section-technology-details .card-featured-playlist .card-content {
+		width: 100%;
+		max-width: 310px
+	}
+
+	.technology-pages-wrapper .section-technology-details .card-featured-playlist .title {
+		font-size: 13px
+	}
+
+	.technology-pages-wrapper .section-technology-details .card-featured-playlist .description-holder {
+		font-size: 12px;
+		margin-bottom: 5px
+	}
+
+	.technology-pages-wrapper .section-technology-details .card-featured-playlist .lessons-list {
+		font-size: 13px
+	}
+
+	.technology-pages-wrapper .section-technology-details .card-featured-playlist .progress-bar-row {
+		margin-bottom: 5px
+	}
+}
+
+.technology-pages-wrapper .section-technology-details .subsection:not(:last-child) {
+	margin-bottom: 40px
+}
+
+@media only screen and (max-width: 767px) {
+	.technology-pages-wrapper .section-technology-details .subsection:not(:last-child) {
+		margin-bottom:30px
+	}
+}
+
+.technology-pages-wrapper .section-technology-details .subsection-courses .grid-row {
+	margin: 0 -5px
+}
+
+.technology-pages-wrapper .section-technology-details .subsection-courses .grid-item {
+	padding: 20px 5px;
+	-webkit-flex-basis: 33.33333%;
+	-ms-flex-preferred-size: 33.33333%;
+	flex-basis: 33.33333%
+}
+
+@media only screen and (max-width: 991px) {
+	.technology-pages-wrapper .section-technology-details .subsection-courses .grid-row {
+		margin:0 -18px
+	}
+
+	.technology-pages-wrapper .section-technology-details .subsection-courses .grid-item {
+		-webkit-flex-basis: 50%;
+		-ms-flex-preferred-size: 50%;
+		flex-basis: 50%
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.technology-pages-wrapper .section-technology-details .subsection-courses .grid-row {
+		margin:0 -10px;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center
+	}
+
+	.technology-pages-wrapper .section-technology-details .subsection-courses .grid-item {
+		padding-left: 10px;
+		padding-right: 10px;
+		-webkit-flex-basis: auto;
+		-ms-flex-preferred-size: auto;
+		flex-basis: auto
+	}
+}
+
+.technology-pages-wrapper .section-technology-details .subsection-new-lessons .grid-row {
+	margin: 0 -20px
+}
+
+.technology-pages-wrapper .section-technology-details .subsection-new-lessons .grid-item {
+	padding: 10px 20px;
+	-webkit-flex-basis: 33.33333%;
+	-ms-flex-preferred-size: 33.33333%;
+	flex-basis: 33.33333%
+}
+
+@media only screen and (max-width: 991px) {
+	.technology-pages-wrapper .section-technology-details .subsection-new-lessons .grid-row {
+		margin:0 -12px;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center
+	}
+
+	.technology-pages-wrapper .section-technology-details .subsection-new-lessons .grid-item {
+		padding: 20px 12px 5px 12px;
+		-webkit-flex-basis: 50%;
+		-ms-flex-preferred-size: 50%;
+		flex-basis: 50%
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.technology-pages-wrapper .section-technology-details .subsection-new-lessons .grid-row {
+		margin:0 -10px
+	}
+
+	.technology-pages-wrapper .section-technology-details .subsection-new-lessons .grid-item {
+		padding: 15px 10px 0 10px;
+		-webkit-flex-basis: auto;
+		-ms-flex-preferred-size: auto;
+		flex-basis: auto
+	}
+}
+
+.technology-pages-wrapper .section-technology-details .subsection-featured-playlists .grid-row {
+	margin: 0 -20px;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center
+}
+
+.technology-pages-wrapper .section-technology-details .subsection-featured-playlists .grid-item {
+	padding: 10px 20px;
+	-webkit-flex-basis: 36%;
+	-ms-flex-preferred-size: 36%;
+	flex-basis: 36%
+}
+
+@media only screen and (max-width: 991px) {
+	.technology-pages-wrapper .section-technology-details .subsection-featured-playlists .grid-item {
+		-webkit-flex-basis:50%;
+		-ms-flex-preferred-size: 50%;
+		flex-basis: 50%
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.technology-pages-wrapper .section-technology-details .subsection-featured-playlists .grid-row {
+		margin:0 -10px;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center
+	}
+
+	.technology-pages-wrapper .section-technology-details .subsection-featured-playlists .grid-item {
+		padding: 15px 10px 0 10px;
+		-webkit-flex-basis: auto;
+		-ms-flex-preferred-size: auto;
+		flex-basis: auto
+	}
+}
+
+.technology-pages-wrapper .section-technology-details .subsection-title-holder {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-bottom: 40px;
+	position: relative
+}
+
+.technology-pages-wrapper .section-technology-details .subsection-title-holder .title {
+	font-size: 15px;
+	line-height: 17px;
+	text-transform: uppercase;
+	color: dimgrey;
+	margin: 0
+}
+
+.technology-pages-wrapper .section-technology-details .subsection-title-holder .total-items {
+	position: absolute;
+	right: 0;
+	color: #989898;
+	font-size: 14px
+}
+
+.technology-pages-wrapper .section-technology-details .subsection-title-holder .total-items .description {
+	margin: 0 1px 0 3px
+}
+
+.technology-pages-wrapper .section-technology-details .subsection-title-holder .total-items .description:after {
+	content: '|';
+	margin-left: 3px
+}
+
+.technology-pages-wrapper .section-technology-details .subsection-title-holder .total-items .description.no-bar:after {
+	content: '';
+	display: inline-block
+}
+
+.technology-pages-wrapper .section-technology-details .subsection-title-holder .total-items .view-all-link {
+	color: #7d7d7d;
+	text-decoration: underline
+}
+
+@media only screen and (max-width: 767px) {
+	.technology-pages-wrapper .section-technology-details .subsection-title-holder {
+		-webkit-box-orient:vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		margin-bottom: 0
+	}
+
+	.technology-pages-wrapper .section-technology-details .subsection-title-holder .title-holder {
+		margin-bottom: 5px
+	}
+
+	.technology-pages-wrapper .section-technology-details .subsection-title-holder .title {
+		font-size: 11px
+	}
+
+	.technology-pages-wrapper .section-technology-details .subsection-title-holder .total-items {
+		position: static;
+		margin-top: 8px
+	}
+}

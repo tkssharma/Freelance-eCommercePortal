@@ -1228,6 +1228,10 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 				};
 			}]
 		})
+		.state('welcome.web.course', {
+			url: '/course',
+			templateUrl: 'partials/welcome/temp.html'
+		})
 		.state('welcome.java', {
 			url: '/java',
 			templateUrl: 'partials/welcome/welcome_java.html',

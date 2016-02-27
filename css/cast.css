@@ -4,6 +4,13 @@
     border: solid 5px #f2f2f2;
         height: 350px;
 }
+.inner {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.light-wrapper, #sub-header.sub-footer.social-light {
+    background: #ffffff !important;
+}
 .how-background {
     background: url(../images/cast.jpg) no-repeat;
     background-size: 100% auto;
@@ -328,7 +335,7 @@ text-align: center;
 .landing-title {
     margin: 3px 0;
     font-weight: 700;
-    font-size: 1.8em;
+    font-size: 1.4em;
 }
 .landing-subtext {
     font-weight: 300;

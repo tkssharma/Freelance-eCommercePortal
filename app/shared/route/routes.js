@@ -16,12 +16,11 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 		})
 		.state('welcome', {
 			url: '/welcome',
-			abstract : true,
 			templateUrl: 'partials/welcome/welcome.html'
 
 		})
-		.state('welcome.web', {
-			url: '/web',
+		.state('welcome.allcourse', {
+			url: '/allcourse',
 			templateUrl: 'partials/welcome/welcome_web.html',
 			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
 				if (! AuthenticationService.isLoggedIn()) {
@@ -29,23 +28,9 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 				};
 			}]
 		})
-		.state('welcome.java', {
-			url: '/java',
-			templateUrl: 'partials/welcome/welcome_java.html',
-			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
-				if (! AuthenticationService.isLoggedIn()) {
-					$state.go('login');
-				};
-			}]
-		})
-		.state('welcome.mobile', {
-			url: '/mobile',
-			templateUrl: 'partials/welcome/welcome_mobile.html',
-			onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
-				if (! AuthenticationService.isLoggedIn()) {
-					$state.go('login');
-				};
-			}]
+		.state('welcome.allcourse.course', {
+			url: '/course',
+			templateUrl: 'partials/welcome/course.html'
 		})
 		.state(
 			"login",
@@ -54,7 +39,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 				templateUrl : "partials/auth/login.html",
 				onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
 					if (AuthenticationService.isLoggedIn()) {
-						$state.go('welcome.web');
+						$state.go('welcome');
 					};
 				}]
 			})
@@ -91,20 +76,11 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 				templateUrl : "partials/auth/register.html",
 				onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
 					if (AuthenticationService.isLoggedIn()) {
-						$state.go('welcome.web');
+						$state.go('welcome');
 					};
 				}]
 			})
-		.state('codecast', {
-			url: '/codecast',
-			templateUrl: 'partials/cast/codecast.html',
-				onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
-					if (! AuthenticationService.isLoggedIn()) {
-						$state.go('login');
-					};
-				}]
-		})
-		.state('codecast.webcast', {
+		.state('webcast', {
 			url: '/webcast',
 			templateUrl: 'partials/cast/webcast.html',
 				onEnter: [ '$state', 'AuthenticationService', function($state, AuthenticationService){
@@ -140,7 +116,6 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 		;
 
 		$urlRouterProvider.when("/myaccount","/myaccount/contact");
-		$urlRouterProvider.when("/welcome","/welcome/web");
 		$urlRouterProvider.when("/postlogin","/postlogin/courses");
 		$urlRouterProvider.when("/myaccount",
 			"/myaccount/myaccounttabs");
