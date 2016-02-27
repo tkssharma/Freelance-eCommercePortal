@@ -688,6 +688,14 @@ hr {
 	background-position-y: -240px;
 	height: 100%;
 }
+.welcome-background {
+	background: url(../images/coursebg.jpg) no-repeat;
+	background-size: cover;
+	background-position-x: center;
+	background-attachment: fixed;
+	background-position-y: -40px;
+	height: 100%;
+}
 .cast-background {
     background: url(../images/codecast.jpg) no-repeat;
     background-size: cover;
@@ -725,7 +733,7 @@ hr {
 	line-height: 1em;
 }
 .half-page {
-	height: 315px;
+	height: 405px;
 }
 .title-small, .title-small a {
 	padding: 0;
