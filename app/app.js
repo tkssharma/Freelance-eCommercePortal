@@ -1,0 +1,42 @@
+	'use strict';
+
+	import React from 'react';
+	import {render} from 'react-dom';
+	import {
+		Router,
+		Redirect,
+		Route,
+		Link,
+		browserHistory,
+		IndexRoute
+	} from 'react-router';
+	import {Provider} from 'react-redux';
+	import store from 'app/redux/stores';
+	import {syncHistoryWithStore} from 'react-router-redux'
+	const history = syncHistoryWithStore(browserHistory, store);
+
+	import * as Action from 'app/redux/actions';
+	import jwt from 'jsonwebtoken';
+
+	if (localStorage.token) {
+		API.setAuthToken(localStorage.token);
+		store.dispatch(Action.authUpdateUserData(jwt.decode(localStorage.token)));
+	}
+	if (localStorage.geo) {
+		// let geo = JSON.parse(localStorage.geo); API.setGeoLocation(geo);
+		// 	store.dispatch(Action.wwwSetGeo(geo));
+	}
+	// ------------------Application Pages-------------//
+	import AppLayout from 'app/ui/layout/Default';
+	//--------------------Dashboard------------------//
+	import DefaultLayout from 'app/ui/layout/Default';
+
+	render((
+		<Provider store={store}>
+			<Router history={history}>
+				<Route path="/" component={AuthLayout}>
+				</Route>
+
+			</Router>
+		</Provider>
+	), document.getElementById('root'));
