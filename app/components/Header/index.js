@@ -32,7 +32,7 @@ export default class CommonHeader extends React.Component {
     );
 
     return (
-      <Header style={{ background: '#fff', padding: 0 }}>
+      <Header>
         <Row type="flex" justify="end" align="middle">
           <Col span={3}>
             <Badge className="header-icon" count={5}>

@@ -29,12 +29,10 @@
 	// ------------------Application Pages-------------//
 	import AppLayout from 'app/ui/layout/Default';
 	//--------------------Dashboard------------------//
-	import DefaultLayout from 'app/ui/layout/Default';
-
 	render((
 		<Provider store={store}>
 			<Router history={history}>
-				<Route path="/" component={AuthLayout}>
+				<Route path="/" component={AppLayout}>
 				</Route>
 
 			</Router>

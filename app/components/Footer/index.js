@@ -14,7 +14,7 @@ export default class CommonFooter extends React.Component {
   render () {
 
     return (
-      <Footer style={{ textAlign: 'center' }}>
+      <Footer>
          ©2015 Antd Layout
       </Footer>
     )

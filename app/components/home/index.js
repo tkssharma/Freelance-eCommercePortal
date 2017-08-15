@@ -49,9 +49,6 @@ let Header_section = (
 
         <InputGroup compact>
           <Input
-            style={{
-            width: '64%'
-          }}
             defaultValue="Search Online course"/>
           <Button type="primary" icon="search">Search</Button>
 
@@ -80,9 +77,6 @@ let banner_section = (
             <div className="ant-search-layout">
               <InputGroup compact>
                 <Input
-                  style={{
-                  width: '64%'
-                }}
                   defaultValue="Search Online course"/>
                 <Button type="primary" icon="search">Search</Button>
 
