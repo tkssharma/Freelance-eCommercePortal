@@ -88471,7 +88471,7 @@
 		var UserNavigation = _react2.default.createElement(
 			'header',
 			{
-				className: 'navbar site-nav navbar-static-top navbar-transparent',
+				className: 'navbar site-nav navbar-static-top',
 				role: 'navigation' },
 			_react2.default.createElement(
 				'div',
@@ -88564,90 +88564,6 @@
 								'a',
 								{ id: 'catalog', className: 'dropdown-toggle', href: '#/welcome' },
 								'Courses'
-							)
-						),
-						_react2.default.createElement(
-							'li',
-							{
-								className: 'dropdown open visible-lg visible-md visible-sm' },
-							_react2.default.createElement(
-								'a',
-								{ href: '#', 'data-toggle': 'dropdown', className: 'no-border dropdown-toggle' },
-								_react2.default.createElement('div', {
-									alt: 'User Thumbnail',
-									className: 'userNavPic img-circle pull-left' }),
-								_react2.default.createElement('span', { id: 'layoutUsername', className: 'name-position ng-binding' }),
-								_react2.default.createElement('i', { className: 'fa fa-caret-down caret-position' })
-							),
-							_react2.default.createElement(
-								'div',
-								{
-									id: 'userMenuPopup',
-									className: 'popover bottom dropdown-menu user-menu',
-									'data-original-title': '',
-									title: '' },
-								_react2.default.createElement(
-									'div',
-									{ className: 'popover-inner col-md-12 ' },
-									_react2.default.createElement(
-										'div',
-										{ className: 'col-md-12 col-sm-12 override-col-margin' },
-										_react2.default.createElement(
-											'ul',
-											null,
-											_react2.default.createElement(
-												'li',
-												null,
-												_react2.default.createElement(
-													'a',
-													{ href: '#/myaccount/myaccounttabs/password', className: 'no-border' },
-													_react2.default.createElement('i', { className: 'fa fa-user medium-indent' }),
-													'Edit Profile'
-												)
-											),
-											_react2.default.createElement(
-												'li',
-												null,
-												_react2.default.createElement(
-													'a',
-													{ href: '#/myaccount/myaccounttabs/password', className: 'no-border' },
-													_react2.default.createElement('i', { className: 'fa fa-cogs medium-indent' }),
-													'Account'
-												)
-											),
-											_react2.default.createElement(
-												'li',
-												null,
-												_react2.default.createElement(
-													'a',
-													{ href: '#/signout', className: 'no-border' },
-													_react2.default.createElement('i', { className: 'fa fa-sign-out medium-indent' }),
-													'Log Out'
-												)
-											),
-											_react2.default.createElement(
-												'li',
-												null,
-												_react2.default.createElement(
-													'a',
-													{ href: '#/myaccount/myaccounttabs/password', className: 'no-border' },
-													_react2.default.createElement('i', { className: 'fa fa-question-circle medium-indent' }),
-													'FAQs'
-												)
-											),
-											_react2.default.createElement(
-												'li',
-												null,
-												_react2.default.createElement(
-													'a',
-													{ href: 'mailto:help@alakarte.com', className: 'no-border' },
-													_react2.default.createElement('i', { className: 'fa fa-envelope-o medium-indent' }),
-													'Contact Us'
-												)
-											)
-										)
-									)
-								)
 							)
 						),
 						_react2.default.createElement(

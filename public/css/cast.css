@@ -111,7 +111,6 @@ ul.inline.trailhead-progress>li {
     padding-top: 6px;
 }
 
-
 .image-homepage-banner-cast {
     background-image: url('../images/codecast.jpg');
 }
@@ -439,9 +438,7 @@ text-align: center;
 	border-bottom-color: #edede8;
 }
 
-
 /*********************************************************************/
-
 
 .column-style {
 	/* height: 100%; */
@@ -461,7 +458,6 @@ text-align: center;
 .border {
 	border-top: 5px solid #1274B2;
 }
-
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
 	background-color: #fff;
@@ -490,7 +486,6 @@ h2 {
 	color: #2C3E56;
 	text-decoration: none;
 }
-
 
 .headerContent>li a {
 	font-family: 'Roboto', sans-serif;
@@ -552,7 +547,6 @@ ul.nav-tabs li a {
 	border-bottom: 10px solid #142C3F;
 	margin-bottom: 0px;
 }
-
 
 .nav-stacked>li.active>a, .nav-stacked>li.active>a:hover, .nav-stacked>li.active>a:focus
 	{
@@ -736,9 +730,13 @@ footer {
 	background: #142C3F;
 	font-size: 16px;
 	line-height: 22px;
+    padding-top: 30px;
 	color: #b7b7b7;
 }
 .footer {
-	padding-top: 30px;
 	padding-bottom: 30px;
+}
+.site-nav.navbar {
+    min-height: 35px;
+    background-color: #142c3f;
 }

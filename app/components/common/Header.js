@@ -21,7 +21,7 @@ let WWWHeader = (props) => {
 	let UserNavigation = (
 
 		<header
-			className="navbar site-nav navbar-static-top navbar-transparent"
+			className="navbar site-nav navbar-static-top"
 			role="navigation">
 			<div className="container">
 				<div className="navbar-header">
@@ -75,59 +75,6 @@ let WWWHeader = (props) => {
 						<li>
 							<a id="catalog" className="dropdown-toggle" href="#/welcome">Courses</a>
 						</li>
-
-						<li
-							className="dropdown open visible-lg visible-md visible-sm">
-							<a href="#" data-toggle="dropdown" className="no-border dropdown-toggle">
-								<div
-									alt="User Thumbnail"
-									className="userNavPic img-circle pull-left"></div>
-								<span id="layoutUsername" className="name-position ng-binding"></span>
-								<i className="fa fa-caret-down caret-position"></i>
-							</a>
-
-							<div
-								id="userMenuPopup"
-								className="popover bottom dropdown-menu user-menu"
-								data-original-title=""
-								title="">
-								<div className="popover-inner col-md-12 ">
-									<div className="col-md-12 col-sm-12 override-col-margin">
-										<ul>
-											<li>
-												<a href="#/myaccount/myaccounttabs/password" className="no-border">
-													<i className="fa fa-user medium-indent"></i>
-													Edit Profile</a>
-											</li>
-											<li>
-												<a href="#/myaccount/myaccounttabs/password" className="no-border">
-													<i className="fa fa-cogs medium-indent"></i>
-													Account</a>
-											</li>
-											<li>
-												<a href="#/signout" className="no-border">
-													<i className="fa fa-sign-out medium-indent"></i>
-													Log Out</a>
-											</li>
-											<li>
-												<a href="#/myaccount/myaccounttabs/password" className="no-border">
-													<i className="fa fa-question-circle medium-indent"></i>
-													FAQs</a>
-											</li>
-
-											<li>
-												<a href="mailto:help@alakarte.com" className="no-border">
-													<i className="fa fa-envelope-o medium-indent"></i>
-													Contact Us</a>
-											</li>
-										</ul>
-									</div>
-
-								</div>
-							</div>
-
-						</li>
-
 						<li>
 							<a data-toggle="modal" href="" data-target="#login">Sign In</a>
 						</li>

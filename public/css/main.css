@@ -5,7 +5,6 @@ body {
 	font-family: "Roboto Light", sans-serif !important;
 }
 
-
 .onboarding-form-group {
 	padding-bottom: 10px
 }
@@ -32,10 +31,11 @@ body {
 }
 
 .gennext-u-slide-in {
-	-webkit-transition: all 400ms ease;
-	transition: all 400ms ease;
-	width: 140px;
-	margin-right: 15px;
+    -webkit-transition: all 400ms ease;
+    transition: all 400ms ease;
+    width: 100px;
+    margin-top: 5px;
+    margin-right: 15px;
 }
 
 .gennext-u-slide-in-sm {
@@ -384,8 +384,6 @@ and (min-device-pixel-ratio:2) {
 	background-color: #273B47 !important;
 	border-color: #273B47 !important;
 }
-
-
 
 footer .title {
 	color: #fff;
@@ -1131,7 +1129,6 @@ p {
 
 /***************************************************************************/
 
-
 .navbar .navbar-nav>li>a {
 	color: inherit;
 	padding-top: 20px;
@@ -1198,5 +1195,3 @@ li a {
 	/* max-width: 400px !important; */
 	width: 150% !important;
 }
-
-
