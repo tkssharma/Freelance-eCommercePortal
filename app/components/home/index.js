@@ -1,115 +1,48 @@
 'use strict';
 
 import React from 'react';
-import {connect} from 'react-redux';
-
-import {
-  Input,
-  Col,
-  Row,
-  Select,
-  InputNumber,
-  DatePicker,
-  AutoComplete,
-  Cascader,
-  Button
-} from 'antd';
-const InputGroup = Input.Group;
 import {Link} from 'react-router';
-import HeaderComp from 'app/components/common/Header';
-import FooterComp from 'app/components/common/Footer';
-import organisationSection from './organisation';
-import technologiesSection from './technologies';
-import courseSection from './courses';
-import memeberSection from './memebers';
-import workshopSection from './workshop';
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    user: state
-      .user
-      .get('profile')
-  }
-}
-const mapDispatchToProps = dispatch => ({});
-
-let Header_section = (
-  <section className="hero ng-scope">
-    <div className="container">
-      <div className="logo-holder">
-        <Link to="/auth/login"><img alt="Tech logo angular" src="images/angular.svg"/></Link>
-        <Link to="/auth/login"><img alt="React" src="images/react.svg"/></Link>
-        <Link to="/auth/login"><img alt="Js" src="images/javascript.svg"/></Link>
-        <Link to="/auth/login"><img alt="Tech logo d3" src="images/d3.svg"/></Link>
-        <Link to="/auth/login"><img alt="Es6" src="images/jss.svg"/></Link>
-      </div>
-      <h1 className="mega customtitle">GenNext Training to deliver project based
-        learning to give you the head start you need as a developer</h1>
-      <div className="ant-search-layout">
-
-        <InputGroup compact>
-          <Input
-            defaultValue="Search Online course"/>
-          <Button type="primary" icon="search">Search</Button>
-
-        </InputGroup>
-      </div>
-    </div>
-
-  </section>
-);
-
-let banner_section = (
-  <div className="banner">
-    <div className="bg-color">
-      <div className="container">
-        <div className="row">
-          <div className="banner-text text-center">
-            <div className="logo-holder">
-              <Link to="/auth/login"><img alt="Tech logo angular" src="img/angular.svg"/></Link>
-              <Link to="/auth/login"><img alt="React" src="img/react.svg"/></Link>
-              <Link to="/auth/login"><img alt="Js" src="img/javascript.svg"/></Link>
-              <Link to="/auth/login"><img alt="Tech logo d3" src="img/d3.svg"/></Link>
-              <Link to="/auth/login"><img alt="Es6" src="img/jss.svg"/></Link>
-            </div>
-            <h1 className="mega customtitle">GenNext Training to deliver project based
-              learning to give you the head start you need as a developer</h1>
-            <div className="ant-search-layout">
-              <InputGroup compact>
-                <Input
-                  defaultValue="Search Online course"/>
-                <Button type="primary" icon="search">Search</Button>
-
-              </InputGroup>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-let Home = (props) => {
-
+let HomeComponent = function(props){
   return (
-    <div>
-      <div className="header">
-        <HeaderComp/>
-      </div>
-      {banner_section}
-      {organisationSection}
-      {workshopSection}
-      {technologiesSection}
-      {courseSection}
-      <div className="footer">
-        <FooterComp/>
-      </div>
-    </div>
-  )
+<div data-responsiveness-enabler="">
+	<div className="super-header-wrapper section-inverse section-slim">
+		<h1 className="h1-text">gennext Free Online Courses</h1>
 
+		<div className="super-header image-homepage-banner">
+			<div className="container">
+				<div className="super-header-content row">
+					<div className="col-xs-12 text-inverse">
+						<div className="row row-gap-huge"></div>
+						<div className="row row-gap-huge"></div>
+						<section className="sliding-text-wrapper">
+							<h1 className="stationary-text-top">Become a</h1>
+							<div className="sliding-text">
+
+								<h2>
+									Full Stack Developer</h2>
+
+							</div>
+							<div className="row row-gap-medium">
+								<div className="stationary-text-bottom">Online Training
+									platform</div>
+								<div className="row row-gap-huge"></div>
+								<a href="#/login" ><span
+									className="btn btn-primary btn-lg btn-min-width-sm">Start
+										Learning</span></a>
+										<a href="#/register"><span
+									className="btn btn-primary btn-lg btn-min-width-sm">Create Account</span></a>
+								<div className="row row-gap-huge"></div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+);
 }
 
-const ConnectHome = connect(mapStateToProps, mapDispatchToProps)(Home)
-
-export default ConnectHome;
+export default HomeComponent;

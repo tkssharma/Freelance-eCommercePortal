@@ -1,5 +1,3 @@
-
-
 body {
 	font-size: 18px;
 	font-family: "Roboto Light", sans-serif !important;
@@ -1194,4 +1192,7 @@ li a {
 	top: 62px !important;
 	/* max-width: 400px !important; */
 	width: 150% !important;
+}
+.courses-thumb{
+	background-image: url('../images/banner/js.jpg');
 }

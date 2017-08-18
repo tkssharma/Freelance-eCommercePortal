@@ -1215,7 +1215,6 @@ pre {
 	border-radius: 0
 }
 
-
 pre code {
 	padding: 0;
 	font-size: inherit;
@@ -1223,8 +1222,6 @@ pre code {
 	white-space: pre-wrap;
 	border-radius: 0
 }
-
-
 
 .pre-scrollable {
 	max-height: 340px;
@@ -3242,8 +3239,6 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 	list-style: none
 }
 
-
-
 .tab-content>.tab-pane {
 	display: none
 }
@@ -4856,7 +4851,6 @@ pre code {
 	color: #fff
 }
 
-
 .site-nav.navbar-transparent {
 	margin-bottom: -35px
 }
@@ -4886,9 +4880,6 @@ pre code {
 .nav-pills>li>a {
 	border-radius: 0
 }
-
-
-
 
 .notifications-icon {
 	height: 22px
@@ -5267,8 +5258,6 @@ hr.hr-slim {
 	margin-top: 11.5px;
 	margin-bottom: 11.5px
 }
-
-
 
 .badge-squared,.table th {
 	line-height: 1.6;
@@ -6784,9 +6773,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 	20% {
 		-webkit-transform: scale3d
 
-
-
-
 		(1
 		.1
 		,
@@ -6795,16 +6781,10 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 		,
 		1
 		.1
-
-
-
 
 		);
 		transform: scale3d
 
-
-
-
 		(1
 		.1
 		,
@@ -6813,9 +6793,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 		,
 		1
 		.1
-
-
-
 
 		)
 	}
@@ -6823,34 +6800,22 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 	40% {
 		-webkit-transform: scale3d
 
-
-
-
 		(0
 		.9
 		,
 		.9
 		,
 		.9
-
-
-
 
 		);
 		transform: scale3d
 
-
-
-
 		(0
 		.9
 		,
 		.9
 		,
 		.9
-
-
-
 
 		)
 	}
@@ -6858,9 +6823,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 	60% {
 		-webkit-transform: scale3d
 
-
-
-
 		(1
 		.03
 		,
@@ -6869,16 +6831,10 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 		,
 		1
 		.03
-
-
-
 
 		);
 		transform: scale3d
 
-
-
-
 		(1
 		.03
 		,
@@ -6887,9 +6843,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 		,
 		1
 		.03
-
-
-
 
 		)
 	}
@@ -6897,34 +6850,22 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 	80% {
 		-webkit-transform: scale3d
 
-
-
-
 		(0
 		.97
 		,
 		.97
 		,
 		.97
-
-
-
 
 		);
 		transform: scale3d
 
-
-
-
 		(0
 		.97
 		,
 		.97
 		,
 		.97
-
-
-
 
 		)
 	}
@@ -6932,16 +6873,10 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 	100% {
 		-webkit-transform: scale3d
 
-
-
-
 		(1
 		,
 		1,1);
 		transform: scale3d
-
-
-
 
 		(1
 		,
@@ -6963,9 +6898,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 	20% {
 		-webkit-transform: scale3d
 
-
-
-
 		(1
 		.1
 		,
@@ -6974,16 +6906,10 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 		,
 		1
 		.1
-
-
-
 
 		);
 		transform: scale3d
 
-
-
-
 		(1
 		.1
 		,
@@ -6992,9 +6918,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 		,
 		1
 		.1
-
-
-
 
 		)
 	}
@@ -7002,34 +6925,22 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 	40% {
 		-webkit-transform: scale3d
 
-
-
-
 		(0
 		.9
 		,
 		.9
 		,
 		.9
-
-
-
 
 		);
 		transform: scale3d
 
-
-
-
 		(0
 		.9
 		,
 		.9
 		,
 		.9
-
-
-
 
 		)
 	}
@@ -7037,9 +6948,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 	60% {
 		-webkit-transform: scale3d
 
-
-
-
 		(1
 		.03
 		,
@@ -7048,16 +6956,10 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 		,
 		1
 		.03
-
-
-
 
 		);
 		transform: scale3d
 
-
-
-
 		(1
 		.03
 		,
@@ -7066,9 +6968,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 		,
 		1
 		.03
-
-
-
 
 		)
 	}
@@ -7076,34 +6975,22 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 	80% {
 		-webkit-transform: scale3d
 
-
-
-
 		(0
 		.97
 		,
 		.97
 		,
 		.97
-
-
-
 
 		);
 		transform: scale3d
 
-
-
-
 		(0
 		.97
 		,
 		.97
 		,
 		.97
-
-
-
 
 		)
 	}
@@ -7111,16 +6998,10 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 	100% {
 		-webkit-transform: scale3d
 
-
-
-
 		(1
 		,
 		1,1);
 		transform: scale3d
-
-
-
 
 		(1
 		,
@@ -7430,6 +7311,8 @@ p.block-initialed-text {
 
 .btn.btn-min-width-sm {
 	min-width: 10em
+	    min-width: 10em;
+    margin-right: 20px;
 }
 
 .btn.btn-min-width-md {

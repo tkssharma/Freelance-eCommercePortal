@@ -14,7 +14,7 @@
 	import store from 'app/redux/stores';
 	import {syncHistoryWithStore} from 'react-router-redux'
 	const history = syncHistoryWithStore(browserHistory, store);
-
+ import  HomeComponent from 'app/components/home/index';
 	import * as Action from 'app/redux/actions';
 	import jwt from 'jsonwebtoken';
 
@@ -33,6 +33,7 @@
 		<Provider store={store}>
 			<Router history={history}>
 				<Route path="/" component={AppLayout}>
+				  <Route path="/home" component={HomeComponent}></Route>
 				</Route>
 
 			</Router>
