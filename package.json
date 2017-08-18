@@ -9,7 +9,7 @@
     "watch-css": "nodemon -e scss -x \"npm run scss-compile\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production webpack --config ./webpack.prod.config.js  --hot --inline",
-    "start": "nodemon server.js"
+    "start": "pm2 start server.js"
   },
   "author": "TarunSharma",
   "license": "MIT",
@@ -50,6 +50,7 @@
     "less-loader": "^2.2.3",
     "lodash": "^4.16.4",
     "node-sass": "^3.2.0",
+    "pm2": "^2.6.1",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-markdown": "2.4.2",
