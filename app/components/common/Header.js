@@ -41,13 +41,13 @@ let WWWHeader = (props) => {
 							className="gennext-u  hidden-sm hidden-xs gennext-u-slide-in"
 							alt="gennext U"
 							title="gennext U"
-							src="images/logo.png"
+							src="public/images/logo.png"
 							id="gennext-u"/>
 						<img
 							className="gennext-u hidden-lg hidden-md  gennext-u-slide-in-sm"
 							alt="gennext U"
 							title="gennext U"
-							src="images/logo.png"
+							src="public/images/logo.png"
 							id="gennext-u"/>
 					</a>
 

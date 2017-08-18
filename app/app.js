@@ -16,16 +16,7 @@
 	const history = syncHistoryWithStore(browserHistory, store);
  import  HomeComponent from 'app/components/home/index';
 	import * as Action from 'app/redux/actions';
-	import jwt from 'jsonwebtoken';
 
-	if (localStorage.token) {
-		API.setAuthToken(localStorage.token);
-		store.dispatch(Action.authUpdateUserData(jwt.decode(localStorage.token)));
-	}
-	if (localStorage.geo) {
-		// let geo = JSON.parse(localStorage.geo); API.setGeoLocation(geo);
-		// 	store.dispatch(Action.wwwSetGeo(geo));
-	}
 	// ------------------Application Pages-------------//
 	import AppLayout from 'app/ui/layout/Default';
 	//--------------------Dashboard------------------//

@@ -6,24 +6,19 @@ var APP_DIR = path.resolve(__dirname, 'app');
 
 var config = {
 
-    entry: APP_DIR + '/app.js',
-
+    entry: [
+    'webpack-hot-middleware/client',
+    APP_DIR + '/app.js'
+     ],
     output: {
         path: BUILD_DIR,
         filename: 'bundle.js',
         publicPath: './public/'
     },
-
-    devServer: {
-        inline: true,
-        contentBase: './public',
-        port: 2244,
-        historyApiFallback: true,
-        stats: 'errors-only',
-        headers: { "Access-Control-Allow-Origin": "*" }
-
-    },
-
+		plugins: [
+		 new webpack.HotModuleReplacementPlugin(),
+		 new webpack.NoErrorsPlugin()
+	 ],
     module: {
         loaders: [
             {
@@ -32,9 +27,7 @@ var config = {
                 exclude: '/node_modules/',
                 include: APP_DIR,
                 query: {
-                    presets: [
-                        'es2015', 'stage-1', 'react'
-                    ],
+					presets: ['es2015', 'react', 'stage-0'],
                     plugins: ['antd']
                 }
             }, {
