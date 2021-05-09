@@ -49,7 +49,7 @@
     "jsonwebtoken": "^7.4.3",
     "less": "^2.5.1",
     "less-loader": "^2.2.3",
-    "lodash": "^4.16.4",
+    "lodash": "^4.17.21",
     "node-sass": "^3.2.0",
     "pm2": "^2.6.1",
     "react": "^15.3.0",
