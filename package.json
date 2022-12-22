@@ -46,7 +46,7 @@
     "file-loader": "^0.10.1",
     "history": "^4.3.0",
     "json-loader": "0.5.4",
-    "jsonwebtoken": "^7.4.3",
+    "jsonwebtoken": "^9.0.0",
     "less": "^2.5.1",
     "less-loader": "^2.2.3",
     "lodash": "^4.16.4",
